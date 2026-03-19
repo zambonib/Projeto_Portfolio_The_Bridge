@@ -1,43 +1,62 @@
 /* ======================================================= */
-/* 1. EFEITO DE DIGITAÇÃO (Typing Effect)                  */
+/* 1. EFEITO DE DIGITAÇÃO E PONTE ASCII                    */
 /* ======================================================= */
-const textElement = document.getElementById('text');
+const linesContainer = document.getElementById('text-lines');
 const phrases = [
+    "Desenvolvedor Full Stack",
     "Especialista em Infraestrutura",
     "Especialista em IA Generativa",
     "Administrador de Ambientes Cloud",
-    "Administrador Windows Server",
-    "Desenvolvedor Front-end",
-    "Especialista Hypervisor",
+    "Especialista Hypervisor"
 ];
 
 let phraseIndex = 0;
 let charIndex = 0;
-let isDeleting = false;
 
+// Nova Função de Digitação (Mantém o histórico)
 function type() {
-    const currentPhrase = phrases[phraseIndex];
-    if (isDeleting) {
-        textElement.innerText = currentPhrase.substring(0, charIndex - 1);
-        charIndex--;
-    } else {
-        textElement.innerText = currentPhrase.substring(0, charIndex + 1);
+    if (phraseIndex < phrases.length) {
+        // Se for o primeiro caractere da frase, cria uma nova linha
+        if (charIndex === 0) {
+            const lineElement = document.createElement('div');
+            lineElement.id = 'line-' + phraseIndex;
+            linesContainer.appendChild(lineElement);
+        }
+
+        const currentLine = document.getElementById('line-' + phraseIndex);
+        currentLine.innerHTML += phrases[phraseIndex].charAt(charIndex);
         charIndex++;
+
+        if (charIndex < phrases[phraseIndex].length) {
+            setTimeout(type, 40); // Velocidade das letras
+        } else {
+            // Palavra terminou. Pula para a próxima após um breve delay
+            phraseIndex++;
+            charIndex = 0;
+            setTimeout(type, 400); 
+        }
     }
-    let typeSpeed = isDeleting ? 50 : 100;
-    if (!isDeleting && charIndex === currentPhrase.length) {
-        isDeleting = true;
-        typeSpeed = 2000;
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        phraseIndex = (phraseIndex + 1) % phrases.length;
-        typeSpeed = 500;
-    }
-    setTimeout(type, typeSpeed);
 }
+
+// Lógica da Ponte ASCII
+const bridgeElement = document.getElementById('ascii-bridge');
+const bridgeArt = " _.-'|¯¯|'-.__.-'|¯¯|'-.__.-'|¯¯|'-.__.-'|¯¯|'-.__.-'|¯¯|'-._ "; // Desenho da ponte
+let bridgeIndex = 0;
+
+function drawBridge() {
+    if (bridgeIndex < bridgeArt.length) {
+        bridgeElement.innerHTML += bridgeArt.charAt(bridgeIndex);
+        bridgeIndex++;
+        setTimeout(drawBridge, 150); // Velocidade de construção da ponte
+    }
+}
+
+// Inicializadores
 document.addEventListener('DOMContentLoaded', () => {
-    type(); // Inicia o efeito de digitação
-    shuffleProjects(); // Inicia o embaralhamento dos projetos
+    type(); // Inicia as linhas de texto
+    setTimeout(drawBridge, 1500); // Começa a desenhar a ponte após 1.5s
+    shuffleProjects(); 
+    checkResolutionForBeam(); // Caso o farol já exista
 });
 
 

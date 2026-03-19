@@ -20,17 +20,19 @@
     <canvas id="easter-egg-matrix"></canvas>
 
     <div class="glass-card">
-        <div style="display: flex; justify-content: space-between; margin-bottom: 20px; opacity: 0.5;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; opacity: 0.7; font-family: monospace;">
             <span>● Infra</span>
-            <span style="cursor: pointer;" title="Acessar Terminal Secreto" onclick="openTerminal()"> >_ Dev</span>
+            <span id="ascii-bridge" style="flex-grow: 1; text-align: center; color: #0ea5e9; letter-spacing: 2px;"></span>
+            <span>>_ Dev</span>
         </div>
 
-        <h1>Olá Sou o Bruno Zamboni!</h1>
+        <h1>Olá, Sou o Bruno Zamboni. Desenvolvedor!</h1>
         
-        <h2 style="margin-bottom: 20px; font-size: 1.2rem; color: #fff;">Criei aqui algo especial para mostrar um pouco da minha Trajetória</h2>
+        <h2 style="margin-bottom: 20px; font-size: 1.2rem; color: #fff;">Criei meu portfólio para mostrar minhas Habilidades e Projetos.</h2>
         
-        <div class="typing-container">
-            <span id="text"></span><span class="cursor">&nbsp;</span>
+        <div class="typing-container" style="display: flex; flex-direction: column; align-items: center; gap: 5px; min-height: 180px;">
+            <div id="text-lines"></div>
+            <div><span class="cursor">&nbsp;</span></div>
         </div>
 
         <p>
@@ -42,12 +44,14 @@
             <button id="cv-button" class="btn-glass btn-cv">
                 DOWNLOAD: CV_BRUNO.ZAMBONI.PDF
             </button>
-            
             <a href="#retrospectiva" class="btn-glass">Explorar Projetos</a>
         </div>
 
-        <div class="terminal-status">
+        <div class="terminal-status" style="align-items: center;">
             <span>Uptime: <span style="color: #f3f1ed; text-shadow: 0 0 5px #ffc014;">44 Years</span></span>
+            
+            <span class="btn-terminal-secret" onclick="openTerminal()">[ Terminal ]</span>
+            
             <span>System: <span style="color: #39ff14; text-shadow: 0 0 5px #39ff14;">Online</span></span>
         </div>
     </div>
@@ -222,9 +226,9 @@
             <h3 style="color: #0ea5e9; margin-bottom: 15px;">Cansado de ver Currículo no formato tradicional?</h3>
             
             <p style="font-size: 1rem; color: #ccc;">
-                A verdade é que eu não caibo em uma folha A4. O PDF é estático, mas minha carreira é dinâmica.
+                A verdade é que minha jornada não cabe em uma folha A4. O PDF é estático, mas minha carreira é dinâmica.
                 <br><br>
-                Convido você a navegar por este site e ver na prática o que posso fazer, em vez de apenas ler sobre isso.
+                Convido você a navegar por este site incrível cheio de funcionalidades e ver na prática o que posso fazer, em vez de apenas ler sobre isso.
             </p>
         </div>
     </div>
