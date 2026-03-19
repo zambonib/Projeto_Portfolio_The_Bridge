@@ -40,7 +40,7 @@ function type() {
 
 // Lógica da Ponte ASCII
 const bridgeElement = document.getElementById('ascii-bridge');
-const bridgeArt = " _.-'|¯¯|'-.__.-'|¯¯|'-.__.-'|¯¯|'-.__.-'|¯¯|'-.__.-'|¯¯|'-._ "; // Desenho da ponte
+const bridgeArt = " _.-'|¯¯|'-..-'|¯¯|'-._ "; // Desenho da ponte
 let bridgeIndex = 0;
 
 function drawBridge() {
