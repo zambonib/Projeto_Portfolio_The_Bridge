@@ -47,7 +47,7 @@ function drawBridge() {
     if (bridgeIndex < bridgeArt.length) {
         bridgeElement.innerHTML += bridgeArt.charAt(bridgeIndex);
         bridgeIndex++;
-        setTimeout(drawBridge, 150); // Velocidade de construção da ponte
+        setTimeout(drawBridge, 300); // Velocidade de construção da ponte
     }
 }
 
