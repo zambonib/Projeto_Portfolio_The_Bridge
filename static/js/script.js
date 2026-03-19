@@ -507,3 +507,96 @@ function buildChristmasTree() {
     `;
     tree.appendChild(star);
 }
+
+/* ======================================================= */
+/* COMPORTAMENTO: Carrossel e Modal de Certificados        */
+/* ======================================================= */
+
+// 1. Lógica do Carrossel
+function initCertificatesCarousel() {
+    const track = document.querySelector('.carousel-track');
+    const prevButton = document.getElementById('prev-cert');
+    const nextButton = document.getElementById('next-cert');
+
+    // Se a tela não tiver esses elementos, a função para aqui (evita erros)
+    if (!track || !prevButton || !nextButton) return; 
+
+    const items = Array.from(track.children);
+    let currentSlideIndex = 0;
+
+    // Oculta os botões se houver apenas 1 certificado
+    if (items.length <= 1) {
+        prevButton.style.display = 'none';
+        nextButton.style.display = 'none';
+        return;
+    }
+
+    // Função centralizada para mover o carrossel
+    function updateCarousel() {
+        const amountToMove = currentSlideIndex * -100;
+        track.style.transform = `translateX(${amountToMove}%)`;
+    }
+
+    // Evento: Próximo
+    nextButton.addEventListener('click', () => {
+        currentSlideIndex++;
+        if (currentSlideIndex >= items.length) {
+            currentSlideIndex = 0; // Se passou do último, volta pro primeiro
+        }
+        updateCarousel();
+    });
+
+    // Evento: Anterior
+    prevButton.addEventListener('click', () => {
+        currentSlideIndex--;
+        if (currentSlideIndex < 0) {
+            currentSlideIndex = items.length - 1; // Se recuou do primeiro, vai pro último
+        }
+        updateCarousel();
+    });
+}
+
+// 2. Lógica do Modal de Tela Cheia (Atualizada para ignorar Mobile)
+function initCertificateModal() {
+    const modal = document.getElementById('cert-modal');
+    const modalImg = document.getElementById('cert-full-img');
+    const certificateImages = document.querySelectorAll('.certificate-img');
+
+    if (!modal || !modalImg) return;
+
+    // Adiciona o evento de clique em TODAS as imagens de certificado
+    certificateImages.forEach(img => {
+        img.addEventListener('click', function(e) {
+            // VERIFICAÇÃO SÊNIOR: Se for tela de celular (< 768px), bloqueia a abertura do modal
+            if (window.innerWidth <= 768) {
+                return; // Sai da função sem fazer nada
+            }
+
+            modalImg.src = this.src; // Copia a imagem clicada para o modal
+            modal.style.display = 'flex'; // Exibe o modal
+        });
+    });
+
+    // Fecha o modal ao clicar fora da imagem (no fundo escuro)
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeCertModal();
+        }
+    });
+}
+
+
+/* ======================================================= */
+/* INICIALIZADOR GERAL                                     */
+/* ======================================================= */
+// Certifique-se de que essas chamadas estejam no seu DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+    if (typeof type === 'function') type();
+    if (typeof drawBridge === 'function') setTimeout(drawBridge, 1500);
+    if (typeof shuffleProjects === 'function') shuffleProjects();
+    if (typeof checkResolutionForBeam === 'function') checkResolutionForBeam();
+    
+    // Nossas novas funções
+    initCertificatesCarousel();
+    initCertificateModal(); 
+});
