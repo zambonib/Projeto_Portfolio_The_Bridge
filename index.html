@@ -13,6 +13,7 @@
     <title>Bruno Zamboni - Portfólio</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
     <link rel="stylesheet" href="./static/css/style.css">
 </head>
 
@@ -110,79 +111,75 @@
                 </div>
                 <p class="instruction-text">Clique em uma habilidade para virar o card</p>
             </div>
-        </div> </div> <div class="content-section" id="certificados">
+        </div> </div>
+
+        <div class="content-section" id="certificados">
         <h2 class="section-title"># Certificados conquistados</h2>
 
-        <div class="carousel-container glass-card" style="padding: 30px;">
-            <button class="carousel-btn prev" id="prev-cert" aria-label="Certificado Anterior">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-
-            <div class="carousel-track-container">
-                <ul class="carousel-track">
-
-                    <li class="carousel-item">
+        <div class="glide cert-glide glass-card" style="padding: 60px 30px;">
+            
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    
+                    <li class="glide__slide" style="display: flex; flex-direction: column; align-items: center;">
                         <img src="./static/image/Global Solution FIAP.png" alt="Certificado 1" class="certificate-img">
                         <div class="certificate-info">
                             <h3>Global Solution FIAP 2025</h3>
                             <p class="cert-meta">FIAP - 2025</p>
-                            <p class="certificate-description">
-                                "Esta certificação validou meus conhecimentos em inovação e tecnologia, premiando o projeto Nohall em 1º Lugar na Global Solution."
-                            </p>
+                            <p class="certificate-description">"Certificado do Desafio Global Solution da FIAP de 2025, aonde criamos e apresentamos o projeto NoHall, que foi o grande Campeão do Desafio.   </p>
                         </div>
                     </li>
                     
-                    <li class="carousel-item">
+                    <li class="glide__slide" style="display: flex; flex-direction: column; align-items: center;">
                         <img src="./static/image/FIAP_1_Semestre.png" alt="Certificado 2" class="certificate-img">
                         <div class="certificate-info">
                             <h3>Análise e Desenvolvimento de Sistemas</h3>
                             <p class="cert-meta">FIAP - 1º Semestre</p>
-                            <p class="certificate-description">
-                                "Conclusão com excelência dos módulos fundamentais de engenharia de software, modelagem de dados e design thinking."
-                            </p>
+                            <p class="certificate-description">"Conclusão com excelência dos módulos fundamentais de engenharia de software, modelagem de dados e design thinking."</p>
                         </div>
                     </li>
 
-                    <li class="carousel-item">
+                    <li class="glide__slide" style="display: flex; flex-direction: column; align-items: center;">
                         <img src="./static/image/Cloud_DEVOPS_Alura.png" alt="Certificado 3" class="certificate-img">
                         <div class="certificate-info">
                             <h3>Formação Cloud & DevOps</h3>
                             <p class="cert-meta">Alura</p>
-                            <p class="certificate-description">
-                                "Domínio em práticas ágeis, CI/CD, automação de infraestrutura e orquestração de containers."
-                            </p>
+                            <p class="certificate-description">"Domínio em práticas ágeis, CI/CD, automação de infraestrutura e orquestração de containers."</p>
                         </div>
                     </li>
 
-                    <li class="carousel-item">
+                    <li class="glide__slide" style="display: flex; flex-direction: column; align-items: center;">
                         <img src="./static/image/AWS_Architecting.png" alt="Certificado 4" class="certificate-img">
                         <div class="certificate-info">
                             <h3>Architecting on AWS</h3>
                             <p class="cert-meta">Amazon Web Services (AWS)</p>
-                            <p class="certificate-description">
-                                "Capacitação avançada em desenho e implantação de arquiteturas altamente escaláveis, seguras e resilientes na nuvem AWS."
-                            </p>
+                            <p class="certificate-description">"Capacitação avançada em desenho e implantação de arquiteturas altamente escaláveis, seguras e resilientes na nuvem AWS."</p>
                         </div>
                     </li>
                     
-                    <li class="carousel-item">
+                    <li class="glide__slide" style="display: flex; flex-direction: column; align-items: center;">
                         <img src="./static/image/PFSense_Snort.png" alt="Certificado 5" class="certificate-img">
                         <div class="certificate-info">
                             <h3>Segurança de Redes: pfSense & Snort</h3>
                             <p class="cert-meta">Especialização em Cybersecurity</p>
-                            <p class="certificate-description">
-                                "Especialização em implementação de firewalls avançados e sistemas de detecção/prevenção de intrusão (IDS/IPS)."
-                            </p>
+                            <p class="certificate-description">"Especialização em implementação de firewalls avançados e sistemas de detecção/prevenção de intrusão (IDS/IPS)."</p>
                         </div>
                     </li>
 
                 </ul>
             </div>
 
-            <button class="carousel-btn next" id="next-cert" aria-label="Próximo Certificado">
-                <i class="fas fa-chevron-right"></i>
-            </button>
+            <div class="glide__arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left carousel-btn prev" data-glide-dir="<">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="glide__arrow glide__arrow--right carousel-btn next" data-glide-dir=">">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
         </div>
+    </div>
     </div> <div class="content-section" id="retrospectiva">
         <h2 class="section-title"># Retrospectiva dos Projetos realizados até aqui!</h2>
 
@@ -319,6 +316,7 @@
         <img class="cert-modal-content" id="cert-full-img" alt="Certificado em Tela Cheia">
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
     <script src="./static/js/script.js"></script>
 </body>
 

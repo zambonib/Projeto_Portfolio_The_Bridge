@@ -246,7 +246,6 @@ p {
 /* --- SESSÃO DE HABILIDADES (SKILLS - DESKTOP) --- */
 .skills-wrapper {
     display: grid;
-    /* AQUI ESTA O SEGREDO DO DESKTOP: 2 COLUNAS */
     grid-template-columns: 1fr 1fr; 
     gap: 40px;
     width: 90%;
@@ -305,7 +304,6 @@ p {
     border-color: #4ade80;
 }
 .skill-desc { font-size: 0.9rem; color: #94a3b8; margin-bottom: 20px; }
-
 
 /* --- ESTILOS DO TERMINAL SECRETO --- */
 .terminal-overlay {
@@ -369,11 +367,10 @@ p {
     flex-direction: column; 
     align-items: center; 
     width: 100%;       
-    max-width: 520px;  /* Largura máxima do card no Desktop */
+    max-width: 520px; 
     margin: 0 auto;    
 }
 
-/* O Container agora não tem altura fixa, ele segue o filho */
 .skill-flip-inner {
     position: relative; 
     width: 100%; 
@@ -390,7 +387,7 @@ p {
     position: relative; 
     width: 100%; 
     height: auto; 
-    min-height: 280px; /* Altura mínima desktop */
+    min-height: 280px; 
     
     backface-visibility: hidden; 
     top: 0; left: 0;
@@ -419,7 +416,6 @@ p {
     border-color: #0ea5e9;
 }
 
-/* Botão de voltar e textos do verso */
 .btn-back {
     margin-top: 20px; padding: 10px 25px;
     background: transparent; border: 1px solid #fff;
@@ -484,7 +480,6 @@ p {
     gap: 20px; margin-top: 30px; width: 100%;
 }
 
-
 /* ======================================================= */
 /* RODAPÉ AVATAR & LANTERNA (DESKTOP)                      */
 /* ======================================================= */
@@ -510,16 +505,12 @@ p {
     height: 200px;
 }
 
-/* --- 1. ESQUERDA (TEXTO)--------*/
 .footer-left {
     text-align: left;
     color: #888;
     z-index: 5;
-    
-    /* CONFIGURAÇÕES DE POSIÇÃO DESKTOP */
     margin-left: 80px; 
     margin-top: -30px; 
-    
     position: relative;
     top: -10px;
     left: 20px; 
@@ -528,7 +519,6 @@ p {
 .footer-left strong { color: #fff; }
 .copyright { font-size: 0.75rem; opacity: 0.6; }
 
-/* 2. CENTRO (LINKS) */
 .footer-links-center {
     display: flex;
     gap: 80px;
@@ -547,7 +537,6 @@ p {
 }
 .social-link i { font-size: 1.4rem; }
 
-/* 3. DIREITA (AVATAR) */
 .avatar-wrapper {
     position: relative;
     height: 100%;
@@ -569,26 +558,20 @@ p {
 .img-off { opacity: 1; z-index: 2; }
 .img-on  { opacity: 0; z-index: 3; }
 
-/* --- O FEIXE DE LUZ (LANTERNA - FIX) --- */
 .flashlight-beam {
     position: absolute;
     top: -95px;   
     right: 115px;
-    
     width: 800px;
     height: 300px;
     mix-blend-mode: screen; 
-    
     clip-path: polygon(0% 10%, 100% 52%, 100% 55%, 0% 60%);
-    
     background: linear-gradient(to left, 
         rgba(255, 255, 200, 0.9) 0%, 
         rgba(255, 255, 200, 0.2) 0%, 
         transparent 100%);
-        
     transform-origin: right center;
     transform: rotate(-5deg);
-    
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
@@ -599,7 +582,6 @@ p {
 .avatar-footer:hover .img-off { opacity: 0; }
 .avatar-footer:hover .img-on  { opacity: 1; }
 .avatar-footer:hover .flashlight-beam { opacity: 1; }
-
 .avatar-footer:hover .social-link {
     color: #fff;
     text-shadow: 0 0 15px rgba(255, 255, 200, 0.8);
@@ -610,10 +592,271 @@ p {
 .avatar-footer:hover .social-link:nth-child(3) { transition-delay: 0.3s; }
 
 /* ======================================================= */
-/* MOBILE DEFINITIVO (LINKS ESQUERDA + AVATAR DIREITA)     */
+/* DICA DO EASTER EGG (OVO MISTERIOSO)                     */
 /* ======================================================= */
 
-@media (max-width: 900px) {
+.easter-egg-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+}
+
+.egg-wrapper {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: help; 
+    animation: egg-wobble 4s infinite ease-in-out;
+}
+
+.egg-icon {
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.15); 
+    transition: all 0.4s ease;
+}
+
+.easter-egg-container:hover .egg-icon {
+    color: #39ff14; 
+    text-shadow: 0 0 15px #39ff14, 0 0 30px #39ff14; 
+    transform: scale(1.2); 
+    animation: none; 
+}
+
+.egg-tooltip {
+    position: absolute;
+    bottom: 60px; 
+    right: 0;
+    width: 320px;
+    background: rgba(0, 0, 0, 0.95);
+    border: 1px solid #39ff14; 
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.15);
+    padding: 20px;
+    border-radius: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.9);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); 
+    pointer-events: none; 
+}
+
+.easter-egg-container:hover .egg-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.egg-tooltip p {
+    color: #e2e8f0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    font-family: 'Courier New', Courier, monospace; 
+    text-align: left;
+}
+
+.egg-signature {
+    text-align: right !important;
+    color: #39ff14 !important; 
+    font-style: italic;
+    margin-bottom: 0 !important;
+    font-size: 0.85rem !important;
+}
+
+@keyframes egg-wobble {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(-8deg); }
+    20% { transform: rotate(8deg); }
+    30% { transform: rotate(-4deg); }
+    40% { transform: rotate(4deg); }
+    50% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); } 
+}
+
+div {
+    transform-style: preserve-3d;
+}
+@keyframes puls {
+    to { scale: .2; opacity: 0.2; }
+}
+@keyframes hue {
+    to { filter:hue-rotate(360deg); }
+}
+
+/* ======================================================= */
+/* ESTILOS: Efeito "Center Mode" do Glide.js               */
+/* ======================================================= */
+
+.cert-glide {
+    max-width: 1000px; 
+    margin: 0 auto;
+    position: relative;
+}
+
+/* 1. Estado Padrão (Slides que estão "de lado") */
+.glide__slide {
+    padding: 10px 15px;
+    box-sizing: border-box;
+    opacity: 0.3; 
+    transform: scale(0.85); 
+    transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    pointer-events: none; 
+}
+
+/* 2. Estado Ativo (O Slide que está no centro) */
+.glide__slide--active {
+    opacity: 1; 
+    transform: scale(1); 
+    pointer-events: auto; 
+    z-index: 2; 
+}
+
+/* Oculta textos nos slides laterais */
+.glide__slide:not(.glide__slide--active) .certificate-info {
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+}
+
+.glide__slide--active .certificate-info {
+    opacity: 1;
+    transition: opacity 0.5s ease 0.2s; 
+}
+
+.glide__arrows {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    pointer-events: none; 
+}
+
+.certificate-img {
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 8px;
+    border: 1px solid rgba(14, 165, 233, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 25px;
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+}
+
+.certificate-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+}
+
+.certificate-info {
+    text-align: center;
+    width: 100%;
+}
+
+.certificate-info h3 {
+    color: #fff;
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+    background: none;
+    -webkit-text-fill-color: #fff;
+}
+
+.cert-meta {
+    font-family: monospace;
+    color: #0ea5e9;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.certificate-description {
+    font-size: 1rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Botões do Carrossel (Setas do Glide) */
+.carousel-btn {
+    pointer-events: auto;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(14, 165, 233, 0.3);
+    color: #0ea5e9;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.carousel-btn:hover {
+    background: rgba(14, 165, 233, 0.2);
+    box-shadow: 0 0 15px rgba(14, 165, 233, 0.5);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
+
+
+/* ======================================================= */
+/* MODAL CERTIFICADO TELA CHEIA                            */
+/* ======================================================= */
+#cert-modal {
+    z-index: 10005;
+}
+
+.cert-modal-content {
+    margin: auto;
+    display: block;
+    max-width: 95%;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(14, 165, 233, 0.4);
+    border: 1px solid rgba(14, 165, 233, 0.8);
+    animation: zoomInModal 0.3s ease;
+}
+
+.cert-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #94a3b8;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 10006;
+}
+
+.cert-modal-close:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #0ea5e9;
+}
+
+@keyframes zoomInModal {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+
+/* ======================================================= */
+/* RESPONSIVIDADE MOBILE (GERAL E COMPONENTES)             */
+/* ======================================================= */
+@media screen and (max-width: 900px) {
     
     .footer-content {
         display: grid;
@@ -627,30 +870,22 @@ p {
         width: 100%;
     }
 
-    /* --- 1. COPYRIGHT (Texto Institucional) --- */
     .footer-left {
         grid-area: copyright; 
-        
-        /* OBRIGATÓRIO: Reseta todas as posições do Desktop */
         position: static;
         margin: 20px 0 0 0; 
         top: auto;
         left: auto;
-        
         width: 100%;
         text-align: center;
-        
         border-top: 1px solid rgba(255,255,255,0.05);
         padding-top: 20px;
     }
 
-    /* --- 2. LINKS (Lado Esquerdo Superior) --- */
     .footer-links-center {
         grid-area: links;
-        
         position: static;
         transform: none;
-        
         display: flex;
         flex-direction: column;
         align-items: flex-end; 
@@ -667,7 +902,6 @@ p {
         white-space: nowrap;
     }
 
-    /* --- 3. AVATAR (Lado Direito Superior) --- */
     .avatar-wrapper {
         grid-area: avatar;
         width: 100%;
@@ -689,13 +923,8 @@ p {
     .img-on  { opacity: 1 !important; display: block !important; }
     .flashlight-beam { display: none; }
 
-    /* ============================================ */
-    /* CORREÇÃO DOS CARDS (SKILLS) NO MOBILE        */
-    /* AGORA DENTRO DO BLOCO MOBILE CORRETAMENTE    */
-    /* ============================================ */
-    
     .skills-wrapper {
-        grid-template-columns: 1fr; /* Força 1 coluna no celular */
+        grid-template-columns: 1fr; 
         gap: 30px;
         width: 100%;
         padding: 0 10px; 
@@ -727,247 +956,34 @@ p {
         font-size: 0.9rem;
         padding: 6px 12px;
     }
-
 }
 
-/* ======================================================= */
-/* DICA DO EASTER EGG (OVO MISTERIOSO)                     */
-/* ======================================================= */
-
-.easter-egg-container {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 9999; /* Fica acima de tudo */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end; /* Alinha tudo à direita */
-}
-
-/* 1. O ÍCONE DO OVO */
-.egg-wrapper {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: help; /* Cursor de interrogação/ajuda */
-    
-    /* Animação: Balançando discretamente */
-    animation: egg-wobble 4s infinite ease-in-out;
-}
-
-.egg-icon {
-    font-size: 1.8rem;
-    color: rgba(255, 255, 255, 0.15); /* Bem discreto (quase invisível) */
-    transition: all 0.4s ease;
-}
-
-/* 2. EFEITO HOVER (LUZ VERDE) */
-/* Quando passar o mouse no container, o ovo acende */
-.easter-egg-container:hover .egg-icon {
-    color: #39ff14; /* Verde Neon do "Online" */
-    text-shadow: 0 0 15px #39ff14, 0 0 30px #39ff14; /* Brilho intenso */
-    transform: scale(1.2); /* Aumenta um pouco */
-    animation: none; /* Para de balançar para focar */
-}
-
-/* 3. A CAIXA DE TEXTO (TOOLTIP) */
-.egg-tooltip {
-    position: absolute;
-    bottom: 60px; /* Aparece acima do ovo */
-    right: 0;
-    width: 320px;
-    
-    /* Estilo Glassmorphism Escuro */
-    background: rgba(0, 0, 0, 0.95);
-    border: 1px solid #39ff14; /* Borda Verde */
-    box-shadow: 0 0 20px rgba(57, 255, 20, 0.15);
-    padding: 20px;
-    border-radius: 12px;
-    
-    /* Escondido por padrão */
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(20px) scale(0.9);
-    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Efeito elástico */
-    pointer-events: none; /* Não atrapalha o clique se estiver invisível */
-}
-
-/* Mostra a caixa quando passar o mouse */
-.easter-egg-container:hover .egg-tooltip {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0) scale(1);
-}
-
-/* Texto da caixa */
-.egg-tooltip p {
-    color: #e2e8f0;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 10px;
-    font-family: 'Courier New', Courier, monospace; /* Fonte Hacker */
-    text-align: left;
-}
-
-.egg-signature {
-    text-align: right !important;
-    color: #39ff14 !important; /* Verde */
-    font-style: italic;
-    margin-bottom: 0 !important;
-    font-size: 0.85rem !important;
-}
-
-/* 4. ANIMAÇÃO DE BALANÇO (WOBBLE) */
-@keyframes egg-wobble {
-    0% { transform: rotate(0deg); }
-    10% { transform: rotate(-8deg); }
-    20% { transform: rotate(8deg); }
-    30% { transform: rotate(-4deg); }
-    40% { transform: rotate(4deg); }
-    50% { transform: rotate(0deg); }
-    100% { transform: rotate(0deg); } /* Pausa longa parado */
-}
-
-/* ======================================================= */
-/* ESTILOS: Carrossel de Certificados                      */
-/* ======================================================= */
-
-.carousel-container {
-    position: relative;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* Herda o visual Glassmorphism da classe .glass-card */
-}
-
-.carousel-track-container {
-    overflow: hidden;
-    width: 100%;
-    border-radius: 8px;
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-}
-
-.carousel-item {
-    flex: 0 0 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 40px;
-    box-sizing: border-box;
-    width: 100%;
-}
-
-.certificate-img {
-    max-width: 100%;
-    max-height: 400px;
-    object-fit: contain;
-    border-radius: 8px;
-    border: 1px solid rgba(14, 165, 233, 0.3);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    margin-bottom: 25px;
-}
-
-.certificate-info {
-    text-align: center;
-    width: 100%;
-}
-
-.certificate-info h3 {
-    color: #fff;
-    margin-bottom: 5px;
-    font-size: 1.5rem;
-    background: none;
-    -webkit-text-fill-color: #fff;
-}
-
-.cert-meta {
-    font-family: monospace;
-    color: #0ea5e9;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-}
-
-.certificate-description {
-    font-size: 1rem;
-    color: #94a3b8;
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-/* Botões do Carrossel */
-.carousel-btn {
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(14, 165, 233, 0.3);
-    color: #0ea5e9;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    position: absolute;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.carousel-btn:hover {
-    background: rgba(14, 165, 233, 0.2);
-    box-shadow: 0 0 15px rgba(14, 165, 233, 0.5);
-    color: #fff;
-    transform: scale(1.1);
-}
-
-.carousel-btn.prev { left: 10px; }
-.carousel-btn.next { right: 10px; }
-
-/* Ajustes Mobile para o Carrossel */
 @media screen and (max-width: 768px) {
-    .carousel-item { padding: 10px 0; }
+    /* Ajustes Carrossel Mobile */
+    .glide__slide { padding: 10px 0; }
     .carousel-btn { width: 35px; height: 35px; font-size: 1.2rem; }
-    .carousel-btn.prev { left: -10px; }
+    .carousel-btn.prev { left: -10px; } 
     .carousel-btn.next { right: -10px; }
     .certificate-info h3 { font-size: 1.2rem; }
-}
+    
+    /* Desativa o efeito de hover e o cursor de lupa no mobile (Modal) */
+    .certificate-img {
+        cursor: default;
+        pointer-events: none; 
+    }
+    
+    .certificate-img:hover {
+        transform: none;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
+    }
 
-/* Ajuste Mobile: Esconde ou diminui para não atrapalhar */
-@media (max-width: 768px) {
+    /* Ajuste Mobile para o Ovo de Páscoa */
     .easter-egg-container {
         bottom: 10px;
         right: 10px;
     }
     .egg-tooltip {
         width: 280px;
-        right: -10px; /* Ajuste para não sair da tela */
-    }
-}
-
-div {
-    transform-style: preserve-3d;
-}
-@keyframes puls {
-    to{
-        scale: .2;
-        opacity: 0.2;
-    }
-}
-@keyframes hue {
-    to{
-        filter:hue-rotate(360deg)
+        right: -10px; 
     }
 }

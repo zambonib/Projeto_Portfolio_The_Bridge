@@ -509,75 +509,60 @@ function buildChristmasTree() {
 }
 
 /* ======================================================= */
-/* COMPORTAMENTO: Carrossel e Modal de Certificados        */
+/* COMPORTAMENTO: Glide.js Carrossel (Center Mode)         */
 /* ======================================================= */
-
-// 1. Lógica do Carrossel
-function initCertificatesCarousel() {
-    const track = document.querySelector('.carousel-track');
-    const prevButton = document.getElementById('prev-cert');
-    const nextButton = document.getElementById('next-cert');
-
-    // Se a tela não tiver esses elementos, a função para aqui (evita erros)
-    if (!track || !prevButton || !nextButton) return; 
-
-    const items = Array.from(track.children);
-    let currentSlideIndex = 0;
-
-    // Oculta os botões se houver apenas 1 certificado
-    if (items.length <= 1) {
-        prevButton.style.display = 'none';
-        nextButton.style.display = 'none';
-        return;
+function initGlideCarousel() {
+    if (document.querySelector('.cert-glide')) {
+        new Glide('.cert-glide', {
+            type: 'carousel',       
+            startAt: 0,
+            focusAt: 'center',      
+            perView: 2,             // MUDANÇA AQUI: 2 no desktop (1 inteiro no centro, 0.5 em cada borda)
+            gap: 40,                // Aumentei um pouco o gap para a imagem central respirar mais
+            animationDuration: 600, 
+            
+            // Responsividade (Mantida intacta para não afetar os outros dispositivos)
+            breakpoints: {
+                1024: {
+                    perView: 2,
+                    focusAt: 'center' 
+                },
+                768: {
+                    perView: 1.4,     
+                    focusAt: 'center',
+                    gap: 15
+                }
+            }
+        }).mount();
     }
-
-    // Função centralizada para mover o carrossel
-    function updateCarousel() {
-        const amountToMove = currentSlideIndex * -100;
-        track.style.transform = `translateX(${amountToMove}%)`;
-    }
-
-    // Evento: Próximo
-    nextButton.addEventListener('click', () => {
-        currentSlideIndex++;
-        if (currentSlideIndex >= items.length) {
-            currentSlideIndex = 0; // Se passou do último, volta pro primeiro
-        }
-        updateCarousel();
-    });
-
-    // Evento: Anterior
-    prevButton.addEventListener('click', () => {
-        currentSlideIndex--;
-        if (currentSlideIndex < 0) {
-            currentSlideIndex = items.length - 1; // Se recuou do primeiro, vai pro último
-        }
-        updateCarousel();
-    });
 }
 
-// 2. Lógica do Modal de Tela Cheia (Atualizada para ignorar Mobile)
+/* ======================================================= */
+/* MODAL DE CERTIFICADOS TELA CHEIA (CORRIGIDO PARA GLIDE) */
+/* ======================================================= */
 function initCertificateModal() {
     const modal = document.getElementById('cert-modal');
     const modalImg = document.getElementById('cert-full-img');
-    const certificateImages = document.querySelectorAll('.certificate-img');
 
     if (!modal || !modalImg) return;
 
-    // Adiciona o evento de clique em TODAS as imagens de certificado
-    certificateImages.forEach(img => {
-        img.addEventListener('click', function(e) {
-            // VERIFICAÇÃO SÊNIOR: Se for tela de celular (< 768px), bloqueia a abertura do modal
+    // DELEGAÇÃO DE EVENTOS: Escuta cliques no documento inteiro
+    document.addEventListener('click', function(e) {
+        // Verifica se o elemento clicado tem a classe 'certificate-img'
+        if (e.target && e.target.classList.contains('certificate-img')) {
+            
+            // Trava Mobile: Se for celular (<= 768px), não faz nada
             if (window.innerWidth <= 768) {
-                return; // Sai da função sem fazer nada
+                return; 
             }
 
-            modalImg.src = this.src; // Copia a imagem clicada para o modal
-            modal.style.display = 'flex'; // Exibe o modal
-        });
+            // Copia o link da imagem clicada e abre o modal
+            modalImg.src = e.target.src;
+            modal.style.display = 'flex';
+        }
     });
 
-    // Fecha o modal ao clicar fora da imagem (no fundo escuro)
+    // Fecha o modal ao clicar na área escura fora da imagem
     modal.addEventListener('click', function(e) {
         if (e.target === modal) {
             closeCertModal();
@@ -585,6 +570,13 @@ function initCertificateModal() {
     });
 }
 
+// Função para fechar (chamada também pelo botão X no HTML)
+function closeCertModal() {
+    const modal = document.getElementById('cert-modal');
+    if (modal) {
+        modal.style.display = 'none';
+    }
+}
 
 /* ======================================================= */
 /* INICIALIZADOR GERAL                                     */
@@ -596,7 +588,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof shuffleProjects === 'function') shuffleProjects();
     if (typeof checkResolutionForBeam === 'function') checkResolutionForBeam();
     
-    // Nossas novas funções
-    initCertificatesCarousel();
-    initCertificateModal(); 
+    initGlideCarousel(); // Chama o Glide
+    initCertificateModal(); // Mantém a função do Modal intacta! (Ela continua funcionando com o Glide)
 });
