@@ -551,10 +551,8 @@ function initCertificateModal() {
         // Verifica se o elemento clicado tem a classe 'certificate-img'
         if (e.target && e.target.classList.contains('certificate-img')) {
             
-            // Trava Mobile: Se for celular (<= 768px), não faz nada
-            if (window.innerWidth <= 768) {
-                return; 
-            }
+            // 🔴 MUDANÇA SÊNIOR: Removemos o bloqueio de Mobile (innerWidth <= 768)
+            // Agora o modal abrirá em qualquer resolução.
 
             // Copia o link da imagem clicada e abre o modal
             modalImg.src = e.target.src;
