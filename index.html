@@ -7,6 +7,7 @@
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 
     <meta name="theme-color" content="#050505">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
@@ -21,37 +22,45 @@
     <canvas id="easter-egg-matrix"></canvas>
 
     <div class="glass-card">
-        <div class="bridge-container" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; opacity: 0.7; font-family: monospace;">
-            <span>● Infra</span>
-            <span id="ascii-bridge" class="bridge-ascii" style="flex-grow: 1; text-align: center; color: #0ea5e9; letter-spacing: 2px;"></span>
-            <span>>_ Dev</span>
+        
+        <div class="lang-selector">
+            <div class="flag-btn active-lang" id="flag-pt" onclick="changeLanguage('pt')" title="Português" data-i18n="flag_pt"></div>
+            
+            <span class="lang-separator">|</span>
+            
+            <div class="flag-btn" id="flag-en" onclick="changeLanguage('en')" title="English" data-i18n="flag_en"></div>
         </div>
 
-        <h1>Olá, Sou o Bruno Zamboni. Desenvolvedor!</h1>
+        <div class="bridge-container" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; opacity: 0.7; font-family: monospace; padding-top: 10px;">
+            <span data-i18n="infra">● Infraestrutura</span>
+            <span data-i18n="dev">>_ Desenvolvimento</span>
+        </div>
 
-        <h2 style="margin-bottom: 20px; font-size: 1.2rem; color: #fff;">Criei meu portfólio para mostrar minhas Habilidades e Projetos.</h2>
+        <h1 data-i18n="hero_greeting">Olá, Sou o Bruno Zamboni Desenvolvedor Full Stack.</h1>
+
+        <h2 style="margin-bottom: 20px; font-size: 1.2rem; color: #fff;" data-i18n="hero_desc">Criei meu portfólio para mostrar minhas Habilidades e Projetos.</h2>
 
         <div class="typing-container" style="display: flex; flex-direction: column; align-items: center; gap: 5px; min-height: 180px;">
             <div id="text-lines"></div>
             <div><span class="cursor">&nbsp;</span></div>
         </div>
 
-        <p>
+        <p data-i18n="hero_exp">
             São 18 anos de experiência dentro da área de TI. <br>
             Agora chegou a hora de criarmos experiências.
         </p>
 
         <div class="buttons-container">
-            <button id="cv-button" class="btn-glass btn-cv">
+            <button id="cv-button" class="btn-glass btn-cv" data-i18n="btn_cv">
                 DOWNLOAD: CV_BRUNO.ZAMBONI.PDF
             </button>
-            <a href="#retrospectiva" class="btn-glass">Explorar Projetos</a>
+            <a href="#retrospectiva" class="btn-glass" data-i18n="btn_projects">Explorar Projetos</a>
         </div>
 
         <div class="terminal-status" style="align-items: center;">
             <span>Uptime: <span class="uptime-val" style="color: #f3f1ed; text-shadow: 0 0 5px #ffc014;">44 Years</span></span>
 
-            <span id="btn-terminal" class="btn-terminal-secret" onclick="openTerminal()"> Terminal </span>
+            <span id="btn-terminal" class="btn-terminal-secret" onclick="openTerminal()"> >_Terminal </span>
 
             <span>System: <span class="system-val" style="color: #39ff14; text-shadow: 0 0 5px #39ff14;">Online</span></span>
         </div>
@@ -111,9 +120,10 @@
                 </div>
                 <p class="instruction-text">Clique em uma habilidade para virar o card</p>
             </div>
-        </div> </div>
+        </div> 
+    </div>
 
-        <div class="content-section" id="certificados">
+    <div class="content-section" id="certificados">
         <h2 class="section-title"># Certificados conquistados</h2>
 
         <div class="glide cert-glide glass-card" style="padding: 60px 30px;">
@@ -126,7 +136,7 @@
                         <div class="certificate-info">
                             <h3>Global Solution FIAP 2025</h3>
                             <p class="cert-meta">FIAP - 2025</p>
-                            <p class="certificate-description">"Certificado do Desafio Global Solution da FIAP de 2025, aonde criamos e apresentamos o projeto NoHall, que foi o grande Campeão do Desafio.   </p>
+                            <p class="certificate-description">"Certificado do Desafio Global Solution da FIAP de 2025, aonde criamos e apresentamos o projeto NoHall, que foi o grande Campeão do Desafio."</p>
                         </div>
                     </li>
                     
@@ -180,7 +190,8 @@
 
         </div>
     </div>
-    </div> <div class="content-section" id="retrospectiva">
+    
+    <div class="content-section" id="retrospectiva">
         <h2 class="section-title"># Retrospectiva dos Projetos realizados até aqui!</h2>
 
         <div class="grid-container">
@@ -226,7 +237,9 @@
             </a>
 
         </div>
-    </div> <footer class="avatar-footer">
+    </div> 
+
+    <footer class="avatar-footer">
         <div class="footer-content">
 
             <div class="footer-left">
