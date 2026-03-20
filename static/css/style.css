@@ -1048,7 +1048,6 @@ div {
 /* Imagens das Bandeiras como Fundo (Links CDN leves) */
 #flag-pt { background-image: url('https://flagcdn.com/br.svg'); }
 #flag-en { background-image: url('https://flagcdn.com/us.svg'); }
-#flag-es { background-image: url('https://flagcdn.com/es.svg'); } /* NOVO: Espanhol */
 
 .lang-separator {
     color: rgba(255, 255, 255, 0.2);

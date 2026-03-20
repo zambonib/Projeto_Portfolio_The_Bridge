@@ -60,35 +60,6 @@ const translations = {
         "egg_1": "Congratulations, you found one of the hidden codes in this portfolio!", "egg_2": 'Type the name of the development company <strong style="color: #39ff14;">dalzam</strong> on your keyboard at any time and see what happens.', "egg_3": 'Sincerely "The Architect".',
         "terminal_welcome": "The Bridge System [Version 1.0.5]<br>Welcome to developer mode.<br>Type <span class='cmd-highlight'>'help'</span> to see commands.<br><br>"
     },
-    es: {
-        "infra": "● Infraestructura", "dev": ">_ Desarrollo",
-        "hero_greeting": "Hola, Soy Bruno Zamboni Desarrollador Full Stack.",
-        "hero_desc": "Creé mi portafolio para mostrar mis Habilidades y Proyectos.",
-        "hero_exp": "18 años de experiencia en el área de TI. <br> Ahora es el momento de crear experiencias.",
-        "btn_cv": "DESCARGAR: CV_BRUNO.ZAMBONI.PDF", "btn_projects": "Explorar Proyectos",
-        "uptime_lbl": "Tiempo act:", "system_lbl": "Sistema:", "system_status": "En línea",
-        "skills_title": "# Mis habilidades y postura profesional",
-        "click_details": "Tecnologías que domino. Clic para detalles.",
-        "instruction_flip": "Haz clic en una habilidad para girar la tarjeta", "btn_back": "Volver",
-        "soft_desc": "Mi comportamiento profesional.",
-        "tag_leadership": "Liderazgo Técnico", "tag_conflict": "Resolución de Conflictos",
-        "tag_comm": "Comunicación Clara", "tag_mentor": "Mentoría", "tag_auto": "Autodidacta",
-        "certs_title": "# Certificados obtenidos",
-        "cert_1_title": "Global Solution FIAP 2025", "cert_1_meta": "FIAP - 2025", "cert_1_desc": '"Certificado del Desafío Global Solution de FIAP 2025, donde creamos el proyecto NoHall, el gran Campeón del Desafío."',
-        "cert_2_title": "Análisis y Desarrollo de Sistemas", "cert_2_meta": "FIAP - 1º Semestre", "cert_2_desc": '"Finalización con excelencia de módulos fundamentales de ingeniería de software, modelado de datos y design thinking."',
-        "cert_3_title": "Formación Cloud y DevOps", "cert_3_desc": '"Dominio en prácticas ágiles, CI/CD, automatización de infraestructura y orquestación de contenedores."',
-        "cert_4_desc": '"Capacitación avanzada en diseño e implementación de arquitecturas altamente escalables, seguras y resilientes en la nube AWS."',
-        "cert_5_title": "Seguridad de Redes: pfSense y Snort", "cert_5_meta": "Especialización en Ciberseguridad", "cert_5_desc": '"Especialización en implementación de firewalls avanzados y sistemas de detección/prevención de intrusos (IDS/IPS)."',
-        "projects_title": "# ¡Retrospectiva de Proyectos realizados hasta ahora!",
-        "proj_1_tag": "Alta Disponibilidad en la Nube", "proj_1_title": "Modernización de la Infraestructura 🚀",
-        "proj_2_tag": '"Ecosistema Microsoft"', "proj_2_title": "Migración del Ecosistema Google Workspace a Microsoft 365",
-        "proj_3_tag": "Reestructuración de Seguridad", "proj_3_title": "Implementación de Seguridad Avanzada (EDR CrowdStrike) y Optimización de Infraestructura",
-        "proj_4_tag": "Ganador de FIAP Global Solution 2025 (1º Lugar)", "proj_4_title": "Proyecto Premiado: Nohall – Connection with Value",
-        "footer_dev": "Desarrollado por Bruno Zamboni", "footer_motto": "Desarrollamos mucho más que software", "footer_rights": "Todos los derechos reservados a Dalzam 2026",
-        "cv_modal_title": "¿Cansado de ver Currículums en formato tradicional?", "cv_modal_desc": "La verdad es que mi viaje no cabe en una hoja A4. Los PDF son estáticos, pero mi carrera es dinámica.<br><br>Te invito a navegar por este increíble sitio y ver en la práctica lo que puedo hacer, en lugar de solo leer sobre ello.",
-        "egg_1": "¡Felicidades, encontraste uno de los códigos ocultos en este portafolio!", "egg_2": 'Escribe en tu teclado en cualquier momento el nombre de la empresa desarrolladora <strong style="color: #39ff14;">dalzam</strong> y mira lo que sucede.', "egg_3": 'Atentamente "El Arquitecto".',
-        "terminal_welcome": "The Bridge System [Version 1.0.5]<br>Bienvenido al modo desarrollador.<br>Escribe <span class='cmd-highlight'>'help'</span> para ver los comandos.<br><br>"
-    }
 };
 
 function changeLanguage(lang) {
@@ -123,7 +94,6 @@ const linesContainer = document.getElementById('text-lines');
 const typewriterPhrases = {
     pt: ["Desenvolvedor Full Stack", "Especialista em Infraestrutura", "Especialista em IA Generativa", "Administrador de Ambientes Cloud", "Especialista Hypervisor"],
     en: ["Full Stack Developer", "Infrastructure Specialist", "Generative AI Specialist", "Cloud Environments Administrator", "Hypervisor Specialist"],
-    es: ["Desarrollador Full Stack", "Especialista en Infraestructura", "Especialista en IA Generativa", "Administrador de Entornos Cloud", "Especialista en Hipervisores"]
 };
 
 let currentPhrases = [];
@@ -258,19 +228,19 @@ function startMatrixBackground(canvasElement) {
 /* 5. FLASHCARDS DE HABILIDADES (Multi-idioma)             */
 /* ======================================================= */
 const skillsDB = {
-    'aws': { pt: { t: 'AWS', d: 'Gerenciamento de EC2, S3, RDS e arquitetura Serverless. Redução de custos em 30%.' }, en: { t: 'AWS', d: 'Management of EC2, S3, RDS, and Serverless architecture. Reduced costs by 30%.' }, es: { t: 'AWS', d: 'Gestión de EC2, S3, RDS y arquitectura Serverless. Reducción de costos en un 30%.' } },
-    'docker': { pt: { t: 'Docker', d: 'Criação de containers otimizados e orquestração.' }, en: { t: 'Docker', d: 'Creation of optimized containers and orchestration.' }, es: { t: 'Docker', d: 'Creación de contenedores optimizados y orquestación.' } },
-    'kubernetes': { pt: { t: 'Kubernetes', d: 'Administração de clusters EKS e configuração de Helm.' }, en: { t: 'Kubernetes', d: 'EKS cluster administration and Helm configuration.' }, es: { t: 'Kubernetes', d: 'Administración de clústeres EKS y configuración de Helm.' } },
-    'linux': { pt: { t: 'Linux', d: '18 anos de terminal. Shell Scripting e hardening.' }, en: { t: 'Linux', d: '18 years of terminal. Shell Scripting and hardening.' }, es: { t: 'Linux', d: '18 años de terminal. Shell Scripting y hardening.' } },
-    'terraform': { pt: { t: 'Terraform', d: 'Infraestrutura como Código (IaC) para provisionar ambientes.' }, en: { t: 'Terraform', d: 'Infrastructure as Code (IaC) to provision environments.' }, es: { t: 'Terraform', d: 'Infraestructura como Código (IaC) para aprovisionar entornos.' } },
-    'js': { pt: { t: 'JavaScript', d: 'Manipulação de DOM e lógica assíncrona.' }, en: { t: 'JavaScript', d: 'DOM manipulation and asynchronous logic.' }, es: { t: 'JavaScript', d: 'Manipulación del DOM y lógica asíncrona.' } },
-    'react': { pt: { t: 'React', d: 'Desenvolvimento de componentes funcionais e Hooks.' }, en: { t: 'React', d: 'Development of functional components and Hooks.' }, es: { t: 'React', d: 'Desarrollo de componentes funcionales y Hooks.' } },
-    'python': { pt: { t: 'Python', d: 'Automação de tarefas e scripts de dados.' }, en: { t: 'Python', d: 'Task automation and data scripts.' }, es: { t: 'Python', d: 'Automatización de tareas y scripts de datos.' } },
-    'leadership': { pt: { t: 'Liderança', d: 'Liderei times em crises, mantendo a calma.' }, en: { t: 'Leadership', d: 'Led teams in crises, maintaining calm.' }, es: { t: 'Liderazgo', d: 'Lideré equipos en crisis, manteniendo la calma.' } },
-    'conflict': { pt: { t: 'Conflitos', d: 'Medio divergências focando na solução viável.' }, en: { t: 'Conflicts', d: 'Mediate divergences focusing on viable solutions.' }, es: { t: 'Conflictos', d: 'Medio divergencias enfocándome en soluciones viables.' } },
-    'communication': { pt: { t: 'Comunicação', d: 'Traduzo problemas técnicos para linguagem de negócios.' }, en: { t: 'Communication', d: 'Translate technical problems into business language.' }, es: { t: 'Comunicación', d: 'Traduzco problemas técnicos al lenguaje de negocios.' } },
-    'mentoring': { pt: { t: 'Mentoria', d: 'Adoro ensinar juniores e compartilhar conhecimento.' }, en: { t: 'Mentoring', d: 'Love teaching juniors and sharing knowledge.' }, es: { t: 'Mentoría', d: 'Me encanta enseñar a juniors y compartir conocimientos.' } },
-    'autodidact': { pt: { t: 'Autodidata', d: 'Aprendi a programar sozinho após anos em infra.' }, en: { t: 'Self-taught', d: 'Taught myself to program after years in infra.' }, es: { t: 'Autodidacta', d: 'Aprendí a programar solo tras años en infra.' } }
+    'aws': { pt: { t: 'AWS', d: 'Gerenciamento de EC2, S3, RDS e arquitetura Serverless. Redução de custos em 30%.' }, en: { t: 'AWS', d: 'Management of EC2, S3, RDS, and Serverless architecture. Reduced costs by 30%.' } },
+    'docker': { pt: { t: 'Docker', d: 'Criação de containers otimizados e orquestração.' }, en: { t: 'Docker', d: 'Creation of optimized containers and orchestration.' } },
+    'kubernetes': { pt: { t: 'Kubernetes', d: 'Administração de clusters EKS e configuração de Helm.' }, en: { t: 'Kubernetes', d: 'EKS cluster administration and Helm configuration.' } },
+    'linux': { pt: { t: 'Linux', d: '18 anos de terminal. Shell Scripting e hardening.' }, en: { t: 'Linux', d: '18 years of terminal. Shell Scripting and hardening.' } },
+    'terraform': { pt: { t: 'Terraform', d: 'Infraestrutura como Código (IaC) para provisionar ambientes.' }, en: { t: 'Terraform', d: 'Infrastructure as Code (IaC) to provision environments.' } },
+    'js': { pt: { t: 'JavaScript', d: 'Manipulação de DOM e lógica assíncrona.' }, en: { t: 'JavaScript', d: 'DOM manipulation and asynchronous logic.' } },
+    'react': { pt: { t: 'React', d: 'Desenvolvimento de componentes funcionais e Hooks.' }, en: { t: 'React', d: 'Development of functional components and Hooks.' } },
+    'python': { pt: { t: 'Python', d: 'Automação de tarefas e scripts de dados.' }, en: { t: 'Python', d: 'Task automation and data scripts.' } },
+    'leadership': { pt: { t: 'Liderança', d: 'Liderei times em crises, mantendo a calma.' }, en: { t: 'Leadership', d: 'Led teams in crises, maintaining calm.' } },
+    'conflict': { pt: { t: 'Conflitos', d: 'Medio divergências focando na solução viável.' }, en: { t: 'Conflicts', d: 'Mediate divergences focusing on viable solutions.' } },
+    'communication': { pt: { t: 'Comunicação', d: 'Traduzo problemas técnicos para linguagem de negócios.' }, en: { t: 'Communication', d: 'Translate technical problems into business language.' } },
+    'mentoring': { pt: { t: 'Mentoria', d: 'Adoro ensinar juniores e compartilhar conhecimento.' }, en: { t: 'Mentoring', d: 'Love teaching juniors and sharing knowledge.' } },
+    'autodidact': { pt: { t: 'Autodidata', d: 'Aprendi a programar sozinho após anos em infra.' }, en: { t: 'Self-taught', d: 'Taught myself to program after years in infra.' } }
 };
 
 function flipCard(cardId, skillKey) {

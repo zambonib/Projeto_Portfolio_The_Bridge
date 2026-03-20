@@ -15,8 +15,14 @@
 
 <body>
     
-    <div style="width: 90%; max-width: 900px; margin: 30px auto 20px auto;">
-        <a href="../index.html" class="btn-back-link">← Voltar para Home</a>
+    <div class="lang-selector">
+        <div class="flag-btn active-lang" id="flag-pt" onclick="changeLanguage('pt')" title="Português"></div>
+        <span class="lang-separator">|</span>
+        <div class="flag-btn" id="flag-en" onclick="changeLanguage('en')" title="English"></div>
+    </div>
+
+    <div style="width: 90%; max-width: 900px; margin: 30px auto 20px auto; position: relative; z-index: 10;">
+        <a href="../index.html" class="btn-back-link" data-i18n="btn_back_home">← Voltar para Home</a>
     </div>
 
     <div class="glass-card project-card-wide" id="project-container">
@@ -42,15 +48,15 @@
         <div class="project-separator"></div>
 
         <div class="project-card-footer">
-            <span class="footer-info-item">Tecnologias: <span id="p-tech" class="highlight-green">Carregando...</span></span>
-            <span class="footer-info-item">Ano: <span id="p-year" class="highlight-green">...</span></span>
+            <span class="footer-info-item"><span data-i18n="lbl_tech">Tecnologias:</span> <span id="p-tech" class="highlight-green">Carregando...</span></span>
+            <span class="footer-info-item"><span data-i18n="lbl_year">Ano:</span> <span id="p-year" class="highlight-green">...</span></span>
         </div>
 
         <div id="animation-section" style="display: none;">
             
             <div class="project-separator"></div>
 
-            <h3 class="animation-title">Motion & Design</h3>
+            <h3 class="animation-title" data-i18n="lbl_motion">Motion & Design</h3>
             
             <div class="animation-wrapper">
                 <video id="p-animation-video" class="project-image" controls loop muted playsinline>
@@ -64,9 +70,9 @@
     <footer class="avatar-footer">
         <div class="footer-content">
             <div class="footer-left">
-                <p><strong>Desenvolvido por Bruno Zamboni</strong></p>
-                <p>Desenvolvemos muito além do software</p>
-                <p class="copyright">Todos os direitos reservados a Dalzam 2026</p>
+                <p><strong data-i18n="footer_dev">Desenvolvido por Bruno Zamboni</strong></p>
+                <p data-i18n="footer_motto">Desenvolvemos muito além do software</p>
+                <p class="copyright" data-i18n="footer_rights">Todos os direitos reservados a Dalzam 2026</p>
             </div>
 
             <div class="footer-links-center">
