@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="theme-color" content="#050505">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -20,7 +21,7 @@
     <canvas id="easter-egg-matrix"></canvas>
 
     <div class="glass-card">
-        
+
         <div class="lang-selector">
             <div class="flag-btn active-lang" id="flag-pt" onclick="changeLanguage('pt')" title="Português"></div>
             <span class="lang-separator">|</span>
@@ -29,16 +30,19 @@
             <div class="flag-btn" id="flag-es" onclick="changeLanguage('es')" title="Español"></div>
         </div>
 
-        <div class="bridge-container" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; opacity: 0.7; font-family: monospace; padding-top: 10px;">
+        <div class="bridge-container"
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; opacity: 0.7; font-family: monospace; padding-top: 10px;">
             <span data-i18n="infra">● Infraestrutura</span>
             <span data-i18n="dev">>_ Desenvolvimento</span>
         </div>
 
         <h1 data-i18n="hero_greeting">Olá, Sou o Bruno Zamboni Desenvolvedor Full Stack.</h1>
 
-        <h2 style="margin-bottom: 20px; font-size: 1.2rem; color: #fff;" data-i18n="hero_desc">Criei meu portfólio para mostrar minhas Habilidades e Projetos.</h2>
+        <h2 style="margin-bottom: 20px; font-size: 1.2rem; color: #fff;" data-i18n="hero_desc">Criei meu portfólio para
+            mostrar minhas Habilidades e Projetos.</h2>
 
-        <div class="typing-container" style="display: flex; flex-direction: column; align-items: center; gap: 5px; min-height: 180px;">
+        <div class="typing-container"
+            style="display: flex; flex-direction: column; align-items: center; gap: 5px; min-height: 180px;">
             <div id="text-lines"></div>
             <div><span class="cursor">&nbsp;</span></div>
         </div>
@@ -54,9 +58,11 @@
         </div>
 
         <div class="terminal-status" style="align-items: center;">
-            <span><span data-i18n="uptime_lbl">Uptime:</span> <span class="uptime-val" style="color: #f3f1ed; text-shadow: 0 0 5px #ffc014;">44 Years</span></span>
+            <span><span data-i18n="uptime_lbl">Uptime:</span> <span class="uptime-val"
+                    style="color: #f3f1ed; text-shadow: 0 0 5px #ffc014;">44 Years</span></span>
             <span id="btn-terminal" class="btn-terminal-secret" onclick="openTerminal()"> >_Terminal </span>
-            <span><span data-i18n="system_lbl">System:</span> <span class="system-val" style="color: #39ff14; text-shadow: 0 0 5px #39ff14;" data-i18n="system_status">Online</span></span>
+            <span><span data-i18n="system_lbl">System:</span> <span class="system-val"
+                    style="color: #39ff14; text-shadow: 0 0 5px #39ff14;" data-i18n="system_status">Online</span></span>
         </div>
     </div>
 
@@ -68,7 +74,8 @@
                 <div class="skill-flip-inner" id="card-hard">
                     <div class="skill-front skill-card-design">
                         <h3><span style="color: #0ea5e9;">#</span> Hard Skills</h3>
-                        <p class="skill-desc" data-i18n="click_details">Tecnologias que domino. Clique para detalhes.</p>
+                        <p class="skill-desc" data-i18n="click_details">Tecnologias que domino. Clique para detalhes.
+                        </p>
                         <div class="tags-group">
                             <span class="tech-tag" onclick="flipCard('card-hard', 'aws')">AWS</span>
                             <span class="tech-tag" onclick="flipCard('card-hard', 'docker')">Docker</span>
@@ -83,7 +90,8 @@
                     <div class="skill-back skill-card-design">
                         <h3 id="hard-title" class="back-title">TITULO</h3>
                         <p id="hard-desc" class="back-desc">Descrição vai aqui...</p>
-                        <button class="btn-back" onclick="unflipCard('card-hard')"><i class="fas fa-arrow-left"></i> <span data-i18n="btn_back">Voltar</span></button>
+                        <button class="btn-back" onclick="unflipCard('card-hard')"><i class="fas fa-arrow-left"></i>
+                            <span data-i18n="btn_back">Voltar</span></button>
                     </div>
                 </div>
                 <p class="instruction-text" data-i18n="instruction_flip">Clique em uma habilidade para virar o card</p>
@@ -95,22 +103,28 @@
                         <h3><span style="color: #2f951d;">#</span> Soft Skills</h3>
                         <p class="skill-desc" data-i18n="soft_desc">Minha postura profissional.</p>
                         <div class="tags-group">
-                            <span class="soft-tag" onclick="flipCard('card-soft', 'leadership')" data-i18n="tag_leadership">Liderança Técnica</span>
-                            <span class="soft-tag" onclick="flipCard('card-soft', 'conflict')" data-i18n="tag_conflict">Resolução de Conflitos</span>
-                            <span class="soft-tag" onclick="flipCard('card-soft', 'communication')" data-i18n="tag_comm">Comunicação Clara</span>
-                            <span class="soft-tag" onclick="flipCard('card-soft', 'mentoring')" data-i18n="tag_mentor">Mentoria</span>
-                            <span class="soft-tag" onclick="flipCard('card-soft', 'autodidact')" data-i18n="tag_auto">Autodidata</span>
+                            <span class="soft-tag" onclick="flipCard('card-soft', 'leadership')"
+                                data-i18n="tag_leadership">Liderança Técnica</span>
+                            <span class="soft-tag" onclick="flipCard('card-soft', 'conflict')"
+                                data-i18n="tag_conflict">Resolução de Conflitos</span>
+                            <span class="soft-tag" onclick="flipCard('card-soft', 'communication')"
+                                data-i18n="tag_comm">Comunicação Clara</span>
+                            <span class="soft-tag" onclick="flipCard('card-soft', 'mentoring')"
+                                data-i18n="tag_mentor">Mentoria</span>
+                            <span class="soft-tag" onclick="flipCard('card-soft', 'autodidact')"
+                                data-i18n="tag_auto">Autodidata</span>
                         </div>
                     </div>
                     <div class="skill-back skill-card-design">
                         <h3 id="soft-title" class="back-title">TITULO</h3>
                         <p id="soft-desc" class="back-desc">Descrição...</p>
-                        <button class="btn-back" onclick="unflipCard('card-soft')"><i class="fas fa-arrow-left"></i> <span data-i18n="btn_back">Voltar</span></button>
+                        <button class="btn-back" onclick="unflipCard('card-soft')"><i class="fas fa-arrow-left"></i>
+                            <span data-i18n="btn_back">Voltar</span></button>
                     </div>
                 </div>
                 <p class="instruction-text" data-i18n="instruction_flip">Clique em uma habilidade para virar o card</p>
             </div>
-        </div> 
+        </div>
     </div>
 
     <div class="content-section" id="certificados">
@@ -124,7 +138,9 @@
                         <div class="certificate-info">
                             <h3 data-i18n="cert_1_title">Global Solution FIAP 2025</h3>
                             <p class="cert-meta" data-i18n="cert_1_meta">FIAP - 2025</p>
-                            <p class="certificate-description" data-i18n="cert_1_desc">"Certificado do Desafio Global Solution da FIAP de 2025, aonde criamos e apresentamos o projeto NoHall, que foi o grande Campeão do Desafio."</p>
+                            <p class="certificate-description" data-i18n="cert_1_desc">"Certificado do Desafio Global
+                                Solution da FIAP de 2025, aonde criamos e apresentamos o projeto NoHall, que foi o
+                                grande Campeão do Desafio."</p>
                         </div>
                     </li>
                     <li class="glide__slide" style="display: flex; flex-direction: column; align-items: center;">
@@ -132,7 +148,9 @@
                         <div class="certificate-info">
                             <h3 data-i18n="cert_2_title">Análise e Desenvolvimento de Sistemas</h3>
                             <p class="cert-meta" data-i18n="cert_2_meta">FIAP - 1º Semestre</p>
-                            <p class="certificate-description" data-i18n="cert_2_desc">"Conclusão com excelência dos módulos fundamentais de engenharia de software, modelagem de dados e design thinking."</p>
+                            <p class="certificate-description" data-i18n="cert_2_desc">"Conclusão com excelência dos
+                                módulos fundamentais de engenharia de software, modelagem de dados e design thinking."
+                            </p>
                         </div>
                     </li>
                     <li class="glide__slide" style="display: flex; flex-direction: column; align-items: center;">
@@ -140,7 +158,8 @@
                         <div class="certificate-info">
                             <h3 data-i18n="cert_3_title">Formação Cloud & DevOps</h3>
                             <p class="cert-meta">Alura</p>
-                            <p class="certificate-description" data-i18n="cert_3_desc">"Domínio em práticas ágeis, CI/CD, automação de infraestrutura e orquestração de containers."</p>
+                            <p class="certificate-description" data-i18n="cert_3_desc">"Domínio em práticas ágeis,
+                                CI/CD, automação de infraestrutura e orquestração de containers."</p>
                         </div>
                     </li>
                     <li class="glide__slide" style="display: flex; flex-direction: column; align-items: center;">
@@ -148,7 +167,9 @@
                         <div class="certificate-info">
                             <h3>Architecting on AWS</h3>
                             <p class="cert-meta">Amazon Web Services (AWS)</p>
-                            <p class="certificate-description" data-i18n="cert_4_desc">"Capacitação avançada em desenho e implantação de arquiteturas altamente escaláveis, seguras e resilientes na nuvem AWS."</p>
+                            <p class="certificate-description" data-i18n="cert_4_desc">"Capacitação avançada em desenho
+                                e implantação de arquiteturas altamente escaláveis, seguras e resilientes na nuvem AWS."
+                            </p>
                         </div>
                     </li>
                     <li class="glide__slide" style="display: flex; flex-direction: column; align-items: center;">
@@ -156,18 +177,21 @@
                         <div class="certificate-info">
                             <h3 data-i18n="cert_5_title">Segurança de Redes: pfSense & Snort</h3>
                             <p class="cert-meta" data-i18n="cert_5_meta">Especialização em Cybersecurity</p>
-                            <p class="certificate-description" data-i18n="cert_5_desc">"Especialização em implementação de firewalls avançados e sistemas de detecção/prevenção de intrusão (IDS/IPS)."</p>
+                            <p class="certificate-description" data-i18n="cert_5_desc">"Especialização em implementação
+                                de firewalls avançados e sistemas de detecção/prevenção de intrusão (IDS/IPS)."</p>
                         </div>
                     </li>
                 </ul>
             </div>
             <div class="glide__arrows" data-glide-el="controls">
-                <button class="glide__arrow glide__arrow--left carousel-btn prev" data-glide-dir="<"><i class="fas fa-chevron-left"></i></button>
-                <button class="glide__arrow glide__arrow--right carousel-btn next" data-glide-dir=">"><i class="fas fa-chevron-right"></i></button>
+                <button class="glide__arrow glide__arrow--left carousel-btn prev" data-glide-dir="<"><i
+                        class="fas fa-chevron-left"></i></button>
+                <button class="glide__arrow glide__arrow--right carousel-btn next" data-glide-dir=">"><i
+                        class="fas fa-chevron-right"></i></button>
             </div>
         </div>
     </div>
-    
+
     <div class="content-section" id="retrospectiva">
         <h2 class="section-title" data-i18n="projects_title"># Retrospectiva dos Projetos realizados até aqui!</h2>
 
@@ -186,7 +210,8 @@
                     <img src="./static/assets/Transformacao_Digital.png" class="item-image" alt="email">
                     <div class="item-info">
                         <div class="item-tag" data-i18n="proj_2_tag">"Ecosistema Microsoft"</div>
-                        <h3 class="item-title" data-i18n="proj_2_title">Migração do Ecosistema Google Workspace para o Microsoft 365</h3>
+                        <h3 class="item-title" data-i18n="proj_2_title">Migração do Ecosistema Google Workspace para o
+                            Microsoft 365</h3>
                     </div>
                 </div>
             </a>
@@ -195,7 +220,8 @@
                     <img src="./static/assets/seguranca.png" class="item-image" alt="seguranca">
                     <div class="item-info">
                         <div class="item-tag" data-i18n="proj_3_tag">Restruturação de Segurança</div>
-                        <h3 class="item-title" data-i18n="proj_3_title">Implementação de Segurança Avançada (EDR CrowdStrike) e Otimização de Infraestrutura</h3>
+                        <h3 class="item-title" data-i18n="proj_3_title">Implementação de Segurança Avançada (EDR
+                            CrowdStrike) e Otimização de Infraestrutura</h3>
                     </div>
                 </div>
             </a>
@@ -203,13 +229,15 @@
                 <div class="glass-item">
                     <img src="./static/assets/Nohall.png" class="item-image" style="object-fit: contain;" alt="nohall">
                     <div class="item-info">
-                        <div class="item-tag" data-i18n="proj_4_tag">Vencedor do FIAP Global Solution 2025 (1º Lugar)</div>
-                        <h3 class="item-title" data-i18n="proj_4_title">Projeto Premiado: Nohall – Connection with Value</h3>
+                        <div class="item-tag" data-i18n="proj_4_tag">Vencedor do FIAP Global Solution 2025 (1º Lugar)
+                        </div>
+                        <h3 class="item-title" data-i18n="proj_4_title">Projeto Premiado: Nohall – Connection with Value
+                        </h3>
                     </div>
                 </div>
             </a>
         </div>
-    </div> 
+    </div>
 
     <footer class="avatar-footer">
         <div class="footer-content">
@@ -219,9 +247,12 @@
                 <p class="copyright" data-i18n="footer_rights">Todos os direitos reservados a Dalzam 2026</p>
             </div>
             <div class="footer-links-center">
-                <a href="https://github.com/zambonib" target="_blank" class="social-link"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://linkedin.com/in/brunozamboni" target="_blank" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="https://instagram.com/zambonib" target="_blank" class="social-link"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://github.com/zambonib" target="_blank" class="social-link"><i class="fab fa-github"></i>
+                    GitHub</a>
+                <a href="https://linkedin.com/in/brunozamboni" target="_blank" class="social-link"><i
+                        class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://instagram.com/zambonib" target="_blank" class="social-link"><i
+                        class="fab fa-instagram"></i> Instagram</a>
             </div>
             <div class="avatar-wrapper">
                 <div class="flashlight-beam"></div>
@@ -254,10 +285,13 @@
     <div id="cv-modal" class="modal-overlay">
         <div class="modal-content glass-card">
             <span class="modal-close" onclick="closeCvModal()">X</span>
-            <h3 style="color: #0ea5e9; margin-bottom: 15px;" data-i18n="cv_modal_title">Cansado de ver Currículo no formato tradicional?</h3>
+            <h3 style="color: #0ea5e9; margin-bottom: 15px;" data-i18n="cv_modal_title">Cansado de ver Currículo no
+                formato tradicional?</h3>
             <p style="font-size: 1rem; color: #ccc;" data-i18n="cv_modal_desc">
-                A verdade é que minha jornada não cabe em uma folha A4. O PDF é estático, mas minha carreira é dinâmica.<br><br>
-                Convido você a navegar por este site incrível cheio de funcionalidades e ver na prática o que posso fazer, em vez de apenas ler sobre isso.
+                A verdade é que minha jornada não cabe em uma folha A4. O PDF é estático, mas minha carreira é
+                dinâmica.<br><br>
+                Convido você a navegar por este site incrível cheio de funcionalidades e ver na prática o que posso
+                fazer, em vez de apenas ler sobre isso.
             </p>
         </div>
     </div>
@@ -266,7 +300,8 @@
         <div class="egg-wrapper"><i class="fas fa-egg egg-icon"></i></div>
         <div class="egg-tooltip glass-card">
             <p data-i18n="egg_1">Parabéns, você encontrou um dos códigos escondidos neste portfólio!</p>
-            <p data-i18n="egg_2">Digite no seu teclado a qualquer momento o nome da empresa desenvolvedora <strong style="color: #39ff14;">dalzam</strong> e veja o que acontece.</p>
+            <p data-i18n="egg_2">Digite no seu teclado a qualquer momento o nome da empresa desenvolvedora <strong
+                    style="color: #39ff14;">dalzam</strong> e veja o que acontece.</p>
             <p class="egg-signature" data-i18n="egg_3">Atenciosamente "O Arquiteto".</p>
         </div>
     </div>
@@ -279,4 +314,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
     <script src="./static/js/script.js"></script>
 </body>
+
 </html>
