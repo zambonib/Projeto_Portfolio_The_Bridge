@@ -1018,72 +1018,57 @@ div {
 }
 
 /* ======================================================= */
-/* SELETOR DE IDIOMAS (FLAGS i18n CIRCULARES)         */
+/* NOVO SELETOR DE IDIOMAS (FLAGS i18n CIRCULARES)         */
 /* ======================================================= */
 .lang-selector {
     position: absolute;
-    top: 15px; /* Subi um pouquinho para alinhar perfeito com os textos laterais */
-    left: 50%; /* Empurra para o meio da tela */
-    transform: translateX(-50%); /* Puxa de volta pela metade do próprio tamanho para centralizar exato */
+    top: 15px; 
+    left: 50%; 
+    transform: translateX(-50%); 
     display: flex;
     gap: 10px; 
     align-items: center; 
     z-index: 20;
 }
 
-/* Estilo Base do Botão Circular */
 .flag-btn {
-    width: 35px; /* Tamanho do círculo */
+    width: 35px;
     height: 35px;
-    border-radius: 50%; /* Faz o círculo perfeito */
+    border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s ease;
-    
-    /* Prepara para receber a imagem de fundo */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    
-    /* Efeito base: Meio apagado e em tons de cinza */
     opacity: 0.4;
     filter: grayscale(100%);
-    
-    /* Borda sutil para dar acabamento */
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Imagens das Bandeiras como Fundo (Links CDN leves) */
-#flag-pt {
-    background-image: url('https://flagcdn.com/br.svg');
-}
+#flag-pt { background-image: url('https://flagcdn.com/br.svg'); }
+#flag-en { background-image: url('https://flagcdn.com/us.svg'); }
+#flag-es { background-image: url('https://flagcdn.com/es.svg'); } /* NOVO: Espanhol */
 
-#flag-en {
-    background-image: url('https://flagcdn.com/us.svg');
-}
-
-/* Barra Separadora */
 .lang-separator {
     color: rgba(255, 255, 255, 0.2);
     font-size: 1.2rem;
     font-family: monospace;
-    pointer-events: none; /* Não clicável */
+    pointer-events: none; 
 }
 
-/* Estados: Hover e Ativo */
 .flag-btn:hover, 
 .flag-btn.active-lang {
-    opacity: 1; /* Ganha brilho */
-    filter: grayscale(0%); /* Ganha cor real */
-    transform: scale(1.1); /* Dá um pequeno pulo */
-    border-color: rgba(14, 165, 233, 0.5); /* Borda azul sutil */
-    box-shadow: 0 0 15px rgba(14, 165, 233, 0.4); /* Brilho temático azul */
+    opacity: 1; 
+    filter: grayscale(0%); 
+    transform: scale(1.1); 
+    border-color: rgba(14, 165, 233, 0.5); 
+    box-shadow: 0 0 15px rgba(14, 165, 233, 0.4); 
 }
 
-/* Ajustes Mobile */
 @media screen and (max-width: 768px) {
     .lang-selector {
         top: 10px;
-        /* A centralização do left/transform é herdada automaticamente no mobile! */
         gap: 8px;
     }
     .flag-btn {
