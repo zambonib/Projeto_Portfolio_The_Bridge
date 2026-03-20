@@ -205,7 +205,45 @@ const projectsDB = {
                 <p>Academic Recognition: The award validates the ability to transform complex theoretical problems into practical, viable, and technically well-founded solutions.</p>
             `
         }
+    },
+
+    'portfolio': {
+        image: "../static/assets/The_Bridge_Portfolio.png", // Sugestão: Tire um print bonito da página principal e salve com esse nome!
+        video: null,
+        animation: null,
+
+        pt: {
+            title: "The Bridge: Portfólio Interativo & Experiência Digital",
+            subtitle: "Desenvolvimento Front-end Avançado & UX/UI",
+            technologies: "HTML5, CSS3 (Glassmorphism), Vanilla JS, Glide.js, Prompt Engineering",
+            year: "2026",
+            description: `
+                <p><strong>Resumo da Atuação:</strong> Idealização, design e desenvolvimento de um portfólio interativo (The Bridge) para unificar 18 anos de experiência em infraestrutura com as minhas novas habilidades em desenvolvimento Full Stack. O projeto foi construído do zero, focando em performance e em uma experiência de usuário (UX) imersiva.</p>
+                <p><strong>Principais Entregas e Impactos:</strong></p>
+                <p><strong>Engenharia de Prompt e Pair Programming com IA:</strong> Utilização avançada de Inteligência Artificial como co-piloto de desenvolvimento, iterando códigos complexos, refatorando lógicas de JavaScript e garantindo as melhores práticas de Clean Code.</p>
+                <p><strong>Design Imersivo (Glassmorphism & Terminal):</strong> Criação de uma interface moderna mesclando o conceito visual de "Glassmorphism" com a estética de terminal, prestando uma homenagem ao meu sólido background em infraestrutura e Linux.</p>
+                <p><strong>Internacionalização (i18n) Dinâmica:</strong> Implementação de um motor de tradução nativo em Vanilla JavaScript, permitindo a troca instantânea entre Português e Inglês sem recarregar a página, retendo a preferência do usuário via LocalStorage.</p>
+                <p><strong>Componentes Interativos & Responsividade:</strong> Desenvolvimento de Flashcards 3D, integração avançada do Glide.js com efeito "Center Mode" e responsividade fluida (Mobile-First adaptado), garantindo usabilidade impecável em qualquer dispositivo.</p>
+                <p><strong>Easter Eggs e Microinterações:</strong> Programação de um terminal secreto interativo e do efeito "Matrix" oculto, demonstrando domínio em manipulação do DOM e Canvas API, além de criar uma experiência lúdica e engajadora para os recrutadores.</p>
+            `
+        },
+        en: {
+            title: "The Bridge: Interactive Portfolio & Digital Experience",
+            subtitle: "Advanced Front-end Development & UX/UI",
+            technologies: "HTML5, CSS3 (Glassmorphism), Vanilla JS, Glide.js, Prompt Engineering",
+            year: "2026",
+            description: `
+                <p><strong>Role Summary:</strong> Ideation, design, and development of an interactive portfolio (The Bridge) to unify 18 years of infrastructure experience with my new Full Stack development skills. The project was built from scratch, focusing on performance and an immersive user experience (UX).</p>
+                <p><strong>Key Deliverables and Impacts:</strong></p>
+                <p><strong>Prompt Engineering and AI Pair Programming:</strong> Advanced use of Artificial Intelligence as a development co-pilot, iterating complex code, refactoring JavaScript logic, and ensuring Clean Code best practices.</p>
+                <p><strong>Immersive Design (Glassmorphism & Terminal):</strong> Creation of a modern interface blending the visual concept of "Glassmorphism" with a terminal aesthetic, paying homage to my solid background in infrastructure and Linux.</p>
+                <p><strong>Dynamic Internationalization (i18n):</strong> Implementation of a native translation engine in Vanilla JavaScript, allowing instant switching between Portuguese and English without reloading the page, retaining user preference via LocalStorage.</p>
+                <p><strong>Interactive Components & Responsiveness:</strong> Development of 3D Flashcards, advanced integration of Glide.js with a "Center Mode" effect, and fluid responsiveness, ensuring flawless usability on any device.</p>
+                <p><strong>Easter Eggs and Micro-interactions:</strong> Programming of a secret interactive terminal and a hidden "Matrix" effect, demonstrating mastery of DOM manipulation and the Canvas API, while creating a playful and engaging experience for recruiters.</p>
+            `
+        }
     }
+
 };
 
 /* ======================================================= */
