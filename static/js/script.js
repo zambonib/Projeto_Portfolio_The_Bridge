@@ -230,19 +230,45 @@ function startMatrixBackground(canvasElement) {
 /* 5. FLASHCARDS DE HABILIDADES (Multi-idioma)             */
 /* ======================================================= */
 const skillsDB = {
-    'aws': { pt: { t: 'AWS', d: 'Gerenciamento de EC2, S3, RDS e arquitetura Serverless. Redução de custos em 30%.' }, en: { t: 'AWS', d: 'Management of EC2, S3, RDS, and Serverless architecture. Reduced costs by 30%.' } },
-    'docker': { pt: { t: 'Docker', d: 'Criação de containers otimizados e orquestração.' }, en: { t: 'Docker', d: 'Creation of optimized containers and orchestration.' } },
-    'kubernetes': { pt: { t: 'Kubernetes', d: 'Administração de clusters EKS e configuração de Helm.' }, en: { t: 'Kubernetes', d: 'EKS cluster administration and Helm configuration.' } },
-    'linux': { pt: { t: 'Linux', d: '18 anos de terminal. Shell Scripting e hardening.' }, en: { t: 'Linux', d: '18 years of terminal. Shell Scripting and hardening.' } },
-    'terraform': { pt: { t: 'Terraform', d: 'Infraestrutura como Código (IaC) para provisionar ambientes.' }, en: { t: 'Terraform', d: 'Infrastructure as Code (IaC) to provision environments.' } },
-    'js': { pt: { t: 'JavaScript', d: 'Manipulação de DOM e lógica assíncrona.' }, en: { t: 'JavaScript', d: 'DOM manipulation and asynchronous logic.' } },
-    'react': { pt: { t: 'React', d: 'Desenvolvimento de componentes funcionais e Hooks.' }, en: { t: 'React', d: 'Development of functional components and Hooks.' } },
-    'python': { pt: { t: 'Python', d: 'Automação de tarefas e scripts de dados.' }, en: { t: 'Python', d: 'Task automation and data scripts.' } },
-    'leadership': { pt: { t: 'Liderança', d: 'Liderei times em crises, mantendo a calma.' }, en: { t: 'Leadership', d: 'Led teams in crises, maintaining calm.' } },
-    'conflict': { pt: { t: 'Conflitos', d: 'Medio divergências focando na solução viável.' }, en: { t: 'Conflicts', d: 'Mediate divergences focusing on viable solutions.' } },
-    'communication': { pt: { t: 'Comunicação', d: 'Traduzo problemas técnicos para linguagem de negócios.' }, en: { t: 'Communication', d: 'Translate technical problems into business language.' } },
-    'mentoring': { pt: { t: 'Mentoria', d: 'Adoro ensinar juniores e compartilhar conhecimento.' }, en: { t: 'Mentoring', d: 'Love teaching juniors and sharing knowledge.' } },
-    'autodidact': { pt: { t: 'Autodidata', d: 'Aprendi a programar sozinho após anos em infra.' }, en: { t: 'Self-taught', d: 'Taught myself to program after years in infra.' } }
+    'Proxmox': { 
+        pt: { t: 'Proxmox', d: 'Implantação do Hypervisor, Gerenciamento de maquinas virtuais,  Cluster e Containers LXC. Rotinas de backup com Proxmox Backup Server.' }, 
+        en: { t: 'Proxmox', d: 'Hypervisor deployment and management of Virtual Machines (VMs), Clusters, and LXC Containers. Expertise in establishing backup routines using Proxmox Backup Server (PBS).' } },
+    'AWS': { 
+        pt: { t: 'AWS', d: 'Provisionamento (EC2) e redes seguras (VPC). Especialista em FinOps e arquiteturas resilientes, reduzindo o TCO através de políticas de backup no S3' }, 
+        en: { t: 'AWS', d: 'EC2 provisioning and secure networking (VPC). FinOps and resilient architecture specialist, reducing TCO through S3 backup policies.' } },
+    'Windows_Server': { 
+        pt: { t: 'Windows_Server', d: 'Administração de ponta a ponta de Windows Server. Domínio em serviços essenciais (AD DS, DNS, GPOs), virtualização com Hyper-V e automação de tarefas via PowerShell.' }, 
+        en: { t: 'Windows_Server', d: 'End-to-end Windows Server administration. Expertise in core services (AD DS, DNS, GPOs), Hyper-V virtualization, and task automation via PowerShell.' } },
+    'Linux': { 
+        pt: { t: 'Linux', d: 'Trabalho com linux a mais de 15+ anos sempre voltado para infraestrutura, Implantando ambientes como PFSense, TailScale(VPN), Zabbix, Grafana, Proxmox, Prometheus, Immich, NextCloud, SFTP, NGiNX e Apache.' }, 
+        en: { t: 'Linux', d: 'Over 15 years of experience in Linux infrastructure, specializing in the deployment and optimization of robust environments. Proficient in implementing high-availability solutions including pfSense, Tailscale (VPN), Zabbix, Grafana, Proxmox, Immich, Nextcloud, Nginx.' } },
+    'JavaScript': { 
+        pt: { t: 'JavaScript', d: 'Manipulação avançada do DOM, Delegação de Eventos, integração de bibliotecas (Glide.js), animações com Canvas API e gestão de estado global (i18n) usando LocalStorage.' }, 
+        en: { t: 'JavaScript', d: 'Advanced DOM manipulation, Event Delegation, library integration (Glide.js), Canvas API animations, and global state management (i18n) using LocalStorage.' } },
+    'HTML': { 
+        pt: { t: 'HTML', d: 'Estruturação semântica avançada, integração de atributos de dados (data-i18n) para controle de estado, acessibilidade (ARIA) e otimização para Web Apps.' }, 
+        en: { t: 'HTML', d: 'Advanced semantic structuring, integration of data attributes (data-i18n) for state control, accessibility (ARIA), and Web App optimization.' } },
+    'CSS': { 
+        pt: { t: 'CSS', d: 'Criação de UI imersiva com Glassmorphism, layouts fluidos (Grid/Flexbox), microinterações com Keyframes/Transitions e arquitetura 100% responsiva.' }, 
+        en: { t: 'CSS', d: 'Creation of immersive UI with Glassmorphism, fluid layouts (Grid/Flexbox), micro-interactions with Keyframes/Transitions, and 100% responsive architecture.' } },
+    'python': { 
+        pt: { t: 'Python', d: 'Microserviço web (Flask) que aplica Visão Computacional (OpenCV, Tesseract OCR) e Regex para converter imagens de extratos bancários em dados estruturados (OFX)' }, 
+        en: { t: 'Python', d: 'Web microservice (Flask) applying Computer Vision (OpenCV, Tesseract OCR) and Regex to convert bank statement images into structured data (OFX)' } },
+    'leadership': { 
+        pt: { t: 'Liderança', d: 'Liderei times em crises, mantendo a calma.' }, 
+        en: { t: 'Leadership', d: 'Led teams in crises, maintaining calm.' } },
+    'conflict': { 
+        pt: { t: 'Conflitos', d: 'Medio divergências focando na solução viável.' }, 
+        en: { t: 'Conflicts', d: 'Mediate divergences focusing on viable solutions.' } },
+    'communication': { 
+        pt: { t: 'Comunicação', d: 'Traduzo problemas técnicos para linguagem de negócios.' }, 
+        en: { t: 'Communication', d: 'Translate technical problems into business language.' } },
+    'mentoring': { 
+        pt: { t: 'Mentoria', d: 'Tenho prazer em ensinar e compartilhar conhecimento.' }, 
+        en: { t: 'Mentoring', d: 'I am passionate about mentoring and sharing knowledge.' } },
+    'autodidact': { 
+        pt: { t: 'Autodidata', d: 'Aprendi a programar sozinho após anos em infra.' }, 
+        en: { t: 'Self-taught', d: 'Taught myself to program after years in infra.' } }
 };
 
 function flipCard(cardId, skillKey) {
