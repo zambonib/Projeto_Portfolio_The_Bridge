@@ -4,10 +4,10 @@
 const translations = {
     pt: {
         "infra": "● Infraestrutura", "dev": ">_ Desenvolvimento",
-        "hero_greeting": "Olá, Sou o Bruno Zamboni Desenvolvedor Full Stack.",
+        "hero_greeting": "Bruno Zamboni | Full Stack Developer.",
         "hero_desc": "Criei meu portfólio para mostrar minhas Habilidades e Projetos.",
-        "hero_exp": "São 18 anos de experiência dentro da área de TI. <br> Agora chegou a hora de criarmos experiências.",
-        "btn_cv": "DOWNLOAD: CV_BRUNO.ZAMBONI.PDF", "btn_projects": "Explorar Projetos",
+        "hero_exp": "Quase duas décadas orquestrando ambientes complexos e resolvendo problemas críticos. Hoje, aplico essa bagagem sênior para codar soluções inteligentes em Java e Python. Não apenas escrevo software; eu projeto sistemas que nascem para performar.",
+        "btn_contact": "FALE COMIGO NO LINKEDIN",
         "uptime_lbl": "Uptime:", "system_lbl": "Sistema:", "system_status": "Online",
         "skills_title": "# Minhas habilidades e posturas profissional",
         "click_details": "Tecnologias que domino. Clique para detalhes.",
@@ -28,16 +28,15 @@ const translations = {
         "proj_4_tag": "Vencedor do FIAP Global Solution 2025 (1º Lugar)", "proj_4_title": "Projeto Premiado: Nohall – Connection with Value",
         "proj_5_tag": "Front-end & UX/UI", "proj_5_title": "The Bridge: Portfólio Interativo com JavaScript",
         "footer_dev": "Desenvolvido por Bruno Zamboni", "footer_motto": "Desenvolvemos muito além do software", "footer_rights": "Todos os direitos reservados a Dalzam 2026",
-        "cv_modal_title": "Cansado de ver Currículo no formato tradicional?", "cv_modal_desc": "A verdade é que minha jornada não cabe em uma folha A4. O PDF é estático, mas minha carreira é dinâmica.<br><br>Convido você a navegar por este site incrível cheio de funcionalidades e ver na prática o que posso fazer, em vez de apenas ler sobre isso.",
         "egg_1": "Parabéns, você encontrou um dos códigos escondidos neste portfólio!", "egg_2": 'Digite no seu teclado a qualquer momento o nome da empresa desenvolvedora <strong style="color: #39ff14;">dalzam</strong> e veja o que acontece.', "egg_3": 'Atenciosamente "O Arquiteto".',
         "terminal_welcome": "The Bridge System [Version 1.0.5]<br>Bem-vindo ao modo desenvolvedor.<br>Digite <span class='cmd-highlight'>'help'</span> para ver os comandos.<br><br>"
     },
     en: {
         "infra": "● Infrastructure", "dev": ">_ Development",
-        "hero_greeting": "Hello, I'm Bruno Zamboni Full Stack Developer.",
+        "hero_greeting": "Bruno Zamboni | Full Stack Developer",
         "hero_desc": "I created my portfolio to showcase my Skills and Projects.",
         "hero_exp": "18 years of experience in the IT field. <br> Now it's time to create experiences.",
-        "btn_cv": "DOWNLOAD: RESUME_BRUNO.ZAMBONI.PDF", "btn_projects": "Explore Projects",
+        "btn_contact": "TALK TO ME ON LINKEDIN",
         "uptime_lbl": "Uptime:", "system_lbl": "System:", "system_status": "Online",
         "skills_title": "# My Skills and Professional Stance",
         "click_details": "Technologies I master. Click for details.",
@@ -58,7 +57,6 @@ const translations = {
         "proj_4_tag": "Winner of FIAP Global Solution 2025 (1st Place)", "proj_4_title": "Award-winning Project: Nohall – Connection with Value",
         "proj_5_tag": "Front-end & UX/UI", "proj_5_title": "The Bridge: Interactive Portfolio with JavaScript",
         "footer_dev": "Developed by Bruno Zamboni", "footer_motto": "We develop much more than software", "footer_rights": "All rights reserved to Dalzam 2026",
-        "cv_modal_title": "Tired of seeing Resumes in the traditional format?", "cv_modal_desc": "The truth is my journey doesn't fit on an A4 sheet. PDFs are static, but my career is dynamic.<br><br>I invite you to navigate this incredible feature-rich site and see practically what I can do, instead of just reading about it.",
         "egg_1": "Congratulations, you found one of the hidden codes in this portfolio!", "egg_2": 'Type the name of the development company <strong style="color: #39ff14;">dalzam</strong> on your keyboard at any time and see what happens.', "egg_3": 'Sincerely "The Architect".',
         "terminal_welcome": "The Bridge System [Version 1.0.5]<br>Welcome to developer mode.<br>Type <span class='cmd-highlight'>'help'</span> to see commands.<br><br>"
     },
@@ -94,8 +92,18 @@ function changeLanguage(lang) {
 /* ======================================================= */
 const linesContainer = document.getElementById('text-lines');
 const typewriterPhrases = {
-    pt: ["Desenvolvedor Full Stack", "Especialista em Infraestrutura", "Especialista em IA Generativa", "Administrador de Ambientes Cloud", "Especialista Hypervisor"],
-    en: ["Full Stack Developer", "Infrastructure Specialist", "Generative AI Specialist", "Cloud Environments Administrator", "Hypervisor Specialist"],
+    pt: [
+        "Desenvolvedor Full Stack (Java | Python)", 
+        "Engenheiro de Software & DevOps", 
+        "Especialista em Cloud & Virtualização", 
+        "Soluções com IA Generativa"
+    ],
+    en: [
+        "Full Stack Developer (Java | Python)", 
+        "Software & DevOps Engineer", 
+        "Cloud & Virtualization Specialist", 
+        "Generative AI Solutions"
+    ],
 };
 
 let currentPhrases = [];
@@ -288,7 +296,7 @@ function unflipAllCards() {
 }
 
 /* ======================================================= */
-/* 6. FAROL E BOTÃO FUGITIVO                               */
+/* 6. FAROL E CONTATO DIRETO                               */
 /* ======================================================= */
 function checkResolutionForBeam() {
     const beam = document.querySelector('.headlight-beam');
@@ -296,31 +304,14 @@ function checkResolutionForBeam() {
 }
 window.addEventListener('resize', checkResolutionForBeam);
 
-const cvButton = document.getElementById('cv-button');
-const cvModal = document.getElementById('cv-modal');
-let chaseActive = true, chaseStartTime = null, xOffset = 0, yOffset = 0;
+const contactButton = document.getElementById('cv-button'); // Mantendo o ID original para não quebrar o CSS
 
-if (cvButton) {
-    document.addEventListener('mousemove', (e) => {
-        if (!chaseActive || cvButton.classList.contains('disabled')) return;
-        const btnRect = cvButton.getBoundingClientRect();
-        const distX = e.clientX - (btnRect.left + btnRect.width / 2);
-        const distY = e.clientY - (btnRect.top + btnRect.height / 2);
-        const distance = Math.sqrt(distX * distX + distY * distY);
-
-        if (distance < 150) {
-            if (!chaseStartTime) chaseStartTime = Date.now();
-            if (Date.now() - chaseStartTime > 5000) { chaseActive = false; if (cvModal) cvModal.style.display = 'flex'; return; }
-            xOffset += -(distX / distance) * 20; yOffset += -(distY / distance) * 20;
-            cvButton.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
-        }
+if (contactButton) {
+    contactButton.addEventListener('click', () => {
+        // Redireciona diretamente para o seu perfil ou sistema de mensagens
+        window.open('https://www.linkedin.com/in/brunozamboni/', '_blank');
     });
 }
-function closeCvModal() {
-    if (cvModal) cvModal.style.display = 'none';
-    if (cvButton) { cvButton.classList.add('disabled'); cvButton.innerText = "CV (Indisponível)"; }
-}
-if (cvModal) window.addEventListener('click', (e) => { if (e.target === cvModal) closeCvModal(); });
 
 /* ======================================================= */
 /* 7. RANDOMIZADOR E GLIDE CAROUSEL                        */
@@ -364,6 +355,12 @@ document.addEventListener('DOMContentLoaded', () => {
     changeLanguage(savedLang); 
     if (typeof shuffleProjects === 'function') shuffleProjects();
     if (typeof checkResolutionForBeam === 'function') checkResolutionForBeam();
+    const contactButton = document.getElementById('cv-button');
+    if (contactButton) {
+        contactButton.addEventListener('click', () => {
+            window.open('https://www.linkedin.com/in/brunozamboni/', '_blank');
+        });
+    }
     initGlideCarousel(); 
     initCertificateModal(); 
 });
