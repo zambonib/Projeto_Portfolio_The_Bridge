@@ -167,7 +167,6 @@ function printToTerminal(text, color = '#0f0') {
     terminalOutput.scrollTop = terminalOutput.scrollHeight;
 }
 
-// Nova função dedicada a imprimir o menu com a moldura ASCII
 function showTerminalMenu() {
     const menuHTML = `
 <pre style="color: #0ea5e9; font-family: 'Courier New', monospace; margin: 15px 0; line-height: 1.2;">
@@ -234,9 +233,9 @@ function processCommand(cmd) {
             break;
     }
 
-    // Se o usuário não escolheu "Sair", espera 1.5 segundos e exibe o menu novamente
+    // Se o usuário não escolheu "Sair", espera 3 segundos e exibe o menu novamente
     if (shouldShowMenuAgain) {
-        setTimeout(showTerminalMenu, 1500); 
+        setTimeout(showTerminalMenu, 3000); 
     }
 }
 

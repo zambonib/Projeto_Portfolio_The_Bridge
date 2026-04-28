@@ -1039,5 +1039,5 @@ p {
 
     .certificate-img:active { transform: scale(0.98); }
 
-    /* Aqui no mobile não é mais necessário o override do lang-selector, já que ele foi centralizado globalmente */
+    
 }
