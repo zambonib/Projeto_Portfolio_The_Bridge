@@ -1,5 +1,5 @@
 /* ======================================================= */
-/* 1. DICIONÁRIO DE TRADUÇÃO (i18n) E MOTOR GLOBAL         */
+/* 1. DICIONÁRIO DE TRADUÇÃO (i18n)                        */
 /* ======================================================= */
 const translations = {
     pt: {
@@ -35,7 +35,7 @@ const translations = {
         "infra": "● Infrastructure", "dev": ">_ Development",
         "hero_greeting": "Bruno Zamboni | Full Stack Developer",
         "hero_desc": "I created my portfolio to showcase my Skills and Projects.",
-        "hero_exp": "18 years of experience in the IT field. <br> Now it's time to create experiences.",
+        "hero_exp": "Nearly two decades orchestrating complex environments and solving critical problems. Today, I apply this senior experience to code intelligent solutions in Java and Python. I don't just write software; I design systems built to perform.",
         "btn_contact": "TALK TO ME ON LINKEDIN",
         "uptime_lbl": "Uptime:", "system_lbl": "System:", "system_status": "Online",
         "skills_title": "# My Skills and Professional Stance",
@@ -63,7 +63,6 @@ const translations = {
 };
 
 function changeLanguage(lang) {
-    // 1. Atualiza visual das bandeiras
     const flags = document.querySelectorAll('.flag-btn');
     flags.forEach(flag => {
         flag.classList.remove('active-lang');
@@ -72,7 +71,6 @@ function changeLanguage(lang) {
         }
     });
 
-    // 2. Traduz HTML estático
     const elementsToTranslate = document.querySelectorAll('[data-i18n]');
     elementsToTranslate.forEach(element => {
         const key = element.getAttribute('data-i18n');
@@ -81,14 +79,13 @@ function changeLanguage(lang) {
         }
     });
 
-    // 3. Salva preferência e reinicia animações dependentes de idioma
     localStorage.setItem('preferredLanguage', lang);
     restartTypewriter(lang);
-    unflipAllCards(); // Desvira os cards para o usuário não ver o idioma antigo no verso
+    unflipAllCards();
 }
 
 /* ======================================================= */
-/* 2. EFEITO DE DIGITAÇÃO (Multi-idioma)                   */
+/* 2. EFEITO DE DIGITAÇÃO (Typewriter)                     */
 /* ======================================================= */
 const linesContainer = document.getElementById('text-lines');
 const typewriterPhrases = {
@@ -142,45 +139,105 @@ function type() {
 }
 
 /* ======================================================= */
-/* 3. LÓGICA DO TERMINAL SECRETO                           */
+/* 3. LÓGICA DO TERMINAL INTERATIVO                        */
 /* ======================================================= */
 const terminalOverlay = document.getElementById('secret-terminal');
 const terminalInput = document.getElementById('terminal-input');
 const terminalOutput = document.getElementById('terminal-output');
 
-function openTerminal() { terminalOverlay.style.display = 'flex'; terminalInput.focus(); }
-function closeTerminal() { terminalOverlay.style.display = 'none'; }
-terminalOverlay.addEventListener('click', (e) => { if (e.target === terminalOverlay) closeTerminal(); });
+function openTerminal() { 
+    terminalOverlay.style.display = 'flex'; 
+    terminalInput.focus();
+    terminalOutput.innerHTML = ''; 
+    printToTerminal("The Bridge System [Version 2.0.1]", "#888");
+    printToTerminal("Autenticação bem-sucedida. Bem-vindo, Recrutador.", "#39ff14");
+    showTerminalMenu(); // Chama o menu logo ao abrir
+}
 
-terminalInput.addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-        const command = terminalInput.value.toLowerCase().trim();
-        processCommand(command);
-        terminalInput.value = '';
-    }
-});
-
-function processCommand(cmd) {
-    printToTerminal(`admin@zamboni:~$ ${cmd}`, '#fff');
-    switch (cmd) {
-        case 'help': printToTerminal("- about | - projects | - contact | - clear | - exit"); break;
-        case 'about': printToTerminal("Bruno Zamboni. Infra -> Dev."); break;
-        case 'projects': printToTerminal("1. AWS | 2. The Bridge | 3. Meu Bolso"); break;
-        case 'contact': printToTerminal("LinkedIn: /in/brunozamboni"); break;
-        case 'clear': terminalOutput.innerHTML = ''; break;
-        case 'exit': setTimeout(closeTerminal, 800); break;
-        case 'sudo': printToTerminal("Acesso negado / Access denied.", "red"); break;
-        case '': break;
-        default: printToTerminal(`Comando não reconhecido: ${cmd}`, "orange");
-    }
+function closeTerminal() {
+    terminalOverlay.style.display = 'none';
+    terminalInput.value = '';
 }
 
 function printToTerminal(text, color = '#0f0') {
-    const newLine = document.createElement('div');
-    newLine.style.color = color;
-    newLine.innerHTML = text;
-    terminalOutput.appendChild(newLine);
+    const line = document.createElement('div');
+    line.style.color = color;
+    line.innerHTML = text;
+    terminalOutput.appendChild(line);
     terminalOutput.scrollTop = terminalOutput.scrollHeight;
+}
+
+// Nova função dedicada a imprimir o menu com a moldura ASCII
+function showTerminalMenu() {
+    const menuHTML = `
+<pre style="color: #0ea5e9; font-family: 'Courier New', monospace; margin: 15px 0; line-height: 1.2;">
+┌──────────────────────────────┐
+│        MENU PRINCIPAL        │
+├──────────────────────────────┤
+│ <span style="color:#39ff14;">[1]</span> Sobre                    │
+│ <span style="color:#39ff14;">[2]</span> Projetos                 │
+│ <span style="color:#39ff14;">[3]</span> Contact                  │
+│ <span style="color:#39ff14;">[4]</span> GitHub                   │
+│ <span style="color:#39ff14;">[5]</span> Sair                     │
+└──────────────────────────────┘
+</pre>`;
+    printToTerminal(menuHTML);
+    printToTerminal("Digite o número ou comando desejado:", "#aaa");
+}
+
+function handleTerminalCommand(e) {
+    if (e.key === 'Enter') {
+        const cmd = terminalInput.value.trim().toLowerCase();
+        terminalInput.value = '';
+        if(cmd) processCommand(cmd);
+    }
+}
+
+function processCommand(cmd) {
+    printToTerminal(`admin@zamboni:~$ ${cmd}`, '#fff');
+    
+    let shouldShowMenuAgain = true; // Controla se o menu deve reaparecer
+
+    switch (cmd) {
+        case '1': case 'sobre':
+            printToTerminal("<br>--- SOBRE ---", "#0ea5e9");
+            printToTerminal("BRUNO ZAMBONI | SÃO PAULO - BRASIL", "#fff");
+            printToTerminal("Trabalho com Tecnologia a mais de 2 décadas.");
+            break;
+        case '2': case 'projetos':
+            printToTerminal("<br>--- PROJETOS ---", "#0ea5e9");
+            printToTerminal("> MEU BOLSO: Gestor Financeiro em Java Spring Boot.");
+            printToTerminal("> NOHALL: Solução HR Tech premiada (1º Lugar FIAP).");
+            printToTerminal("> CARPLUSFAMILY: Redução de No-Show em clínicas.");
+            printToTerminal("> CUIDA+: Integração Médico -> Paciente.");
+            break;
+        case '3': case 'contact':
+            printToTerminal("<br>--- CONTATO ---", "#0ea5e9");
+            printToTerminal("LinkedIn: linkedin.com/in/brunozamboni", "#39ff14");
+            break;
+        case '4': case 'github':
+            printToTerminal("<br>Abrindo repositório do GitHub...", "#39ff14");
+            window.open('https://github.com/zambonib', '_blank');
+            break;
+        case '5': case 'sair': case 'exit':
+            printToTerminal("<br>Encerrando sessão...", "#ff5555");
+            setTimeout(closeTerminal, 600); // Fecha o terminal após um breve efeito de delay
+            shouldShowMenuAgain = false;
+            break;
+        case 'help': case 'menu': case 'clear':
+            if (cmd === 'clear') terminalOutput.innerHTML = '';
+            shouldShowMenuAgain = false; 
+            showTerminalMenu(); // Mostra o menu imediatamente sem delay
+            break;
+        default:
+            printToTerminal(`Comando '${cmd}' não reconhecido.`, "orange");
+            break;
+    }
+
+    // Se o usuário não escolheu "Sair", espera 1.5 segundos e exibe o menu novamente
+    if (shouldShowMenuAgain) {
+        setTimeout(showTerminalMenu, 1500); 
+    }
 }
 
 /* ======================================================= */
@@ -191,6 +248,8 @@ let inputSequence = "";
 let matrixRunning = false;
 
 document.addEventListener('keydown', (e) => {
+    if (document.activeElement.id === 'terminal-input') return;
+
     inputSequence += e.key.toLowerCase();
     if (inputSequence.length > secretCode.length) inputSequence = inputSequence.slice(-secretCode.length);
     if (inputSequence === secretCode && !matrixRunning) activateEasterEgg();
@@ -235,48 +294,22 @@ function startMatrixBackground(canvasElement) {
 }
 
 /* ======================================================= */
-/* 5. FLASHCARDS DE HABILIDADES (Multi-idioma)             */
+/* 5. FLASHCARDS DE HABILIDADES                            */
 /* ======================================================= */
 const skillsDB = {
-    'Proxmox': { 
-        pt: { t: 'Proxmox', d: 'Implantação do Hypervisor, Gerenciamento de maquinas virtuais,  Cluster e Containers LXC. Rotinas de backup com Proxmox Backup Server.' }, 
-        en: { t: 'Proxmox', d: 'Hypervisor deployment and management of Virtual Machines (VMs), Clusters, and LXC Containers. Expertise in establishing backup routines using Proxmox Backup Server (PBS).' } },
-    'AWS': { 
-        pt: { t: 'AWS', d: 'Provisionamento (EC2) e redes seguras (VPC). Especialista em FinOps e arquiteturas resilientes, reduzindo o TCO através de políticas de backup no S3' }, 
-        en: { t: 'AWS', d: 'EC2 provisioning and secure networking (VPC). FinOps and resilient architecture specialist, reducing TCO through S3 backup policies.' } },
-    'Windows_Server': { 
-        pt: { t: 'Windows_Server', d: 'Administração de ponta a ponta de Windows Server. Domínio em serviços essenciais (AD DS, DNS, GPOs), virtualização com Hyper-V e automação de tarefas via PowerShell.' }, 
-        en: { t: 'Windows_Server', d: 'End-to-end Windows Server administration. Expertise in core services (AD DS, DNS, GPOs), Hyper-V virtualization, and task automation via PowerShell.' } },
-    'Linux': { 
-        pt: { t: 'Linux', d: 'Trabalho com linux a mais de 15+ anos sempre voltado para infraestrutura, Implantando ambientes como PFSense, TailScale(VPN), Zabbix, Grafana, Proxmox, Prometheus, Immich, NextCloud, SFTP, NGiNX e Apache.' }, 
-        en: { t: 'Linux', d: 'Over 15 years of experience in Linux infrastructure, specializing in the deployment and optimization of robust environments. Proficient in implementing high-availability solutions including pfSense, Tailscale (VPN), Zabbix, Grafana, Proxmox, Immich, Nextcloud, Nginx.' } },
-    'JavaScript': { 
-        pt: { t: 'JavaScript', d: 'Manipulação avançada do DOM, Delegação de Eventos, integração de bibliotecas (Glide.js), animações com Canvas API e gestão de estado global (i18n) usando LocalStorage.' }, 
-        en: { t: 'JavaScript', d: 'Advanced DOM manipulation, Event Delegation, library integration (Glide.js), Canvas API animations, and global state management (i18n) using LocalStorage.' } },
-    'HTML': { 
-        pt: { t: 'HTML', d: 'Estruturação semântica avançada, integração de atributos de dados (data-i18n) para controle de estado, acessibilidade (ARIA) e otimização para Web Apps.' }, 
-        en: { t: 'HTML', d: 'Advanced semantic structuring, integration of data attributes (data-i18n) for state control, accessibility (ARIA), and Web App optimization.' } },
-    'CSS': { 
-        pt: { t: 'CSS', d: 'Criação de UI imersiva com Glassmorphism, layouts fluidos (Grid/Flexbox), microinterações com Keyframes/Transitions e arquitetura 100% responsiva.' }, 
-        en: { t: 'CSS', d: 'Creation of immersive UI with Glassmorphism, fluid layouts (Grid/Flexbox), micro-interactions with Keyframes/Transitions, and 100% responsive architecture.' } },
-    'python': { 
-        pt: { t: 'Python', d: 'Microserviço web (Flask) que aplica Visão Computacional (OpenCV, Tesseract OCR) e Regex para converter imagens de extratos bancários em dados estruturados (OFX)' }, 
-        en: { t: 'Python', d: 'Web microservice (Flask) applying Computer Vision (OpenCV, Tesseract OCR) and Regex to convert bank statement images into structured data (OFX)' } },
-    'leadership': { 
-        pt: { t: 'Liderança', d: 'Liderei times em crises, mantendo a calma.' }, 
-        en: { t: 'Leadership', d: 'Led teams in crises, maintaining calm.' } },
-    'conflict': { 
-        pt: { t: 'Conflitos', d: 'Medio divergências focando na solução viável.' }, 
-        en: { t: 'Conflicts', d: 'Mediate divergences focusing on viable solutions.' } },
-    'communication': { 
-        pt: { t: 'Comunicação', d: 'Traduzo problemas técnicos para linguagem de negócios.' }, 
-        en: { t: 'Communication', d: 'Translate technical problems into business language.' } },
-    'mentoring': { 
-        pt: { t: 'Mentoria', d: 'Tenho prazer em ensinar e compartilhar conhecimento.' }, 
-        en: { t: 'Mentoring', d: 'I am passionate about mentoring and sharing knowledge.' } },
-    'autodidact': { 
-        pt: { t: 'Autodidata', d: 'Aprendi a programar sozinho após anos em infra.' }, 
-        en: { t: 'Self-taught', d: 'Taught myself to program after years in infra.' } }
+    'Proxmox': { pt: { t: 'Proxmox', d: 'Implantação do Hypervisor, Gerenciamento de maquinas virtuais,  Cluster e Containers LXC. Rotinas de backup com Proxmox Backup Server.' }, en: { t: 'Proxmox', d: 'Hypervisor deployment and management of Virtual Machines (VMs), Clusters, and LXC Containers. Expertise in establishing backup routines using Proxmox Backup Server (PBS).' } },
+    'AWS': { pt: { t: 'AWS', d: 'Provisionamento (EC2) e redes seguras (VPC). Especialista em FinOps e arquiteturas resilientes, reduzindo o TCO através de políticas de backup no S3' }, en: { t: 'AWS', d: 'EC2 provisioning and secure networking (VPC). FinOps and resilient architecture specialist, reducing TCO through S3 backup policies.' } },
+    'Windows_Server': { pt: { t: 'Windows_Server', d: 'Administração de ponta a ponta de Windows Server. Domínio em serviços essenciais (AD DS, DNS, GPOs), virtualização com Hyper-V e automação de tarefas via PowerShell.' }, en: { t: 'Windows_Server', d: 'End-to-end Windows Server administration. Expertise in core services (AD DS, DNS, GPOs), Hyper-V virtualization, and task automation via PowerShell.' } },
+    'Linux': { pt: { t: 'Linux', d: 'Trabalho com linux a mais de 15+ anos sempre voltado para infraestrutura, Implantando ambientes como PFSense, TailScale(VPN), Zabbix, Grafana, Proxmox, Prometheus, Immich, NextCloud, SFTP, NGiNX e Apache.' }, en: { t: 'Linux', d: 'Over 15 years of experience in Linux infrastructure, specializing in the deployment and optimization of robust environments. Proficient in implementing high-availability solutions including pfSense, Tailscale (VPN), Zabbix, Grafana, Proxmox, Immich, Nextcloud, Nginx.' } },
+    'JavaScript': { pt: { t: 'JavaScript', d: 'Manipulação avançada do DOM, Delegação de Eventos, integração de bibliotecas (Glide.js), animações com Canvas API e gestão de estado global (i18n) usando LocalStorage.' }, en: { t: 'JavaScript', d: 'Advanced DOM manipulation, Event Delegation, library integration (Glide.js), Canvas API animations, and global state management (i18n) using LocalStorage.' } },
+    'HTML': { pt: { t: 'HTML', d: 'Estruturação semântica avançada, integração de atributos de dados (data-i18n) para controle de estado, acessibilidade (ARIA) e otimização para Web Apps.' }, en: { t: 'HTML', d: 'Advanced semantic structuring, integration of data attributes (data-i18n) for state control, accessibility (ARIA), and Web App optimization.' } },
+    'CSS': { pt: { t: 'CSS', d: 'Criação de UI imersiva com Glassmorphism, layouts fluidos (Grid/Flexbox), microinterações com Keyframes/Transitions e arquitetura 100% responsiva.' }, en: { t: 'CSS', d: 'Creation of immersive UI with Glassmorphism, fluid layouts (Grid/Flexbox), micro-interactions with Keyframes/Transitions, and 100% responsive architecture.' } },
+    'python': { pt: { t: 'Python', d: 'Microserviço web (Flask) que aplica Visão Computacional (OpenCV, Tesseract OCR) e Regex para converter imagens de extratos bancários em dados estruturados (OFX)' }, en: { t: 'Python', d: 'Web microservice (Flask) applying Computer Vision (OpenCV, Tesseract OCR) and Regex to convert bank statement images into structured data (OFX)' } },
+    'leadership': { pt: { t: 'Liderança', d: 'Liderei times em crises, mantendo a calma.' }, en: { t: 'Leadership', d: 'Led teams in crises, maintaining calm.' } },
+    'conflict': { pt: { t: 'Conflitos', d: 'Medio divergências focando na solução viável.' }, en: { t: 'Conflicts', d: 'Mediate divergences focusing on viable solutions.' } },
+    'communication': { pt: { t: 'Comunicação', d: 'Traduzo problemas técnicos para linguagem de negócios.' }, en: { t: 'Communication', d: 'Translate technical problems into business language.' } },
+    'mentoring': { pt: { t: 'Mentoria', d: 'Tenho prazer em ensinar e compartilhar conhecimento.' }, en: { t: 'Mentoring', d: 'I am passionate about mentoring and sharing knowledge.' } },
+    'autodidact': { pt: { t: 'Autodidata', d: 'Aprendi a programar sozinho após anos em infra.' }, en: { t: 'Self-taught', d: 'Taught myself to program after years in infra.' } }
 };
 
 function flipCard(cardId, skillKey) {
@@ -296,25 +329,23 @@ function unflipAllCards() {
 }
 
 /* ======================================================= */
-/* 6. FAROL E CONTATO DIRETO                               */
+/* 6. INTERAÇÕES VISUAIS (FAROL E BOTÕES)                  */
 /* ======================================================= */
 function checkResolutionForBeam() {
-    const beam = document.querySelector('.headlight-beam');
+    const beam = document.querySelector('.flashlight-beam'); 
     if (beam) beam.style.display = (window.innerWidth >= 1900 && window.innerWidth <= 1940) ? '' : 'none';
 }
 window.addEventListener('resize', checkResolutionForBeam);
 
-const contactButton = document.getElementById('cv-button'); // Mantendo o ID original para não quebrar o CSS
-
+const contactButton = document.getElementById('cv-button');
 if (contactButton) {
     contactButton.addEventListener('click', () => {
-        // Redireciona diretamente para o seu perfil ou sistema de mensagens
         window.open('https://www.linkedin.com/in/brunozamboni/', '_blank');
     });
 }
 
 /* ======================================================= */
-/* 7. RANDOMIZADOR E GLIDE CAROUSEL                        */
+/* 7. INICIALIZADORES (CARROSSEL, MODAIS, BOOT)            */
 /* ======================================================= */
 function shuffleProjects() {
     const container = document.querySelector('#retrospectiva .grid-container');
@@ -345,22 +376,17 @@ function initCertificateModal() {
     });
     modal.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
 }
-function closeCertModal() { const modal = document.getElementById('cert-modal'); if (modal) modal.style.display = 'none'; }
+function closeCertModal() { 
+    const modal = document.getElementById('cert-modal'); 
+    if (modal) modal.style.display = 'none'; 
+}
 
-/* ======================================================= */
-/* INICIALIZADOR GERAL                                     */
-/* ======================================================= */
+// --- INICIALIZAÇÃO GERAL ---
 document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('preferredLanguage') || 'pt';
     changeLanguage(savedLang); 
     if (typeof shuffleProjects === 'function') shuffleProjects();
     if (typeof checkResolutionForBeam === 'function') checkResolutionForBeam();
-    const contactButton = document.getElementById('cv-button');
-    if (contactButton) {
-        contactButton.addEventListener('click', () => {
-            window.open('https://www.linkedin.com/in/brunozamboni/', '_blank');
-        });
-    }
     initGlideCarousel(); 
     initCertificateModal(); 
 });
