@@ -4,7 +4,7 @@
 const translations = {
     pt: {
         "infra": "● Infraestrutura", "dev": ">_ Desenvolvimento",
-        "hero_greeting": "Bruno Zamboni | Full Stack Developer.",
+        "hero_greeting": "Bruno Zamboni | Back-end Developer.",
         "hero_desc": "Criei meu portfólio para mostrar minhas Habilidades e Projetos.",
         "hero_exp": "Quase duas décadas orquestrando ambientes complexos e resolvendo problemas críticos. Hoje, aplico essa bagagem sênior para codar soluções inteligentes em Java e Python. Não apenas escrevo software; eu projeto sistemas que nascem para performar.",
         "btn_contact": "FALE COMIGO NO LINKEDIN",
@@ -33,7 +33,7 @@ const translations = {
     },
     en: {
         "infra": "● Infrastructure", "dev": ">_ Development",
-        "hero_greeting": "Bruno Zamboni | Full Stack Developer",
+        "hero_greeting": "Bruno Zamboni | Back-end Developer",
         "hero_desc": "I created my portfolio to showcase my Skills and Projects.",
         "hero_exp": "Nearly two decades orchestrating complex environments and solving critical problems. Today, I apply this senior experience to code intelligent solutions in Java and Python. I don't just write software; I design systems built to perform.",
         "btn_contact": "TALK TO ME ON LINKEDIN",
@@ -90,13 +90,13 @@ function changeLanguage(lang) {
 const linesContainer = document.getElementById('text-lines');
 const typewriterPhrases = {
     pt: [
-        "Desenvolvedor Full Stack (Java | Python)", 
+        "Desenvolvedor Back-end (Java | Python)", 
         "Engenheiro de Software & DevOps", 
         "Especialista em Cloud & Virtualização", 
         "Soluções com IA Generativa"
     ],
     en: [
-        "Full Stack Developer (Java | Python)", 
+        "Back-end Developer (Java | Python)", 
         "Software & DevOps Engineer", 
         "Cloud & Virtualization Specialist", 
         "Generative AI Solutions"
