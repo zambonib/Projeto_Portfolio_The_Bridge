@@ -27,6 +27,7 @@ const translations = {
         "proj_3_tag": "Restruturação de Segurança", "proj_3_title": "Implementação de Segurança Avançada (EDR CrowdStrike) e Otimização de Infraestrutura",
         "proj_4_tag": "Vencedor do FIAP Global Solution 2025 (1º Lugar)", "proj_4_title": "Projeto Premiado: Nohall – Connection with Value",
         "proj_5_tag": "Front-end & UX/UI", "proj_5_title": "The Bridge: Portfólio Interativo com JavaScript",
+        "proj_6_tag": "Challenge FIAP • HealthTech", "proj_6_title": "Care Plus Family: Gamificação & Saúde Integrada",
         "footer_dev": "Desenvolvido por Bruno Zamboni", "footer_motto": "Desenvolvemos muito além do software", "footer_rights": "Todos os direitos reservados a Dalzam 2026",
         "egg_1": "Parabéns, você encontrou um dos códigos escondidos neste portfólio!", "egg_2": 'Digite no seu teclado a qualquer momento o nome da empresa desenvolvedora <strong style="color: #39ff14;">dalzam</strong> e veja o que acontece.', "egg_3": 'Atenciosamente "O Arquiteto".',
         "terminal_welcome": "The Bridge System [Version 1.0.5]<br>Bem-vindo ao modo desenvolvedor.<br>Digite <span class='cmd-highlight'>'help'</span> para ver os comandos.<br><br>"
@@ -56,6 +57,7 @@ const translations = {
         "proj_3_tag": "Security Restructuring", "proj_3_title": "Advanced Security Implementation (EDR CrowdStrike) and Infrastructure Optimization",
         "proj_4_tag": "Winner of FIAP Global Solution 2025 (1st Place)", "proj_4_title": "Award-winning Project: Nohall – Connection with Value",
         "proj_5_tag": "Front-end & UX/UI", "proj_5_title": "The Bridge: Interactive Portfolio with JavaScript",
+        "proj_6_tag": "FIAP Challenge • HealthTech", "proj_6_title": "Care Plus Family: Gamification & Integrated Healthcare",
         "footer_dev": "Developed by Bruno Zamboni", "footer_motto": "We develop much more than software", "footer_rights": "All rights reserved to Dalzam 2026",
         "egg_1": "Congratulations, you found one of the hidden codes in this portfolio!", "egg_2": 'Type the name of the development company <strong style="color: #39ff14;">dalzam</strong> on your keyboard at any time and see what happens.', "egg_3": 'Sincerely "The Architect".',
         "terminal_welcome": "The Bridge System [Version 1.0.5]<br>Welcome to developer mode.<br>Type <span class='cmd-highlight'>'help'</span> to see commands.<br><br>"

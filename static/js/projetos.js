@@ -242,6 +242,101 @@ const projectsDB = {
                 <p><strong>Easter Eggs and Micro-interactions:</strong> Programming of a secret interactive terminal and a hidden "Matrix" effect, demonstrating mastery of DOM manipulation and the Canvas API, while creating a playful and engaging experience for recruiters.</p>
             `
         }
+    },
+
+    'careplus': {
+        image: "../static/assets/CarPlusFamily Homepage.png",
+        video: null,
+        animation: null,
+
+        pt: {
+            title: "Care Plus Family – Ecossistema de Saúde Gamificada & Engajamento Familiar",
+            subtitle: "🏥 Desafio Corporativo & Acadêmico FIAP + Care Plus",
+            technologies: "HTML5, CSS3, JavaScript (ES6 Modules), Bootstrap 5, WhatsApp API, Oracle SQL / MER, UX/UI Design",
+            year: "2026",
+            description: `
+                <p><strong>Resumo da Atuação:</strong> Desenvolvimento de uma solução inovadora para o ecossistema da <strong>Care Plus</strong> (operadora de saúde corporativa premium), idealizada durante o Challenge universitário na FIAP. O projeto foca em transformar a relação das famílias com a medicina preventiva, combatendo a abstenção de consultas e incentivando hábitos saudáveis contínuos por meio de tecnologia e gamificação.</p>
+                
+                <p><strong>O Desafio (Problem Statement):</strong> O setor de saúde suplementar enfrenta custos crescentes e desperdício operacional provocados por dois fatores centrais: a cultura reativa da população (buscar o médico apenas na doença) e as altas taxas de <em>No-Show</em> (pacientes que agendam consultas e exames, mas não comparecem, gerando ociosidade na rede credenciada).</p>
+
+                <img src="../static/assets/CarPlusFamily Engajamento familiar combate NOSHOW.png" class="img-float-right" alt="Engajamento Familiar e Combate ao No-Show">
+
+                <p><strong>Engajamento Familiar & Combate ao No-Show:</strong> Estruturamos um mecanismo integrado de confirmações ativas e incentivo mútuo entre os membros da família. Ao conectar dependentes e titulares na mesma plataforma, o sistema cria um ciclo de cuidado compartilhado, com lembretes inteligentes e recompensas que reduzem diretamente a abstenção nas consultas agendadas.</p>
+
+                <img src="../static/assets/CarPlusFamily Gamificação.png" class="img-float-left" alt="Game Plus - Gamificação em Saúde">
+
+                <p><strong>Game Plus + (A Saúde Gamificada):</strong> Projetamos um módulo interativo onde manter a saúde em dia gera benefícios tangíveis. O cumprimento de metas preventivas (como check-ups periódicos, vacinação, hidratação e atividades físicas) gera pontos no ecossistema familiar. Esses pontos podem ser convertidos em vantagens exclusivas na rede de parceiros Care Plus.</p>
+
+                <img src="../static/assets/CarPlusFamily Avatar.png" class="img-float-right" alt="Personalização de Avatares">
+
+                <p><strong>Personalização de Avatares & Psicologia Comportamental:</strong> Para aproximar o público jovem e tornar a jornada engajadora, criamos uma interface lúdica com avatares customizáveis. Cada membro da família desbloqueia novos itens e personalizações conforme mantém sua constância nos cuidados de saúde, aplicando princípios modernos de <em>Behavioral Design</em>.</p>
+
+                <img src="../static/assets/CarPlusFamily Agendamentos.png" class="img-float-left" alt="Agendamento Inteligente">
+
+                <p><strong>Jornada de Agendamento Fluida & Telemedicina:</strong> Otimização da experiência do usuário (UX) no fluxo de busca e agendamento de consultas médicas e odontológicas. O módulo centraliza a agenda de toda a família, oferecendo acesso rápido à Telemedicina 24 horas e localização inteligente de prestadores credenciados.</p>
+
+                <img src="../static/assets/CarPlusFamily Integração com whatsapp por API.png" class="img-float-right" alt="Integração WhatsApp API">
+
+                <p><strong>Automação Conversacional & WhatsApp Business API:</strong> Integração estratégica com a API do WhatsApp para notificações em tempo real. O paciente recebe lembretes automatizados com confirmação/cancelamento em 1 clique, orientações pré-exame e integração com assistentes virtuais de voz, garantindo acessibilidade e conveniência no canal mais utilizado do Brasil.</p>
+
+                <div class="clear" style="margin-bottom: 15px;"></div>
+
+                <img src="../static/assets/CarPlusFamily Modelagem de  dados MER.png" class="img-float-left" alt="Modelagem de Dados MER">
+
+                <p><strong>Arquitetura e Modelagem de Dados Relacional (MER):</strong> Desenvolvimento da modelagem conceitual e lógica do banco de dados (MER/DER) utilizando Oracle Data Modeler. A estrutura foi projetada para suportar alta cardinalidade, relacionando titulares, dependentes, histórico clínico, transações de pontos da gamificação e logs de notificações.</p>
+
+                <div class="clear" style="margin-bottom: 15px;"></div>
+
+                <p><strong>Entregas e Competências Desenvolvidas:</strong></p>
+                <p>• <strong>Visão de Produto & Negócio:</strong> Aplicação prática de tecnologia para endereçar dores reais de uma grande operadora de saúde (redução de custos com sinistralidade e No-Show).</p>
+                <p>• <strong>Arquitetura Front-end Modular:</strong> Código estruturado em JavaScript moderno (ES6 Modules), interface responsiva com Bootstrap 5 e componentização limpa.</p>
+                <p>• <strong>Engenharia de Dados:</strong> Modelagem relacional robusta e normalizada, garantindo integridade e consistência dos dados familiares e clínicos.</p>
+            `
+        },
+        en: {
+            title: "Care Plus Family – Gamified Health Ecosystem & Family Engagement",
+            subtitle: "🏥 FIAP + Care Plus Corporate & Academic Challenge",
+            technologies: "HTML5, CSS3, JavaScript (ES6 Modules), Bootstrap 5, WhatsApp API, Oracle SQL / ERD, UX/UI Design",
+            year: "2025",
+            description: `
+                <p><strong>Role Summary:</strong> Engineering an innovative digital solution for the <strong>Care Plus</strong> ecosystem (a leading premium corporate healthcare provider in Brazil), conceived during the FIAP academic challenge. The project aims to reshape how families engage with preventive medicine, drastically mitigating appointment no-shows and encouraging persistent healthy habits through technology and gamification.</p>
+                
+                <p><strong>The Challenge (Problem Statement):</strong> The private healthcare industry faces escalating costs and substantial operational waste driven by two core factors: a reactive care culture (seeking healthcare only when illness strikes) and high <em>No-Show</em> rates (patients booking appointments and diagnostic exams but failing to attend, resulting in idle clinical capacity).</p>
+
+                <img src="../static/assets/CarPlusFamily Engajamento familiar combate NOSHOW.png" class="img-float-right" alt="Family Engagement and No-Show Prevention">
+
+                <p><strong>Family Engagement & No-Show Prevention:</strong> We built an integrated mechanism combining active confirmations and mutual family incentives. By connecting planholders and dependents on a unified platform, the system establishes a shared cycle of care, delivering intelligent reminders and rewards that directly drive down absenteeism in scheduled appointments.</p>
+
+                <img src="../static/assets/CarPlusFamily Gamificação.png" class="img-float-left" alt="Game Plus - Gamified Health">
+
+                <p><strong>Game Plus + (Gamified Healthcare):</strong> We designed an interactive module where staying healthy yields tangible rewards. Completing preventive milestones (such as routine check-ups, vaccinations, hydration goals, and physical activity) awards points within the family ecosystem. These points can be redeemed for exclusive benefits across Care Plus partner networks.</p>
+
+                <img src="../static/assets/CarPlusFamily Avatar.png" class="img-float-right" alt="Avatar Customization">
+
+                <p><strong>Avatar Customization & Behavioral Psychology:</strong> To appeal to younger audiences and ensure high user retention, we crafted a playful interface featuring customizable avatars. Each family member unlocks new accessories and customization tiers as they sustain consistent health habits, applying modern <em>Behavioral Design</em> principles.</p>
+
+                <img src="../static/assets/CarPlusFamily Agendamentos.png" class="img-float-left" alt="Smart Scheduling">
+
+                <p><strong>Frictionless Scheduling Journey & Telemedicine:</strong> Optimized user experience (UX) across the discovery and scheduling flows for medical and dental consultations. The platform consolidates the entire family's calendar, delivering 1-click access to 24/7 Telemedicine and smart geolocated search for accredited providers.</p>
+
+                <img src="../static/assets/CarPlusFamily Integração com whatsapp por API.png" class="img-float-right" alt="WhatsApp Business API Integration">
+
+                <p><strong>Conversational Automation & WhatsApp Business API:</strong> Strategic integration with the WhatsApp API for real-time engagement. Patients receive automated alerts with 1-tap confirmation/rescheduling, pre-exam guidelines, and voice assistant connectivity, ensuring seamless convenience on the country's most ubiquitous messaging channel.</p>
+
+                <div class="clear" style="margin-bottom: 15px;"></div>
+
+                <img src="../static/assets/CarPlusFamily Modelagem de  dados MER.png" class="img-float-left" alt="Data Architecture and ERD">
+
+                <p><strong>Relational Data Architecture & ERD Modeling:</strong> Designed the conceptual and logical database architecture (ERD/DER) using Oracle Data Modeler. The data structure was built to handle high cardinality, efficiently relating primary holders, dependents, clinical records, gamification reward ledgers, and notification logs.</p>
+
+                <div class="clear" style="margin-bottom: 15px;"></div>
+
+                <p><strong>Key Deliverables & Core Competencies:</strong></p>
+                <p>• <strong>Product & Business Acumen:</strong> Practical application of technology addressing critical pain points for an enterprise healthcare provider (reducing claims loss ratios and no-show overhead).</p>
+                <p>• <strong>Modular Front-end Architecture:</strong> Codebase structured with modern JavaScript (ES6 Modules), responsive layout powered by Bootstrap 5, and clean UI componentization.</p>
+                <p>• <strong>Data Engineering:</strong> Robust, normalized relational modeling guaranteeing data integrity and consistency across family profiles and clinical interactions.</p>
+            `
+        }
     }
 
 };
