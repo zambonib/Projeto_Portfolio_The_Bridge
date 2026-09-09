@@ -68,6 +68,10 @@
                         <h3><span style="color: #0ea5e9;">#</span> Hard Skills</h3>
                         <p class="skill-desc" data-i18n="click_details">Tecnologias que domino. Clique para detalhes.</p>
                         <div class="tags-group">
+                            <span class="tech-tag" onclick="flipCard('card-hard', 'Java')">Java</span>
+                            <span class="tech-tag" onclick="flipCard('card-hard', 'Firebase')">Firebase</span>
+                            <span class="tech-tag" onclick="flipCard('card-hard', 'Kotlin')">Kotlin</span>
+                            <span class="tech-tag" onclick="flipCard('card-hard', 'SQL')">SQL</span>
                             <span class="tech-tag" onclick="flipCard('card-hard', 'Proxmox')">Proxmox</span>
                             <span class="tech-tag" onclick="flipCard('card-hard', 'AWS')">AWS</span>
                             <span class="tech-tag" onclick="flipCard('card-hard', 'Windows_Server')">Windows_Server</span>
@@ -134,6 +138,14 @@
                         </div>
                     </li>
                     <li class="glide__slide" style="display: flex; flex-direction: column; align-items: center;">
+                        <img src="./static/image/FIAP_2_Semestre.png" alt="Certificado FIAP 2º Semestre" class="certificate-img" onerror="this.src='https://placehold.co/400x300?text=Certificado+FIAP+2'">
+                        <div class="certificate-info">
+                            <h3 data-i18n="cert_fiap2_title">Análise e Desenvolvimento de Sistemas • 2º Semestre</h3>
+                            <p class="cert-meta" data-i18n="cert_fiap2_meta">FIAP - 2º Semestre • Selo Ouro (Média 9.5)</p>
+                            <p class="certificate-description" data-i18n="cert_fiap2_desc">"Conclusão do 2º semestre com excelência, conquistando o prestigioso Selo Ouro da FIAP pela segunda vez consecutiva com média geral de 9.5, com destaque em desenvolvimento de software, arquitetura de sistemas e soluções tecnológicas."</p>
+                        </div>
+                    </li>
+                    <li class="glide__slide" style="display: flex; flex-direction: column; align-items: center;">
                         <img src="./static/image/Cloud_DEVOPS_Alura.png" alt="Certificado 3" class="certificate-img" onerror="this.src='https://placehold.co/400x300?text=Certificado+3'">
                         <div class="certificate-info">
                             <h3 data-i18n="cert_3_title">Formação Cloud & DevOps</h3>
@@ -172,7 +184,7 @@
         <div class="grid-container">
             <a href="./templates/projetos.html?id=migracao" style="text-decoration: none;">
                 <div class="glass-item">
-                    <img src="./static/assets/Migracao_Servidores.png" class="item-image" alt="migracao" onerror="this.src='https://placehold.co/400x300?text=Projeto+1'">
+                    <img src="./static/assets/Migracao_Servidores/Migracao_Servidores.png" class="item-image" alt="migracao" onerror="this.src='https://placehold.co/400x300?text=Projeto+1'">
                     <div class="item-info">
                         <div class="item-tag" data-i18n="proj_1_tag">Alta Disponibilidade em Cloud</div>
                         <h3 class="item-title" data-i18n="proj_1_title">Modernização da Infraestrutura 🚀</h3>
@@ -181,7 +193,7 @@
             </a>
             <a href="./templates/projetos.html?id=email" style="text-decoration: none;">
                 <div class="glass-item">
-                    <img src="./static/assets/Transformacao_Digital.png" class="item-image" alt="email" onerror="this.src='https://placehold.co/400x300?text=Projeto+2'">
+                    <img src="./static/assets/Migracao/Transformacao_Digital.png" class="item-image" alt="email" onerror="this.src='https://placehold.co/400x300?text=Projeto+2'">
                     <div class="item-info">
                         <div class="item-tag" data-i18n="proj_2_tag">"Ecosistema Microsoft"</div>
                         <h3 class="item-title" data-i18n="proj_2_title">Migração do Ecosistema Google Workspace para o Microsoft 365</h3>
@@ -190,7 +202,7 @@
             </a>
             <a href="./templates/projetos.html?id=seguranca" style="text-decoration: none;">
                 <div class="glass-item">
-                    <img src="./static/assets/seguranca.png" class="item-image" alt="seguranca" onerror="this.src='https://placehold.co/400x300?text=Projeto+3'">
+                    <img src="./static/assets/Restruturacao/seguranca.png" class="item-image" alt="seguranca" onerror="this.src='https://placehold.co/400x300?text=Projeto+3'">
                     <div class="item-info">
                         <div class="item-tag" data-i18n="proj_3_tag">Restruturação de Segurança</div>
                         <h3 class="item-title" data-i18n="proj_3_title">Implementação de Segurança Avançada (EDR CrowdStrike) e Otimização de Infraestrutura</h3>
@@ -199,7 +211,7 @@
             </a>
             <a href="./templates/projetos.html?id=nohall" style="text-decoration: none;">
                 <div class="glass-item">
-                    <img src="./static/assets/Nohall.png" class="item-image" style="object-fit: contain;" alt="nohall" onerror="this.src='https://placehold.co/400x300?text=Projeto+4'">
+                    <img src="./static/assets/NoHall/Nohall.png" class="item-image" style="object-fit: contain;" alt="nohall" onerror="this.src='https://placehold.co/400x300?text=Projeto+4'">
                     <div class="item-info">
                         <div class="item-tag" data-i18n="proj_4_tag">Vencedor do FIAP Global Solution 2025 (1º Lugar)</div>
                         <h3 class="item-title" data-i18n="proj_4_title">Projeto Premiado: Nohall – Connection with Value</h3>
@@ -208,7 +220,7 @@
             </a>
             <a href="./templates/projetos.html?id=portfolio" style="text-decoration: none;">
                 <div class="glass-item">
-                    <img src="./static/assets/The_Bridge_Portfolio.png" class="item-image" alt="portfolio" onerror="this.src='https://placehold.co/400x300?text=Projeto+5'">
+                    <img src="./static/assets/The_Bridge/The_Bridge_Portfolio.png" class="item-image" alt="portfolio" onerror="this.src='https://placehold.co/400x300?text=Projeto+5'">
                     <div class="item-info">
                         <div class="item-tag" data-i18n="proj_5_tag">Front-end & UX/UI</div>
                         <h3 class="item-title" data-i18n="proj_5_title">The Bridge: Portfólio Interativo com JavaScript</h3>
@@ -217,10 +229,28 @@
             </a>
             <a href="./templates/projetos.html?id=careplus" style="text-decoration: none;">
                 <div class="glass-item">
-                    <img src="./static/assets/CarPlusFamily Homepage.png" class="item-image" alt="careplus" onerror="this.src='https://placehold.co/400x300?text=Care+Plus+Family'">
+                    <img src="./static/assets/CarPlusFamily/CarPlusFamily Homepage.png" class="item-image" alt="careplus" onerror="this.src='https://placehold.co/400x300?text=Care+Plus+Family'">
                     <div class="item-info">
                         <div class="item-tag" data-i18n="proj_6_tag">Challenge FIAP • HealthTech</div>
                         <h3 class="item-title" data-i18n="proj_6_title">Care Plus Family: Gamificação & Saúde Integrada</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="./templates/projetos.html?id=elo" style="text-decoration: none;">
+                <div class="glass-item">
+                    <img src="./static/assets/ELO_ESG/HomePage.png" class="item-image" style="object-fit: contain;" alt="elo" onerror="this.src='https://placehold.co/400x300?text=ELO+ESG'">
+                    <div class="item-info">
+                        <div class="item-tag" data-i18n="proj_7_tag">Challenge FIAP • Mobile & IA</div>
+                        <h3 class="item-title" data-i18n="proj_7_title">ELO: App Mobile ESG com IA Gemini & SQLite</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="./templates/projetos.html?id=cinevoto" style="text-decoration: none;">
+                <div class="glass-item">
+                    <img src="./static/assets/CineVoto/HomePage.png" class="item-image" style="object-fit: contain;" alt="cinevoto" onerror="this.src='https://placehold.co/400x300?text=CineVoto'">
+                    <div class="item-info">
+                        <div class="item-tag" data-i18n="proj_8_tag">Real-Time Web App • Java & Firebase</div>
+                        <h3 class="item-title" data-i18n="proj_8_title">CineVoto 2.0: Votação em Tempo Real com Cloud Firestore</h3>
                     </div>
                 </div>
             </a>
@@ -241,8 +271,8 @@
             </div>
             <div class="avatar-wrapper">
                 <div class="flashlight-beam"></div>
-                <img src="./static/assets/Avatar.png" class="avatar-img img-off" alt="Avatar Bruno" onerror="this.style.display='none'">
-                <img src="./static/assets/Avatar2.png" class="avatar-img img-on" alt="Avatar com Lanterna" onerror="this.style.display='none'">
+                <img src="./static/assets/Avatar/Avatar.png" class="avatar-img img-off" alt="Avatar Bruno" onerror="this.style.display='none'">
+                <img src="./static/assets/Avatar/Avatar2.png" class="avatar-img img-on" alt="Avatar com Lanterna" onerror="this.style.display='none'">
             </div>
         </div>
     </footer>

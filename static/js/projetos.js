@@ -32,9 +32,9 @@ const staticTranslations = {
 const projectsDB = {
     
     'migracao': {
-        image: "../static/assets/Migracao_Servidores.png",
+        image: "../static/assets/Migracao_Servidores/Migracao_Servidores.png",
         video: null,
-        animation: "../static/assets/Migracao_Servidores.mp4", 
+        animation: "../static/assets/Migracao_Servidores/Migracao_Servidores.mp4", 
         
         pt: {
             title: "Modernização de Infraestrutura Crítica – Cloud Migration (AWS)",
@@ -67,7 +67,7 @@ const projectsDB = {
     },
 
     'email': {
-        image: "../static/assets/Transformacao_Digital.png",
+        image: "../static/assets/Migracao/Transformacao_Digital.png",
         video: null,
         animation: null,
 
@@ -102,7 +102,7 @@ const projectsDB = {
     },
 
     'seguranca': {
-        image: "../static/assets/seguranca.png",
+        image: "../static/assets/Restruturacao/seguranca.png",
         video: null,
         animation: null,
 
@@ -141,7 +141,7 @@ const projectsDB = {
     },
 
     'nohall': {
-        image: "../static/assets/Nohall.png",
+        image: "../static/assets/NoHall/Nohall.png",
         video: null,
         animation: null,
 
@@ -156,7 +156,7 @@ const projectsDB = {
                 <p>Estudos indicam que enquanto a tecnologia avança, a falta de padronização na avaliação de habilidades comportamentais gera desigualdade e ineficiência operacional.</p>
                 <p><strong>A Solução – Nohall:</strong> Criamos um ecossistema de qualificação mútua que atua em três frentes principais:</p>
                 
-                <img src="../static/assets/Nohall_Arena.png" class="img-float-right" alt="Arena Softskills">
+                <img src="../static/assets/NoHall/Nohall_Arena.png" class="img-float-right" alt="Arena Softskills">
                 
                 <p><strong>Recrutamento Consciente & "O Não Educativo":</strong> Diferente de plataformas tradicionais, o Nohall bloqueia vagas com requisitos abusivos (ex: exigir sênior para vaga júnior) e fornece feedback automático de desenvolvimento para candidatos rejeitados, combatendo a falta de transparência.</p>
                 <p><strong>Arena de Soft Skills (Gamificação & IA):</strong> Projetamos um ambiente imersivo (VR/AR) onde a IA analisa microexpressões, tom de voz e argumentação em cenários simulados (ex: entrevistas, negociações) para validar e treinar soft skills de forma objetiva.</p>
@@ -164,7 +164,7 @@ const projectsDB = {
                 <p><strong>Ferramentas e Tecnologias Aplicadas:</strong></p>
                 <p><strong>Design & Prototipagem (Figma):</strong> Criação de interfaces de alta fidelidade, focadas na Jornada do Usuário (UX/UI), desde o Onboarding até os Dashboards de gestão de vagas e a interface imersiva da Arena.</p>
                 
-                <img src="../static/assets/Nohall_BancoDados.png" class="img-float-left" alt="Banco de Dados">
+                <img src="../static/assets/NoHall/Nohall_BancoDados.png" class="img-float-left" alt="Banco de Dados">
                 
                 <p><strong>Arquitetura de Dados (Oracle Data Modeler):</strong> Modelagem completa do Banco de Dados (Modelos Lógico e Relacional), estruturando entidades complexas como Usuários, Empresas, Vagas, Skills e as relações de "Match".</p>
                 <p><strong>Inteligência Artificial (Gemini):</strong> Utilizada para pesquisa de mercado, estruturação de cenários de teste para a Arena e validação de conceitos da Indústria 5.0.</p>
@@ -186,7 +186,7 @@ const projectsDB = {
                 <p>Studies indicate that while technology advances, the lack of standardization in behavioral skills assessment generates inequality and operational inefficiency.</p>
                 <p><strong>The Solution – Nohall:</strong> We created a mutual qualification ecosystem acting on three main fronts:</p>
                 
-                <img src="../static/assets/Nohall_Arena.png" class="img-float-right" alt="Softskills Arena">
+                <img src="../static/assets/NoHall/Nohall_Arena.png" class="img-float-right" alt="Softskills Arena">
                 
                 <p><strong>Conscious Recruiting & "The Educational No":</strong> Unlike traditional platforms, Nohall blocks jobs with abusive requirements (e.g., demanding senior skills for a junior role) and provides automatic development feedback for rejected candidates, combating the lack of transparency.</p>
                 <p><strong>Soft Skills Arena (Gamification & AI):</strong> We designed an immersive environment (VR/AR) where AI analyzes micro-expressions, tone of voice, and argumentation in simulated scenarios (e.g., interviews, negotiations) to objectively validate and train soft skills.</p>
@@ -194,7 +194,7 @@ const projectsDB = {
                 <p><strong>Applied Tools and Technologies:</strong></p>
                 <p><strong>Design & Prototyping (Figma):</strong> Creation of high-fidelity interfaces, focused on the User Journey (UX/UI), from Onboarding to job management Dashboards and the Arena's immersive interface.</p>
                 
-                <img src="../static/assets/Nohall_BancoDados.png" class="img-float-left" alt="Database">
+                <img src="../static/assets/NoHall/Nohall_BancoDados.png" class="img-float-left" alt="Database">
                 
                 <p><strong>Data Architecture (Oracle Data Modeler):</strong> Complete Database modeling (Logical and Relational Models), structuring complex entities such as Users, Companies, Jobs, Skills, and "Match" relations.</p>
                 <p><strong>Artificial Intelligence (Gemini):</strong> Used for market research, structuring test scenarios for the Arena, and validating Industry 5.0 concepts.</p>
@@ -208,7 +208,7 @@ const projectsDB = {
     },
 
     'portfolio': {
-        image: "../static/assets/The_Bridge_Portfolio.png", // Sugestão: Tire um print bonito da página principal e salve com esse nome!
+        image: "../static/assets/The_Bridge/The_Bridge_Portfolio.png", // Sugestão: Tire um print bonito da página principal e salve com esse nome!
         video: null,
         animation: null,
 
@@ -245,7 +245,7 @@ const projectsDB = {
     },
 
     'careplus': {
-        image: "../static/assets/CarPlusFamily Homepage.png",
+        image: "../static/assets/CarPlusFamily/CarPlusFamily Homepage.png",
         video: null,
         animation: null,
 
@@ -259,29 +259,29 @@ const projectsDB = {
                 
                 <p><strong>O Desafio (Problem Statement):</strong> O setor de saúde suplementar enfrenta custos crescentes e desperdício operacional provocados por dois fatores centrais: a cultura reativa da população (buscar o médico apenas na doença) e as altas taxas de <em>No-Show</em> (pacientes que agendam consultas e exames, mas não comparecem, gerando ociosidade na rede credenciada).</p>
 
-                <img src="../static/assets/CarPlusFamily Engajamento familiar combate NOSHOW.png" class="img-float-right" alt="Engajamento Familiar e Combate ao No-Show">
+                <img src="../static/assets/CarPlusFamily/CarPlusFamily Engajamento familiar combate NOSHOW.png" class="img-float-right" alt="Engajamento Familiar e Combate ao No-Show">
 
                 <p><strong>Engajamento Familiar & Combate ao No-Show:</strong> Estruturamos um mecanismo integrado de confirmações ativas e incentivo mútuo entre os membros da família. Ao conectar dependentes e titulares na mesma plataforma, o sistema cria um ciclo de cuidado compartilhado, com lembretes inteligentes e recompensas que reduzem diretamente a abstenção nas consultas agendadas.</p>
 
-                <img src="../static/assets/CarPlusFamily Gamificação.png" class="img-float-left" alt="Game Plus - Gamificação em Saúde">
+                <img src="../static/assets/CarPlusFamily/CarPlusFamily Gamificação.png" class="img-float-left" alt="Game Plus - Gamificação em Saúde">
 
                 <p><strong>Game Plus + (A Saúde Gamificada):</strong> Projetamos um módulo interativo onde manter a saúde em dia gera benefícios tangíveis. O cumprimento de metas preventivas (como check-ups periódicos, vacinação, hidratação e atividades físicas) gera pontos no ecossistema familiar. Esses pontos podem ser convertidos em vantagens exclusivas na rede de parceiros Care Plus.</p>
 
-                <img src="../static/assets/CarPlusFamily Avatar.png" class="img-float-right" alt="Personalização de Avatares">
+                <img src="../static/assets/CarPlusFamily/CarPlusFamily Avatar.png" class="img-float-right" alt="Personalização de Avatares">
 
                 <p><strong>Personalização de Avatares & Psicologia Comportamental:</strong> Para aproximar o público jovem e tornar a jornada engajadora, criamos uma interface lúdica com avatares customizáveis. Cada membro da família desbloqueia novos itens e personalizações conforme mantém sua constância nos cuidados de saúde, aplicando princípios modernos de <em>Behavioral Design</em>.</p>
 
-                <img src="../static/assets/CarPlusFamily Agendamentos.png" class="img-float-left" alt="Agendamento Inteligente">
+                <img src="../static/assets/CarPlusFamily/CarPlusFamily Agendamentos.png" class="img-float-left" alt="Agendamento Inteligente">
 
                 <p><strong>Jornada de Agendamento Fluida & Telemedicina:</strong> Otimização da experiência do usuário (UX) no fluxo de busca e agendamento de consultas médicas e odontológicas. O módulo centraliza a agenda de toda a família, oferecendo acesso rápido à Telemedicina 24 horas e localização inteligente de prestadores credenciados.</p>
 
-                <img src="../static/assets/CarPlusFamily Integração com whatsapp por API.png" class="img-float-right" alt="Integração WhatsApp API">
+                <img src="../static/assets/CarPlusFamily/CarPlusFamily Integração com whatsapp por API.png" class="img-float-right" alt="Integração WhatsApp API">
 
                 <p><strong>Automação Conversacional & WhatsApp Business API:</strong> Integração estratégica com a API do WhatsApp para notificações em tempo real. O paciente recebe lembretes automatizados com confirmação/cancelamento em 1 clique, orientações pré-exame e integração com assistentes virtuais de voz, garantindo acessibilidade e conveniência no canal mais utilizado do Brasil.</p>
 
                 <div class="clear" style="margin-bottom: 15px;"></div>
 
-                <img src="../static/assets/CarPlusFamily Modelagem de  dados MER.png" class="img-float-left" alt="Modelagem de Dados MER">
+                <img src="../static/assets/CarPlusFamily/CarPlusFamily Modelagem de  dados MER.png" class="img-float-left" alt="Modelagem de Dados MER">
 
                 <p><strong>Arquitetura e Modelagem de Dados Relacional (MER):</strong> Desenvolvimento da modelagem conceitual e lógica do banco de dados (MER/DER) utilizando Oracle Data Modeler. A estrutura foi projetada para suportar alta cardinalidade, relacionando titulares, dependentes, histórico clínico, transações de pontos da gamificação e logs de notificações.</p>
 
@@ -303,29 +303,29 @@ const projectsDB = {
                 
                 <p><strong>The Challenge (Problem Statement):</strong> The private healthcare industry faces escalating costs and substantial operational waste driven by two core factors: a reactive care culture (seeking healthcare only when illness strikes) and high <em>No-Show</em> rates (patients booking appointments and diagnostic exams but failing to attend, resulting in idle clinical capacity).</p>
 
-                <img src="../static/assets/CarPlusFamily Engajamento familiar combate NOSHOW.png" class="img-float-right" alt="Family Engagement and No-Show Prevention">
+                <img src="../static/assets/CarPlusFamily/CarPlusFamily Engajamento familiar combate NOSHOW.png" class="img-float-right" alt="Family Engagement and No-Show Prevention">
 
                 <p><strong>Family Engagement & No-Show Prevention:</strong> We built an integrated mechanism combining active confirmations and mutual family incentives. By connecting planholders and dependents on a unified platform, the system establishes a shared cycle of care, delivering intelligent reminders and rewards that directly drive down absenteeism in scheduled appointments.</p>
 
-                <img src="../static/assets/CarPlusFamily Gamificação.png" class="img-float-left" alt="Game Plus - Gamified Health">
+                <img src="../static/assets/CarPlusFamily/CarPlusFamily Gamificação.png" class="img-float-left" alt="Game Plus - Gamified Health">
 
                 <p><strong>Game Plus + (Gamified Healthcare):</strong> We designed an interactive module where staying healthy yields tangible rewards. Completing preventive milestones (such as routine check-ups, vaccinations, hydration goals, and physical activity) awards points within the family ecosystem. These points can be redeemed for exclusive benefits across Care Plus partner networks.</p>
 
-                <img src="../static/assets/CarPlusFamily Avatar.png" class="img-float-right" alt="Avatar Customization">
+                <img src="../static/assets/CarPlusFamily/CarPlusFamily Avatar.png" class="img-float-right" alt="Avatar Customization">
 
                 <p><strong>Avatar Customization & Behavioral Psychology:</strong> To appeal to younger audiences and ensure high user retention, we crafted a playful interface featuring customizable avatars. Each family member unlocks new accessories and customization tiers as they sustain consistent health habits, applying modern <em>Behavioral Design</em> principles.</p>
 
-                <img src="../static/assets/CarPlusFamily Agendamentos.png" class="img-float-left" alt="Smart Scheduling">
+                <img src="../static/assets/CarPlusFamily/CarPlusFamily Agendamentos.png" class="img-float-left" alt="Smart Scheduling">
 
                 <p><strong>Frictionless Scheduling Journey & Telemedicine:</strong> Optimized user experience (UX) across the discovery and scheduling flows for medical and dental consultations. The platform consolidates the entire family's calendar, delivering 1-click access to 24/7 Telemedicine and smart geolocated search for accredited providers.</p>
 
-                <img src="../static/assets/CarPlusFamily Integração com whatsapp por API.png" class="img-float-right" alt="WhatsApp Business API Integration">
+                <img src="../static/assets/CarPlusFamily/CarPlusFamily Integração com whatsapp por API.png" class="img-float-right" alt="WhatsApp Business API Integration">
 
                 <p><strong>Conversational Automation & WhatsApp Business API:</strong> Strategic integration with the WhatsApp API for real-time engagement. Patients receive automated alerts with 1-tap confirmation/rescheduling, pre-exam guidelines, and voice assistant connectivity, ensuring seamless convenience on the country's most ubiquitous messaging channel.</p>
 
                 <div class="clear" style="margin-bottom: 15px;"></div>
 
-                <img src="../static/assets/CarPlusFamily Modelagem de  dados MER.png" class="img-float-left" alt="Data Architecture and ERD">
+                <img src="../static/assets/CarPlusFamily/CarPlusFamily Modelagem de  dados MER.png" class="img-float-left" alt="Data Architecture and ERD">
 
                 <p><strong>Relational Data Architecture & ERD Modeling:</strong> Designed the conceptual and logical database architecture (ERD/DER) using Oracle Data Modeler. The data structure was built to handle high cardinality, efficiently relating primary holders, dependents, clinical records, gamification reward ledgers, and notification logs.</p>
 
@@ -335,6 +335,218 @@ const projectsDB = {
                 <p>• <strong>Product & Business Acumen:</strong> Practical application of technology addressing critical pain points for an enterprise healthcare provider (reducing claims loss ratios and no-show overhead).</p>
                 <p>• <strong>Modular Front-end Architecture:</strong> Codebase structured with modern JavaScript (ES6 Modules), responsive layout powered by Bootstrap 5, and clean UI componentization.</p>
                 <p>• <strong>Data Engineering:</strong> Robust, normalized relational modeling guaranteeing data integrity and consistency across family profiles and clinical interactions.</p>
+            `
+        }
+    },
+
+    'elo': {
+        image: "../static/assets/ELO_ESG/HomePage.png",
+        video: null,
+        animation: null,
+
+        pt: {
+            title: "ELO — Aplicativo Mobile Nativo de Educação Financeira & Sustentabilidade ESG",
+            subtitle: "🌿 Kotlin 2.0 • Jetpack Compose • Google Gemini AI • Room SQLite • Firebase Auth",
+            technologies: "Android Nativo (Kotlin 2.0), Jetpack Compose (M3), Google Gemini LLM, Firebase Auth, Room / SQLite, Dagger Hilt 2.51, Retrofit 2, Coroutines, CI/CD GitHub Actions",
+            year: "2026",
+            description: `
+                <p><strong>Resumo da Atuação:</strong> Concepção e desenvolvimento de um aplicativo mobile nativo construído com o que há de mais moderno no ecossistema Android (Kotlin 2.0 e Jetpack Compose). O <strong>ELO</strong> une inteligência artificial generativa à teoria dos três pilares <strong>ESG (Environmental, Social and Governance)</strong>, democratizando a educação financeira familiar e a consciência socioambiental.</p>
+                
+                <p><strong>Autenticação Segura na Nuvem (Firebase Auth):</strong> O onboarding e controle de acesso foram arquitetados utilizando o <strong>Firebase Authentication Android SDK</strong>, integrando validação reativa de força de senha em tempo real, proteção de dados e perfis criptografados na nuvem.</p>
+
+                <img src="../static/assets/ELO_ESG/Dashboard.png" class="img-float-right" alt="Dashboard Financeiro ELO">
+
+                <p><strong>Dashboard & Gestão Orçamentária em Tempo Real:</strong> Uma interface reativa construída com <em>Jetpack Compose Material 3</em> e arquitetura <strong>MVVM + Clean Architecture</strong>. Permite visualização imediata do saldo mensal, gráfico dinâmico de despesas vs receitas, busca de transações e acesso ao assistente de IA através de Floating Action Button (FAB).</p>
+
+                <img src="../static/assets/ELO_ESG/Lançamentos.png" class="img-float-left" alt="Registro com Inteligência Artificial Gemini">
+
+                <p><strong>Registro com IA Generativa (Google Gemini LLM):</strong> Implementação de processamento de linguagem natural (NLP) consumindo a API do <strong>Google Gemini</strong> (modelo <em>gemini-flash-lite</em>). O usuário registra transações de forma conversacional (ex: <em>"Gastei 35 reais no almoço hoje"</em>), e a IA extrai automaticamente valor, tipo de despesa, categoria e data com alta precisão.</p>
+
+                <img src="../static/assets/ELO_ESG/Educação Financeira.png" class="img-float-right" alt="Educação Financeira e Flashcards">
+
+                <p><strong>Educação Financeira Imersiva:</strong> Trilha pedagógica dividida em 5 módulos com microaulas interativas sobre juros, reserva de emergência e orçamento familiar. Inclui sistema de <strong>Flashcards 3D interativos</strong> com virada de card e <strong>Quizzes pontuados</strong> com feedback instantâneo de retenção.</p>
+
+                <img src="../static/assets/ELO_ESG/Finanças.png" class="img-float-left" alt="Metas e Limites Orçamentários">
+
+                <p><strong>Metas, Tetos Orçamentários e Score de Saúde:</strong> Visualização analítica dos gastos com gráficos de distribuição por categorias, histórico de evolução financeira semestral, alertas de limite de gastos por categoria e algoritmo proprietário para cálculo do <em>Score de Saúde Financeira</em>.</p>
+
+                <img src="../static/assets/ELO_ESG/Conquistas.png" class="img-float-right" alt="Gamificação e Conquistas">
+
+                <p><strong>Gamificação e Psicologia de Engajamento:</strong> Sistema motivacional com níveis progressivos de evolução financeira (ex: <em>"Guardião Financeiro"</em>), acúmulo de pontos de experiência (XP) e medalhas exclusivas desbloqueadas conforme o cumprimento de metas de economia e aprendizado.</p>
+
+                <img src="../static/assets/ELO_ESG/Economize.png" class="img-float-left" alt="Pilar Ambiental ESG">
+
+                <p><strong>Pilar Ambiental (E - Environmental) & Green IT:</strong> Guias práticos expansíveis para redução de consumo de água e energia elétrica nas residências. Incorpora princípios inovadores de <strong>Green IT</strong>, orientando sobre uso consciente de inteligência artificial e otimização de processamento para economia energética em Data Centers.</p>
+
+                <img src="../static/assets/ELO_ESG/Social.png" class="img-float-right" alt="Pilar Social e Localizador CRAS">
+
+                <p><strong>Pilar Social (S - Social) & Integração ViaCEP:</strong> Hub de assistência com orientações sobre programas sociais (Bolsa Família, BPC, Tarifa Social) e ferramenta de <strong>Localização Inteligente de postos CRAS</strong> via consulta de CEP consumindo a API pública do <em>ViaCEP</em> com tratamento assíncrono via Retrofit.</p>
+
+                <div class="clear" style="margin-bottom: 15px;"></div>
+
+                <img src="../static/assets/ELO_ESG/SQLite Banco de dados..png" class="img-float-left" alt="Persistência Local Room e SQLite">
+
+                <p><strong>Persistência Local Offline-First (Room / SQLite):</strong> Arquitetura de dados local utilizando <strong>Room Database (SQLite)</strong> com DAOs otimizados (<em>TransacaoDao</em>, <em>OrcamentoDao</em>) e suporte a <em>Migrations</em> estruturadas. Garantia de operação 100% fluida mesmo sem conectividade, validada em tempo de execução através do <em>Database Inspector</em> no Android Studio.</p>
+
+                <div class="clear" style="margin-bottom: 15px;"></div>
+
+                <p><strong>Excelência de Engenharia, Qualidade e DevOps:</strong></p>
+                <p>• <strong>Injeção de Dependências:</strong> <strong>Dagger Hilt 2.51</strong> desacoplando ViewModels, Repositories e Serviços de Rede com ciclo de vida unificado.</p>
+                <p>• <strong>Assincronismo Reativo:</strong> Kotlin Coroutines e StateFlow para fluxos de dados unidirecionais seguros contra vazamento de memória.</p>
+                <p>• <strong>Testes Automatizados:</strong> Testes unitários com <strong>MockK / JUnit 4</strong> para lógica de negócio e testes instrumentados de banco de dados com Room In-Memory.</p>
+                <p>• <strong>CI/CD & Otimização:</strong> Pipeline automatizada no <strong>GitHub Actions</strong> para build e testes, com minificação avançada via <strong>R8/ProGuard</strong> gerando um APK ultra-leve de apenas ~7.9 MB.</p>
+                <p>• <strong>Repositório no GitHub:</strong> <a href="https://github.com/zambonib/ELO_ESG" target="_blank" style="color: #39ff14; text-decoration: underline; font-weight: 600;">github.com/zambonib/ELO_ESG</a></p>
+            `
+        },
+        en: {
+            title: "ELO — Native ESG Mobile App for Financial Education & Sustainability",
+            subtitle: "🌿 Kotlin 2.0 • Jetpack Compose • Google Gemini AI • Room SQLite • Firebase Auth",
+            technologies: "Native Android (Kotlin 2.0), Jetpack Compose (M3), Google Gemini LLM, Firebase Auth, Room / SQLite, Dagger Hilt 2.51, Retrofit 2, Coroutines, GitHub Actions CI/CD",
+            year: "2026",
+            description: `
+                <p><strong>Role Summary:</strong> Design and development of a native mobile application built on the modern Android ecosystem (Kotlin 2.0 and Jetpack Compose). <strong>ELO</strong> merges generative artificial intelligence with the three pillars of <strong>ESG (Environmental, Social, and Governance)</strong>, democratizing family financial education and socio-environmental awareness.</p>
+                
+                <p><strong>Secure Cloud Authentication (Firebase Auth):</strong> Onboarding and user identity are architected using the <strong>Firebase Authentication Android SDK</strong>, delivering real-time password strength validation, secure data access, and cloud-encrypted profiles.</p>
+
+                <img src="../static/assets/ELO_ESG/Dashboard.png" class="img-float-right" alt="ELO Financial Dashboard">
+
+                <p><strong>Real-time Financial Dashboard:</strong> A reactive interface built with <em>Jetpack Compose Material 3</em> following <strong>MVVM + Clean Architecture</strong> principles. Delivers instant visibility into monthly balances, dynamic income vs. expenses tracking, transaction lookup, and AI quick-access via Floating Action Button (FAB).</p>
+
+                <img src="../static/assets/ELO_ESG/Lançamentos.png" class="img-float-left" alt="Gemini Generative AI Logging">
+
+                <p><strong>Generative AI Transaction Logging (Google Gemini LLM):</strong> Natural language parsing (NLP) powered by the <strong>Google Gemini API</strong> (<em>gemini-flash-lite</em>). Users log transactions conversationally (e.g., <em>"I spent 35 dollars on lunch today"</em>), and the LLM accurately extracts amounts, expense types, categories, and timestamps in real time.</p>
+
+                <img src="../static/assets/ELO_ESG/Educação Financeira.png" class="img-float-right" alt="Financial Literacy & Flashcards">
+
+                <p><strong>Immersive Financial Literacy:</strong> A structured 5-module curriculum with micro-lessons on compound interest, emergency reserves, and budgeting. Features <strong>interactive 3D Flashcards</strong> and <strong>scored quizzes</strong> with instant retention feedback.</p>
+
+                <img src="../static/assets/ELO_ESG/Finanças.png" class="img-float-left" alt="Budget Limits & Health Score">
+
+                <p><strong>Budget Ceilings & Financial Health Score:</strong> Category breakdown charts, 6-month financial evolution metrics, proactive spending limit alerts, and a proprietary algorithm calculating a composite <em>Financial Health Score</em>.</p>
+
+                <img src="../static/assets/ELO_ESG/Conquistas.png" class="img-float-right" alt="Gamification & Achievements">
+
+                <p><strong>Gamification & Retention:</strong> Tiered progression system (e.g., <em>"Financial Guardian"</em>), XP accumulation bars, and unlockable achievement badges rewarding savings milestones and curriculum completion.</p>
+
+                <img src="../static/assets/ELO_ESG/Economize.png" class="img-float-left" alt="Environmental Pillar ESG">
+
+                <p><strong>Environmental Pillar (E) & Green IT:</strong> Actionable expandable guides for water and electricity reduction. Integrates cutting-edge <strong>Green IT</strong> practices, coaching users on efficient AI prompting and compute conservation to lower cloud data center carbon footprints.</p>
+
+                <img src="../static/assets/ELO_ESG/Social.png" class="img-float-right" alt="Social Pillar & CRAS Locator">
+
+                <p><strong>Social Pillar (S) & ViaCEP Integration:</strong> Social assistance hub providing eligibility criteria for public benefits, paired with a <strong>Smart Social Services (CRAS) Locator</strong> querying postal codes via the <em>ViaCEP API</em> through asynchronous Retrofit calls.</p>
+
+                <div class="clear" style="margin-bottom: 15px;"></div>
+
+                <img src="../static/assets/ELO_ESG/SQLite Banco de dados..png" class="img-float-left" alt="Room SQLite Local Persistence">
+
+                <p><strong>Offline-First Local Persistence (Room / SQLite):</strong> Robust local persistence layer utilizing <strong>Room Database (SQLite)</strong> with optimized DAOs (<em>TransacaoDao</em>, <em>OrcamentoDao</em>) and schema migrations. Ensures full offline functionality, inspected live via Android Studio's <em>Database Inspector</em>.</p>
+
+                <div class="clear" style="margin-bottom: 15px;"></div>
+
+                <p><strong>Engineering Quality, Architecture & DevOps:</strong></p>
+                <p>• <strong>Dependency Injection:</strong> <strong>Dagger Hilt 2.51</strong> decoupling ViewModels, Repositories, and Network Services with unified lifecycle scoping.</p>
+                <p>• <strong>Reactive Concurrency:</strong> Kotlin Coroutines and StateFlow enabling memory-safe unidirectional data flow (UDF).</p>
+                <p>• <strong>Automated Testing:</strong> Unit testing with <strong>MockK / JUnit 4</strong> for business logic and Room In-Memory instrumented database tests.</p>
+                <p>• <strong>CI/CD & Production Hardening:</strong> Automated <strong>GitHub Actions</strong> pipeline running builds and test suites on every push/PR, paired with <strong>R8/ProGuard</strong> minification yielding an ultra-optimized ~7.9 MB APK.</p>
+                <p>• <strong>GitHub Repository:</strong> <a href="https://github.com/zambonib/ELO_ESG" target="_blank" style="color: #39ff14; text-decoration: underline; font-weight: 600;">github.com/zambonib/ELO_ESG</a></p>
+            `
+        }
+    },
+
+    'cinevoto': {
+        image: "../static/assets/CineVoto/HomePage.png",
+        video: null,
+        animation: null,
+
+        pt: {
+            title: "CineVoto 2.0 – Sistema de Votação em Tempo Real",
+            subtitle: "Web Application • Full Stack & Cloud Real-Time",
+            technologies: "Java 21, JavaScript (ES6+ Modules), Firebase Auth, Cloud Firestore, HTML5, CSS3",
+            year: "2026",
+            description: `
+                <p><strong>Resumo do Projeto:</strong> O <strong>CineVoto 2.0</strong> é uma aplicação web moderna de alta performance projetada para resolver de forma democrática e em tempo real a escolha de filmes em sessões de cinema com amigos ou família. Na versão 2.0, o projeto passou por uma evolução arquitetural completa: superou a persistência local em arquivos de texto para integrar a infraestrutura em nuvem do <strong>Google Firebase</strong> (Authentication e Cloud Firestore) aliada a um servidor backend ultraleve em <strong>Java 21 puro</strong>.</p>
+
+                <p><strong>Principais Funcionalidades & Arquitetura Técnica:</strong></p>
+
+                <img src="../static/assets/CineVoto/Login.png" class="img-float-right" alt="Tela de Autenticação com Google Sign-In">
+
+                <p><strong>Autenticação Federada com Google (Firebase Auth):</strong> Login seguro em um único clique utilizando a conta Google. Cada participante é imediatamente identificado com seu nome oficial, e-mail e avatar fotográfico, garantindo rastreabilidade e integridade para cada voto emitido na sessão.</p>
+
+                <img src="../static/assets/CineVoto/HomePage.png" class="img-float-left" alt="Painel Inicial e Criação de Salas">
+
+                <p><strong>Gestão Dinâmica de Salas & Papéis (Admin vs Votantes):</strong> O sistema implementa separação clara de responsabilidades. O <strong>Criador da Sala (Admin)</strong> gera um código de acesso exclusivo de 6 caracteres, cadastra e gerencia o catálogo de filmes da rodada. Os <strong>Participantes</strong> acessam instantaneamente via link direto (<code>?sala=CODIGO</code>) ou inserção manual do código.</p>
+
+                <img src="../static/assets/CineVoto/TelaAdministradorSala.png" class="img-float-right" alt="Painel do Administrador da Sala com Apuração ao Vivo">
+
+                <p><strong>Painel do Administrador & Apuração ao Vivo:</strong> O painel administrativo exibe em tempo real o status de cada votante conectado (com avatares visuais), contagem de votos auditável e controle total de encerramento da rodada com declaração automática do filme vencedor.</p>
+
+                <img src="../static/assets/CineVoto/TelaVotacao.png" class="img-float-left" alt="Interface de Votação Interativa">
+
+                <p><strong>Interface de Votação Interativa & Responsiva:</strong> Interface cinematográfica inspirada em salas de cinema (Dark Cinema com acentos neon), permitindo que os votantes escolham seus títulos favoritos com feedback tátil e visual instantâneo em qualquer dispositivo móvel ou desktop.</p>
+
+                <img src="../static/assets/CineVoto/ConvidadoVotando.png" class="img-float-right" alt="Experiência do Convidado em Tempo Real">
+
+                <p><strong>Sincronização em Tempo Real (Cloud Firestore):</strong> Utilizando ouvintes reativos de snapshots (<code>onSnapshot</code>), todos os votos, entradas de participantes e atualizações de catálogo refletem instantaneamente na tela de todos os envolvidos sem necessidade de recarregar a página (F5) ou de técnicas dispendiosas de polling.</p>
+
+                <div class="clear" style="margin-bottom: 15px;"></div>
+
+                <img src="../static/assets/CineVoto/Banco de dados Firestore.png" class="img-float-left" alt="Console do Banco de Dados Cloud Firestore">
+
+                <p><strong>Persistência NoSQL & Histórico Permanente:</strong> Modelagem de dados distribuída no <strong>Cloud Firestore</strong>. Os filmes vencedores são consolidados permanentemente no perfil individual do usuário (<code>usuarios/{uid}.filmesAssistidos</code>), preservando o histórico pessoal de sessões passadas mesmo após o encerramento da sala.</p>
+
+                <div class="clear" style="margin-bottom: 15px;"></div>
+
+                <p><strong>Engenharia de Software, Backend Java & Segurança:</strong></p>
+                <p>• <strong>Backend Ultraleve em Java 21:</strong> Servidor HTTP de alta velocidade implementado com as APIs nativas do JDK (<code>com.sun.net.httpserver</code>). Inicialização praticamente instantânea, zero dependências externas pesadas (sem frameworks volumosos) e baixíssimo consumo de memória.</p>
+                <p>• <strong>Bloqueio Inteligente de Duplicatas:</strong> Algoritmo de normalização insensível a maiúsculas, minúsculas, espaços e acentuação gráfica (ex: <em>"A Origem"</em>, <em>"a origem"</em> e <em>"À Origem"</em> são unificados), impedindo cadastros repetidos e títulos já assistidos em sessões anteriores.</p>
+                <p>• <strong>Regras de Segurança & Isolamento de Credenciais:</strong> Políticas de segurança declarativas no Firestore (<code>firestore.rules</code>) assegurando que apenas usuários autenticados gravem dados, com chaves de API isoladas do versionamento através de boas práticas com <code>.gitignore</code> e template <code>firebase-config.example.js</code>.</p>
+                <p>• <strong>Repositório no GitHub:</strong> <a href="https://github.com/zambonib/cinevoto" target="_blank" style="color: #39ff14; text-decoration: underline; font-weight: 600;">github.com/zambonib/cinevoto</a></p>
+            `
+        },
+        en: {
+            title: "CineVoto 2.0 – Real-Time Voting System",
+            subtitle: "Web Application • Full Stack & Cloud Real-Time",
+            technologies: "Java 21, JavaScript (ES6+ Modules), Firebase Auth, Cloud Firestore, HTML5, CSS3",
+            year: "2026",
+            description: `
+                <p><strong>Project Overview:</strong> <strong>CineVoto 2.0</strong> is a high-performance, modern web application engineered to democratically streamline movie selection for group and family movie nights in real time. In version 2.0, the system underwent a major architectural overhaul: replacing local text-file persistence with the cloud infrastructure of <strong>Google Firebase</strong> (Authentication and Cloud Firestore), coupled with an ultra-lightweight native <strong>Java 21</strong> backend server.</p>
+
+                <p><strong>Core Features & Technical Architecture:</strong></p>
+
+                <img src="../static/assets/CineVoto/Login.png" class="img-float-right" alt="Google Sign-In Authentication Screen">
+
+                <p><strong>Federated Authentication with Google (Firebase Auth):</strong> Secure one-click login powered by Google Identity. Each voter is instantly authenticated with their verified display name, email, and photo avatar, guaranteeing accountability and vote integrity across the session.</p>
+
+                <img src="../static/assets/CineVoto/HomePage.png" class="img-float-left" alt="Home Dashboard and Room Creation">
+
+                <p><strong>Dynamic Rooms & Role Segregation (Admin vs Voters):</strong> Strict separation of responsibilities. The <strong>Room Creator (Admin)</strong> provisions a 6-character access room code and manages the round movie catalog. <strong>Voters</strong> join instantaneously through direct shared links (<code>?sala=CODE</code>) or manual code entry.</p>
+
+                <img src="../static/assets/CineVoto/TelaAdministradorSala.png" class="img-float-right" alt="Admin Control Center with Live Tallying">
+
+                <p><strong>Admin Control Center & Live Tallying:</strong> The administration dashboard monitors connected voters in real time (displaying visual avatars), delivers an auditable live vote count, and manages round termination with automatic winning title declaration.</p>
+
+                <img src="../static/assets/CineVoto/TelaVotacao.png" class="img-float-left" alt="Interactive Voting Interface">
+
+                <p><strong>Interactive & Responsive Voting UI:</strong> Dark Cinema aesthetic with vibrant neon highlights, providing intuitive voting gestures with immediate visual feedback across mobile and desktop environments.</p>
+
+                <img src="../static/assets/CineVoto/ConvidadoVotando.png" class="img-float-right" alt="Real-Time Guest Experience">
+
+                <p><strong>Real-Time Synchronization (Cloud Firestore):</strong> Utilizing reactive <code>onSnapshot</code> listeners, vote submissions, participant joins, and catalog changes propagate instantly across all active screens with zero page reloads or polling overhead.</p>
+
+                <div class="clear" style="margin-bottom: 15px;"></div>
+
+                <img src="../static/assets/CineVoto/Banco de dados Firestore.png" class="img-float-left" alt="Cloud Firestore NoSQL Database Console">
+
+                <p><strong>NoSQL Cloud Persistence & Permanent History:</strong> Distributed data modeling in <strong>Cloud Firestore</strong>. Winning movies are permanently appended to the user profile (<code>usuarios/{uid}.filmesAssistidos</code>), preserving individual movie night histories across session resets.</p>
+
+                <div class="clear" style="margin-bottom: 15px;"></div>
+
+                <p><strong>Software Engineering, Java Backend & Security:</strong></p>
+                <p>• <strong>Ultra-Lightweight Java 21 Backend:</strong> High-throughput HTTP server leveraging standard JDK networking APIs (<code>com.sun.net.httpserver</code>). Sub-second boot times, zero heavy external frameworks, and minimal RAM footprint.</p>
+                <p>• <strong>Intelligent Duplicate Prevention:</strong> Case-insensitive, diacritic-insensitive normalization algorithm (e.g., <em>"A Origem"</em>, <em>"a origem"</em>, and <em>"À Origem"</em> resolve identically), preventing duplicate movie entries and re-nominating already watched titles.</p>
+                <p>• <strong>Security Rules & Credential Isolation:</strong> Declarative Cloud Firestore Security Rules (<code>firestore.rules</code>) restricting write access to authenticated users, with API credentials completely isolated via <code>.gitignore</code> and clean <code>firebase-config.example.js</code> templates.</p>
+                <p>• <strong>GitHub Repository:</strong> <a href="https://github.com/zambonib/cinevoto" target="_blank" style="color: #39ff14; text-decoration: underline; font-weight: 600;">github.com/zambonib/cinevoto</a></p>
             `
         }
     }

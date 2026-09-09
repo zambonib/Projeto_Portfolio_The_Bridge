@@ -18,6 +18,7 @@ const translations = {
         "certs_title": "# Certificados conquistados",
         "cert_1_title": "Global Solution FIAP 2025", "cert_1_meta": "FIAP - 2025", "cert_1_desc": '"Certificado do Desafio Global Solution da FIAP de 2025, aonde criamos e apresentamos o projeto NoHall, que foi o grande Campeão do Desafio."',
         "cert_2_title": "Análise e Desenvolvimento de Sistemas", "cert_2_meta": "FIAP - 1º Semestre", "cert_2_desc": '"Conclusão com excelência dos módulos fundamentais de engenharia de software, modelagem de dados e design thinking."',
+        "cert_fiap2_title": "Análise e Desenvolvimento de Sistemas • 2º Semestre", "cert_fiap2_meta": "FIAP - 2º Semestre • Selo Ouro (Média 9.5)", "cert_fiap2_desc": '"Conclusão do 2º semestre com excelência, conquistando o prestigioso Selo Ouro da FIAP pela segunda vez consecutiva com média geral de 9.5, com destaque em desenvolvimento de software, arquitetura de sistemas e soluções tecnológicas."',
         "cert_3_title": "Formação Cloud & DevOps", "cert_3_desc": '"Domínio em práticas ágeis, CI/CD, automação de infraestrutura e orquestração de containers."',
         "cert_4_desc": '"Capacitação avançada em desenho e implantação de arquiteturas altamente escaláveis, seguras e resilientes na nuvem AWS."',
         "cert_5_title": "Segurança de Redes: pfSense & Snort", "cert_5_meta": "Especialização em Cybersecurity", "cert_5_desc": '"Especialização em implementação de firewalls avançados e sistemas de detecção/prevenção de intrusão (IDS/IPS)."',
@@ -28,6 +29,8 @@ const translations = {
         "proj_4_tag": "Vencedor do FIAP Global Solution 2025 (1º Lugar)", "proj_4_title": "Projeto Premiado: Nohall – Connection with Value",
         "proj_5_tag": "Front-end & UX/UI", "proj_5_title": "The Bridge: Portfólio Interativo com JavaScript",
         "proj_6_tag": "Challenge FIAP • HealthTech", "proj_6_title": "Care Plus Family: Gamificação & Saúde Integrada",
+        "proj_7_tag": "Challenge FIAP • Mobile & IA", "proj_7_title": "ELO: App Mobile ESG com IA Gemini & SQLite",
+        "proj_8_tag": "Real-Time Web App • Java & Firebase", "proj_8_title": "CineVoto 2.0: Votação em Tempo Real com Cloud Firestore",
         "footer_dev": "Desenvolvido por Bruno Zamboni", "footer_motto": "Desenvolvemos muito além do software", "footer_rights": "Todos os direitos reservados a Dalzam 2026",
         "egg_1": "Parabéns, você encontrou um dos códigos escondidos neste portfólio!", "egg_2": 'Digite no seu teclado a qualquer momento o nome da empresa desenvolvedora <strong style="color: #39ff14;">dalzam</strong> e veja o que acontece.', "egg_3": 'Atenciosamente "O Arquiteto".',
         "terminal_welcome": "The Bridge System [Version 1.0.5]<br>Bem-vindo ao modo desenvolvedor.<br>Digite <span class='cmd-highlight'>'help'</span> para ver os comandos.<br><br>"
@@ -48,6 +51,7 @@ const translations = {
         "certs_title": "# Earned Certificates",
         "cert_1_title": "Global Solution FIAP 2025", "cert_1_meta": "FIAP - 2025", "cert_1_desc": '"Certificate from the 2025 FIAP Global Solution Challenge, where we created the NoHall project, the grand Champion of the Challenge."',
         "cert_2_title": "Systems Analysis and Development", "cert_2_meta": "FIAP - 1st Semester", "cert_2_desc": '"Excellence in completion of core software engineering, data modeling, and design thinking modules."',
+        "cert_fiap2_title": "Systems Analysis and Development • 2nd Semester", "cert_fiap2_meta": "FIAP - 2nd Semester • Gold Badge (9.5 GPA)", "cert_fiap2_desc": '"Completion of the 2nd semester with outstanding honors, earning the prestigious FIAP Gold Badge for the second consecutive time with a 9.5 GPA, excelling in software engineering, system architecture, and tech solutions."',
         "cert_3_title": "Cloud & DevOps Formation", "cert_3_desc": '"Mastery in agile practices, CI/CD, infrastructure automation, and container orchestration."',
         "cert_4_desc": '"Advanced training in designing and deploying highly scalable, secure, and resilient architectures on AWS cloud."',
         "cert_5_title": "Network Security: pfSense & Snort", "cert_5_meta": "Cybersecurity Specialization", "cert_5_desc": '"Specialization in implementing advanced firewalls and intrusion detection/prevention systems (IDS/IPS)."',
@@ -58,6 +62,8 @@ const translations = {
         "proj_4_tag": "Winner of FIAP Global Solution 2025 (1st Place)", "proj_4_title": "Award-winning Project: Nohall – Connection with Value",
         "proj_5_tag": "Front-end & UX/UI", "proj_5_title": "The Bridge: Interactive Portfolio with JavaScript",
         "proj_6_tag": "FIAP Challenge • HealthTech", "proj_6_title": "Care Plus Family: Gamification & Integrated Healthcare",
+        "proj_7_tag": "FIAP Challenge • Mobile & AI", "proj_7_title": "ELO: ESG Mobile App with Gemini AI & SQLite",
+        "proj_8_tag": "Real-Time Web App • Java & Firebase", "proj_8_title": "CineVoto 2.0: Real-Time Voting with Cloud Firestore",
         "footer_dev": "Developed by Bruno Zamboni", "footer_motto": "We develop much more than software", "footer_rights": "All rights reserved to Dalzam 2026",
         "egg_1": "Congratulations, you found one of the hidden codes in this portfolio!", "egg_2": 'Type the name of the development company <strong style="color: #39ff14;">dalzam</strong> on your keyboard at any time and see what happens.', "egg_3": 'Sincerely "The Architect".',
         "terminal_welcome": "The Bridge System [Version 1.0.5]<br>Welcome to developer mode.<br>Type <span class='cmd-highlight'>'help'</span> to see commands.<br><br>"
@@ -207,6 +213,8 @@ function processCommand(cmd) {
             break;
         case '2': case 'projetos':
             printToTerminal("<br>--- PROJETOS ---", "#0ea5e9");
+            printToTerminal("> CINEVOTO 2.0: Votação em tempo real com Java e Firebase.");
+            printToTerminal("> ELO ESG: App Mobile Android Nativo com Gemini AI e SQLite.");
             printToTerminal("> MEU BOLSO: Gestor Financeiro em Java Spring Boot.");
             printToTerminal("> NOHALL: Solução HR Tech premiada (1º Lugar FIAP).");
             printToTerminal("> CARPLUSFAMILY: Redução de No-Show em clínicas.");
@@ -298,6 +306,10 @@ function startMatrixBackground(canvasElement) {
 /* 5. FLASHCARDS DE HABILIDADES                            */
 /* ======================================================= */
 const skillsDB = {
+    'Java': { pt: { t: 'Java', d: 'Desenvolvimento Back-end com Java (Java 21+ / Spring Boot), arquitetura de APIs RESTful, servidores HTTP nativos ultraleves (com.sun.net.httpserver), Programação Orientada a Objetos robusta, Clean Code e padrões de projeto corporativos.' }, en: { t: 'Java', d: 'Back-end development with Java (Java 21+ / Spring Boot), RESTful API architecture, ultra-lightweight native HTTP servers (com.sun.net.httpserver), robust OOP principles, Clean Code, and enterprise design patterns.' } },
+    'Firebase': { pt: { t: 'Firebase (Google Cloud)', d: 'Implementação de Cloud Firestore para bancos NoSQL com sincronização em tempo real (onSnapshot), autenticação federada (Firebase Auth com Google Sign-In), regras de segurança granulares (Security Rules) e hospedagem.' }, en: { t: 'Firebase (Google Cloud)', d: 'Cloud Firestore implementation for real-time NoSQL databases (onSnapshot), federated authentication (Firebase Auth with Google Sign-In), granular Security Rules, and cloud hosting.' } },
+    'Kotlin': { pt: { t: 'Kotlin', d: 'Desenvolvimento Android Nativo moderno com Kotlin 2.0, Jetpack Compose (M3), Coroutines, StateFlow, Room Database (SQLite), Dagger Hilt (DI) e integração com Google Gemini AI e Firebase.' }, en: { t: 'Kotlin', d: 'Modern Android Native development using Kotlin 2.0, Jetpack Compose (M3), Coroutines, StateFlow, Room Database (SQLite), Dagger Hilt (DI), and Google Gemini AI & Firebase integration.' } },
+    'SQL': { pt: { t: 'SQL & Bancos de Dados', d: 'Modelagem conceitual e relacional (MER/DER), consultas complexas, joins, índices, otimização de queries e persistência de dados em Oracle DB, SQLite/Room e PostgreSQL.' }, en: { t: 'SQL & Databases', d: 'Conceptual and relational modeling (ERD), complex queries, joins, indexing, query optimization, and data persistence in Oracle DB, SQLite/Room, and PostgreSQL.' } },
     'Proxmox': { pt: { t: 'Proxmox', d: 'Implantação do Hypervisor, Gerenciamento de maquinas virtuais,  Cluster e Containers LXC. Rotinas de backup com Proxmox Backup Server.' }, en: { t: 'Proxmox', d: 'Hypervisor deployment and management of Virtual Machines (VMs), Clusters, and LXC Containers. Expertise in establishing backup routines using Proxmox Backup Server (PBS).' } },
     'AWS': { pt: { t: 'AWS', d: 'Provisionamento (EC2) e redes seguras (VPC). Especialista em FinOps e arquiteturas resilientes, reduzindo o TCO através de políticas de backup no S3' }, en: { t: 'AWS', d: 'EC2 provisioning and secure networking (VPC). FinOps and resilient architecture specialist, reducing TCO through S3 backup policies.' } },
     'Windows_Server': { pt: { t: 'Windows_Server', d: 'Administração de ponta a ponta de Windows Server. Domínio em serviços essenciais (AD DS, DNS, GPOs), virtualização com Hyper-V e automação de tarefas via PowerShell.' }, en: { t: 'Windows_Server', d: 'End-to-end Windows Server administration. Expertise in core services (AD DS, DNS, GPOs), Hyper-V virtualization, and task automation via PowerShell.' } },
