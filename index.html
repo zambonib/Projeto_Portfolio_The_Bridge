@@ -15,6 +15,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
 
     <link rel="stylesheet" href="./static/css/style.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NDD0KP8H0N"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-NDD0KP8H0N');
+    </script>
 </head>
 
 <body>
@@ -52,8 +62,8 @@
             </span>
 
             <span>
-                <span data-i18n="system_lbl">Sistema:</span>
-                <span class="system-val" style="color: #39ff14;" data-i18n="system_status">Online</span>
+                <span data-i18n="counter_lbl">Contador:</span>
+                <span id="visitor-counter" class="system-val" style="color: #39ff14; font-family: 'Courier New', monospace; letter-spacing: 2px;">00001</span>
             </span>
         </div>
     </div>
@@ -310,6 +320,59 @@
         <span class="cert-modal-close" onclick="closeCertModal()">X</span>
         <img class="cert-modal-content" id="cert-full-img" alt="Certificado em Tela Cheia">
     </div>
+
+    <!-- Firebase App e Cloud Firestore (Compat CDN para integração rápida e sem bundler) -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCq0UBmEpRX3-9GEA60iqL48-MhUmGRsu0",
+            authDomain: "portfolio-a37e1.firebaseapp.com",
+            projectId: "portfolio-a37e1",
+            storageBucket: "portfolio-a37e1.firebasestorage.app",
+            messagingSenderId: "536595038597",
+            appId: "1:536595038597:web:aa8dcbb5ea6c51be74c4ec",
+            measurementId: "G-FC97NR1XHE"
+        };
+
+        if (!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig);
+        }
+        const db = firebase.firestore();
+
+        async function initVisitorCounter() {
+            const counterEl = document.getElementById('visitor-counter');
+            if (!counterEl) return;
+
+            const docRef = db.collection('estatisticas').doc('visitas');
+            const sessionKey = 'the_bridge_visited_session';
+
+            try {
+                // Incrementa apenas uma vez por sessão de navegação (evita F5 contínuo inflando o contador)
+                if (!sessionStorage.getItem(sessionKey)) {
+                    await docRef.set({
+                        total: firebase.firestore.FieldValue.increment(1),
+                        ultimoAcesso: firebase.firestore.FieldValue.serverTimestamp()
+                    }, { merge: true });
+                    sessionStorage.setItem(sessionKey, 'true');
+                }
+
+                // Escuta em tempo real o valor do contador
+                docRef.onSnapshot((doc) => {
+                    if (doc.exists && doc.data().total !== undefined) {
+                        const total = doc.data().total;
+                        counterEl.innerText = String(total).padStart(5, '0');
+                    }
+                }, (error) => {
+                    console.warn("Aviso Firestore Contador:", error);
+                });
+            } catch (err) {
+                console.warn("Erro ao atualizar contador:", err);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', initVisitorCounter);
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
     <script src="./static/js/script.js"></script>
