@@ -1,0 +1,566 @@
+/* ======================================================= */
+/* MODAL DO CURRÍCULO INTERATIVO (CV) & ESTILOS A4/ATS     */
+/* ======================================================= */
+
+.cv-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(3, 7, 18, 0.92);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    animation: fadeInModal 0.25s ease forwards;
+}
+
+@keyframes fadeInModal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.cv-modal-wrapper {
+    background: #0b1120;
+    border: 1px solid rgba(14, 165, 233, 0.35);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 980px;
+    height: 94vh;
+    max-height: 94vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 25px 65px rgba(0, 0, 0, 0.8), 0 0 30px rgba(14, 165, 233, 0.25);
+    overflow: hidden;
+}
+
+/* Barra de Ações Superior */
+.cv-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    background: #0f172a;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+    z-index: 10;
+}
+
+.cv-toolbar-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #38bdf8;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cv-toolbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cv-lang-toggle {
+    display: flex;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 2px;
+}
+
+.cv-lang-btn {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 6px 14px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cv-lang-btn.active {
+    background: #0ea5e9;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(14, 165, 233, 0.5);
+}
+
+.btn-cv-download {
+    background: #10b981;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 18px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+}
+
+.btn-cv-download:hover {
+    background: #059669;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
+    transform: translateY(-1px);
+}
+
+.btn-cv-download:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.cv-close-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #cbd5e1;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cv-close-btn:hover {
+    background: #ef4444;
+    border-color: #ef4444;
+    color: #ffffff;
+}
+
+/* Área de Rolagem do Documento */
+.cv-document-scroll {
+    flex: 1;
+    overflow-y: auto;
+    padding: 30px 15px;
+    background: #050811;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#cv-document {
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    box-sizing: border-box;
+}
+
+/* ======================================================= */
+/* ESTRUTURA DE PÁGINA INDIVIDUAL A4 (PÁGINA 1 E PÁGINA 2) */
+/* ======================================================= */
+
+.cv-page {
+    background-color: #ffffff !important;
+    color: #1e293b !important;
+    width: 800px;
+    min-width: 800px;
+    max-width: 800px;
+    height: 1131px;
+    min-height: 1131px;
+    max-height: 1131px;
+    padding: 30px 42px 20px 42px;
+    border-radius: 6px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    line-height: 1.4;
+    text-align: left;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Estado limpo durante a geração do PDF para evitar sombras ou bordas cortadas */
+.cv-page.cv-pdf-rendering {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+}
+
+/* Isolamento total contra estilos escuros ou gradientes globais */
+.cv-page, .cv-page * {
+    background-image: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    box-sizing: border-box;
+}
+
+/* Cabeçalho da Página 1 */
+.cv-header-p1 {
+    border-bottom: 2px solid #0284c7;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+}
+
+.cv-page .cv-name {
+    font-size: 26px !important;
+    font-weight: 800 !important;
+    color: #0f172a !important; /* Grafite escuro forte garantido */
+    margin: 0 0 3px 0 !important;
+    letter-spacing: -0.5px !important;
+    line-height: 1.15 !important;
+    background: transparent !important;
+    background-image: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
+.cv-page .cv-headline {
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #0284c7 !important;
+    margin: 0 0 8px 0 !important;
+    -webkit-text-fill-color: #0284c7 !important;
+}
+
+.cv-contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    font-size: 11.5px !important;
+    color: #334155 !important;
+    margin-bottom: 4px;
+}
+
+.cv-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #334155 !important;
+    -webkit-text-fill-color: #334155 !important;
+}
+
+.cv-contact-item i {
+    color: #0284c7 !important;
+    font-size: 11px;
+}
+
+.cv-contact-item a {
+    color: #0284c7 !important;
+    -webkit-text-fill-color: #0284c7 !important;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.cv-contact-item a:hover {
+    text-decoration: underline;
+}
+
+.cv-contact-notice {
+    font-size: 11px !important;
+    font-style: italic;
+    color: #0369a1 !important;
+    background: #f0f9ff !important;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border-left: 3px solid #0284c7;
+    margin-top: 5px;
+    -webkit-text-fill-color: #0369a1 !important;
+}
+
+/* Cabeçalho Contínuo da Página 2 (Estilo Word) */
+.cv-word-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1.5px solid #cbd5e1;
+    padding-bottom: 6px;
+    margin-bottom: 12px;
+}
+
+.cv-word-header-name {
+    font-size: 13.5px !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: transparent !important;
+    background-image: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
+.cv-word-header-title {
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    color: #0284c7 !important;
+    -webkit-text-fill-color: #0284c7 !important;
+}
+
+/* Seções e Conteúdo */
+.cv-section {
+    margin-bottom: 11px;
+}
+
+.cv-page .cv-section-title {
+    font-size: 12.5px !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 3px;
+    margin: 0 0 6px 0 !important;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
+.cv-section-title i {
+    color: #0284c7 !important;
+    font-size: 11.5px;
+}
+
+.cv-page .cv-summary-p {
+    font-size: 11.5px !important;
+    color: #334155 !important;
+    text-align: justify;
+    line-height: 1.48;
+    margin: 0 !important;
+    -webkit-text-fill-color: #334155 !important;
+}
+
+/* Competências em Grade */
+.cv-skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.5px;
+}
+
+.cv-skill-row {
+    font-size: 11.5px !important;
+    color: #334155 !important;
+    line-height: 1.38;
+    -webkit-text-fill-color: #334155 !important;
+}
+
+.cv-skill-label {
+    font-weight: 700 !important;
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
+/* Itens de Experiência e Projetos */
+.cv-timeline-item {
+    margin-bottom: 7.5px;
+}
+
+.cv-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1px;
+}
+
+.cv-item-title {
+    font-size: 12.5px !important;
+    font-weight: 700 !important;
+    color: #0f172a !important;
+    background: transparent !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
+.cv-item-subtitle {
+    font-size: 11.5px !important;
+    font-weight: 600 !important;
+    color: #0284c7 !important;
+    -webkit-text-fill-color: #0284c7 !important;
+}
+
+.cv-item-desc {
+    font-size: 11px !important;
+    color: #475569 !important;
+    line-height: 1.38;
+    margin: 1px 0 0 0 !important;
+    -webkit-text-fill-color: #475569 !important;
+}
+
+/* Listas de Formação & Certificações */
+.cv-bullet-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.cv-bullet-list li {
+    font-size: 11.5px !important;
+    color: #334155 !important;
+    margin-bottom: 4px;
+    position: relative;
+    padding-left: 15px;
+    line-height: 1.36;
+    -webkit-text-fill-color: #334155 !important;
+}
+
+.cv-bullet-list li::before {
+    content: "•";
+    color: #0284c7 !important;
+    font-weight: bold;
+    font-size: 13px;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+/* Rodapé das Páginas (Presente na Folha 1 e Folha 2) */
+.cv-page-footer {
+    border-top: 1px solid #cbd5e1;
+    padding-top: 8px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10.5px !important;
+    color: #64748b !important;
+    -webkit-text-fill-color: #64748b !important;
+    flex-shrink: 0;
+}
+
+.cv-footer-left {
+    font-size: 10.5px !important;
+    color: #475569 !important;
+    -webkit-text-fill-color: #475569 !important;
+}
+
+.cv-footer-left strong {
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
+.cv-footer-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cv-footer-links a {
+    color: #0284c7 !important;
+    -webkit-text-fill-color: #0284c7 !important;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.cv-footer-links a:hover {
+    text-decoration: underline;
+}
+
+.cv-footer-page-num {
+    font-weight: 700;
+    color: #0f172a !important;
+    -webkit-text-fill-color: #0f172a !important;
+}
+
+/* Botão Visualizar CV no Hero */
+.btn-cv-hero {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 30px;
+    background: rgba(14, 165, 233, 0.12);
+    border: 1px solid #0ea5e9;
+    color: #38bdf8;
+    border-radius: 50px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(14, 165, 233, 0.2);
+}
+
+.btn-cv-hero:hover {
+    background: #0ea5e9;
+    color: #ffffff;
+    box-shadow: 0 0 25px rgba(14, 165, 233, 0.6);
+    transform: translateY(-2px);
+}
+
+/* Regras de Impressão Direta */
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 0;
+    }
+    body * {
+        visibility: hidden !important;
+    }
+    #cv-modal, #cv-modal * {
+        visibility: visible !important;
+    }
+    .cv-modal-overlay {
+        position: static !important;
+        background: transparent !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+    .cv-modal-wrapper {
+        border: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+        max-width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+    .cv-toolbar {
+        display: none !important;
+    }
+    .cv-document-scroll {
+        background: transparent !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        height: auto !important;
+        max-height: none !important;
+        display: block !important;
+    }
+    #cv-document {
+        gap: 0 !important;
+        max-width: 100% !important;
+        display: block !important;
+    }
+    .cv-page {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 297mm !important;
+        min-height: 297mm !important;
+        max-height: 297mm !important;
+        box-sizing: border-box !important;
+        padding: 12mm 15mm 10mm 15mm !important;
+        page-break-after: always !important;
+        break-after: page !important;
+    }
+    .cv-page:last-child {
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+    }
+}

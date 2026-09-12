@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
 
     <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="./static/css/cv.css">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NDD0KP8H0N"></script>
@@ -51,8 +52,11 @@
             Agora chegou a hora de criarmos experiências.
         </p>
 
-        <div class="buttons-container">
+        <div class="buttons-container" style="display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap;">
             <button id="cv-button" data-i18n="btn_contact">FALE COMIGO NO LINKEDIN</button>
+            <button id="btn-open-cv" class="btn-cv-hero" onclick="openCvModal()">
+                <i class="fas fa-file-alt"></i> <span data-i18n="btn_view_cv">VISUALIZAR CURRÍCULO</span>
+            </button>
             <a href="#retrospectiva" class="btn-glass" data-i18n="btn_projects">Explorar Projetos</a>
         </div>
 
@@ -321,6 +325,35 @@
         <img class="cert-modal-content" id="cert-full-img" alt="Certificado em Tela Cheia">
     </div>
 
+    <!-- MODAL DO CURRÍCULO DINÂMICO INTERATIVO (CV) -->
+    <div id="cv-modal" class="cv-modal-overlay">
+        <div class="cv-modal-wrapper">
+            <div class="cv-toolbar">
+                <div class="cv-toolbar-title">
+                    <i class="fas fa-file-invoice" style="color: #0ea5e9;"></i>
+                    <span data-i18n="cv_modal_title">Currículo Profissional</span>
+                </div>
+                <div class="cv-toolbar-actions">
+                    <div class="cv-lang-toggle">
+                        <button id="cv-btn-pt" class="cv-lang-btn active" onclick="setModalCvLang('pt')">PT</button>
+                        <button id="cv-btn-en" class="cv-lang-btn" onclick="setModalCvLang('en')">EN</button>
+                    </div>
+                    <button class="btn-cv-download" onclick="downloadCvPdf()">
+                        <i class="fas fa-file-pdf"></i> <span data-i18n="btn_download_pdf">Baixar PDF</span>
+                    </button>
+                    <button class="cv-close-btn" onclick="closeCvModal()" title="Fechar">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="cv-document-scroll">
+                <div id="cv-document" class="cv-paper">
+                    <!-- Conteúdo dinâmico gerado via cv-data.js -->
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Firebase App e Cloud Firestore (Compat CDN para integração rápida e sem bundler) -->
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
@@ -374,6 +407,10 @@
         document.addEventListener('DOMContentLoaded', initVisitorCounter);
     </script>
 
+    <!-- Bibliotecas para exportação em PDF A4 de alta fidelidade -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="./static/js/cv-data.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
     <script src="./static/js/script.js"></script>
 </body>

@@ -8,6 +8,9 @@ const translations = {
         "hero_desc": "Criei meu portfólio para mostrar minhas Habilidades e Projetos.",
         "hero_exp": "Quase duas décadas orquestrando ambientes complexos e resolvendo problemas críticos. Hoje, aplico essa bagagem sênior para codar soluções inteligentes em Java e Python. Não apenas escrevo software; eu projeto sistemas que nascem para performar.",
         "btn_contact": "FALE COMIGO NO LINKEDIN",
+        "btn_view_cv": "VISUALIZAR CURRÍCULO",
+        "cv_modal_title": "Currículo Profissional",
+        "btn_download_pdf": "Baixar PDF",
         "uptime_lbl": "Uptime:", "system_lbl": "Sistema:", "system_status": "Online", "counter_lbl": "Contador:",
         "skills_title": "# Minhas habilidades e posturas profissional",
         "click_details": "Tecnologias que domino. Clique para detalhes.",
@@ -41,6 +44,9 @@ const translations = {
         "hero_desc": "I created my portfolio to showcase my Skills and Projects.",
         "hero_exp": "Nearly two decades orchestrating complex environments and solving critical problems. Today, I apply this senior experience to code intelligent solutions in Java and Python. I don't just write software; I design systems built to perform.",
         "btn_contact": "TALK TO ME ON LINKEDIN",
+        "btn_view_cv": "VIEW RESUME",
+        "cv_modal_title": "Professional Resume",
+        "btn_download_pdf": "Download PDF",
         "uptime_lbl": "Uptime:", "system_lbl": "System:", "system_status": "Online", "counter_lbl": "Visitor Count:",
         "skills_title": "# My Skills and Professional Stance",
         "click_details": "Technologies I master. Click for details.",
@@ -392,6 +398,271 @@ function initCertificateModal() {
 function closeCertModal() { 
     const modal = document.getElementById('cert-modal'); 
     if (modal) modal.style.display = 'none'; 
+}
+
+/* ======================================================= */
+/* 8. CONTROLADOR DO CURRÍCULO DINÂMICO (MODAL & PDF)      */
+/* ======================================================= */
+let currentCvLang = 'pt';
+
+function openCvModal() {
+    const modal = document.getElementById('cv-modal');
+    if (!modal) return;
+
+    // Sincroniza o idioma inicial com o idioma atual do portfólio
+    const savedLang = localStorage.getItem('preferredLanguage') || 'pt';
+    currentCvLang = savedLang;
+
+    setModalCvLang(currentCvLang);
+    modal.style.display = 'flex';
+}
+
+function closeCvModal() {
+    const modal = document.getElementById('cv-modal');
+    if (modal) modal.style.display = 'none';
+}
+
+function setModalCvLang(lang) {
+    currentCvLang = lang;
+
+    const btnPt = document.getElementById('cv-btn-pt');
+    const btnEn = document.getElementById('cv-btn-en');
+    if (btnPt && btnEn) {
+        btnPt.classList.toggle('active', lang === 'pt');
+        btnEn.classList.toggle('active', lang === 'en');
+    }
+
+    renderCv(lang);
+}
+
+function renderCv(lang) {
+    const container = document.getElementById('cv-document');
+    if (!container || typeof cvData === 'undefined' || !cvData[lang]) return;
+
+    const d = cvData[lang];
+    const p = d.personal;
+
+    const page1Experiences = d.experiences.slice(0, 4);
+    const page2Experiences = d.experiences.slice(4);
+
+    let html = `
+        <!-- PÁGINA 1 (FOLHA A4) -->
+        <article id="cv-page-1" class="cv-page">
+            <div class="cv-page-main">
+                <header class="cv-header-p1">
+                    <div class="cv-name" style="color: #0f172a !important; -webkit-text-fill-color: #0f172a !important; background: transparent !important; -webkit-background-clip: border-box !important;">${p.name}</div>
+                    <div class="cv-headline">${p.title}</div>
+                    <div class="cv-contacts">
+                        <span class="cv-contact-item"><i class="fas fa-map-marker-alt"></i> ${p.location}</span>
+                        <span class="cv-contact-item"><i class="fas fa-envelope"></i> <a href="mailto:${p.email}">${p.email}</a></span>
+                        <span class="cv-contact-item"><i class="fab fa-linkedin"></i> <a href="${p.linkedinUrl}" target="_blank">${p.linkedin}</a></span>
+                        <span class="cv-contact-item"><i class="fab fa-github"></i> <a href="${p.githubUrl}" target="_blank">${p.github}</a></span>
+                        <span class="cv-contact-item"><i class="fab fa-instagram"></i> <a href="${p.instagramUrl}" target="_blank">${p.instagram}</a></span>
+                        <span class="cv-contact-item"><i class="fas fa-globe"></i> <a href="${p.portfolioUrl}" target="_blank">${p.portfolio}</a></span>
+                    </div>
+                    <div class="cv-contact-notice">
+                        <i class="fas fa-info-circle"></i> ${p.contactNotice}
+                    </div>
+                </header>
+
+                <section class="cv-section">
+                    <div class="cv-section-title"><i class="fas fa-user-tie"></i> ${d.summaryTitle}</div>
+                    <p class="cv-summary-p">${d.summaryText}</p>
+                </section>
+
+                <section class="cv-section">
+                    <div class="cv-section-title"><i class="fas fa-layer-group"></i> ${d.skillsTitle}</div>
+                    <div class="cv-skills-grid">
+                        ${d.skillsGroups.map(g => `
+                            <div class="cv-skill-row">
+                                <span class="cv-skill-label">• ${g.category}:</span> ${g.items}
+                            </div>
+                        `).join('')}
+                    </div>
+                </section>
+
+                <section class="cv-section" style="margin-bottom: 0;">
+                    <div class="cv-section-title"><i class="fas fa-briefcase"></i> ${d.experienceTitle}</div>
+                    ${page1Experiences.map(e => `
+                        <div class="cv-timeline-item">
+                            <div class="cv-item-header">
+                                <span class="cv-item-title">${e.company}</span>
+                                <span class="cv-item-subtitle">${e.role}</span>
+                            </div>
+                            <div class="cv-item-desc">${e.description}</div>
+                        </div>
+                    `).join('')}
+                </section>
+            </div>
+
+            <footer class="cv-page-footer">
+                <div class="cv-footer-left"><strong>Bruno Zamboni</strong> • ${p.title}</div>
+                <div class="cv-footer-links">
+                    <a href="${p.portfolioUrl}" target="_blank">Portfólio</a> •
+                    <a href="${p.linkedinUrl}" target="_blank">LinkedIn</a> •
+                    <a href="${p.githubUrl}" target="_blank">GitHub</a> •
+                    <a href="${p.instagramUrl}" target="_blank">Instagram</a>
+                </div>
+                <div class="cv-footer-page-num">${lang === 'pt' ? 'Página 1 de 2' : 'Page 1 of 2'}</div>
+            </footer>
+        </article>
+
+        <!-- PÁGINA 2 (FOLHA A4 COM CABEÇALHO ESTILO WORD) -->
+        <article id="cv-page-2" class="cv-page">
+            <div class="cv-page-main">
+                <header class="cv-word-header">
+                    <div class="cv-word-header-name" style="color: #0f172a !important; -webkit-text-fill-color: #0f172a !important; background: transparent !important; -webkit-background-clip: border-box !important;">${p.name}</div>
+                    <div class="cv-word-header-title">${p.title}</div>
+                </header>
+
+                <section class="cv-section">
+                    <div class="cv-section-title"><i class="fas fa-briefcase"></i> ${d.experienceTitle} (${lang === 'pt' ? 'Continuação' : 'Continued'})</div>
+                    ${page2Experiences.map(e => `
+                        <div class="cv-timeline-item">
+                            <div class="cv-item-header">
+                                <span class="cv-item-title">${e.company}</span>
+                                <span class="cv-item-subtitle">${e.role}</span>
+                            </div>
+                            <div class="cv-item-desc">${e.description}</div>
+                        </div>
+                    `).join('')}
+                </section>
+
+                <section class="cv-section">
+                    <div class="cv-section-title"><i class="fas fa-code-branch"></i> ${d.projectsTitle}</div>
+                    ${d.projects.map(proj => `
+                        <div class="cv-timeline-item">
+                            <div class="cv-item-header">
+                                <span class="cv-item-title">${proj.name}</span>
+                                <span class="cv-item-subtitle" style="font-size: 11px; color: #0284c7;">${proj.tech}</span>
+                            </div>
+                            <div class="cv-item-desc">${proj.description}</div>
+                        </div>
+                    `).join('')}
+                </section>
+
+                <section class="cv-section">
+                    <div class="cv-section-title"><i class="fas fa-graduation-cap"></i> ${d.educationTitle}</div>
+                    <ul class="cv-bullet-list">
+                        ${d.educations.map(edu => `
+                            <li><strong>${edu.institution}</strong> – ${edu.course} <br><span style="color: #64748b; font-size: 11px;">${edu.details}</span></li>
+                        `).join('')}
+                    </ul>
+                </section>
+
+                <section class="cv-section" style="margin-bottom: 0;">
+                    <div class="cv-section-title"><i class="fas fa-certificate"></i> ${d.certificationsTitle}</div>
+                    <ul class="cv-bullet-list">
+                        ${d.certifications.map(c => `<li>${c}</li>`).join('')}
+                    </ul>
+                </section>
+            </div>
+
+            <footer class="cv-page-footer">
+                <div class="cv-footer-left"><strong>Bruno Zamboni</strong> • ${p.title}</div>
+                <div class="cv-footer-links">
+                    <a href="${p.portfolioUrl}" target="_blank">Portfólio</a> •
+                    <a href="${p.linkedinUrl}" target="_blank">LinkedIn</a> •
+                    <a href="${p.githubUrl}" target="_blank">GitHub</a> •
+                    <a href="${p.instagramUrl}" target="_blank">Instagram</a>
+                </div>
+                <div class="cv-footer-page-num">${lang === 'pt' ? 'Página 2 de 2' : 'Page 2 of 2'}</div>
+            </footer>
+        </article>
+    `;
+
+    container.innerHTML = html;
+}
+
+async function downloadCvPdf() {
+    const page1 = document.getElementById('cv-page-1');
+    const page2 = document.getElementById('cv-page-2');
+    if (!page1 || !page2) return;
+
+    const btnDownload = document.querySelector('.btn-cv-download');
+    const originalBtnHtml = btnDownload ? btnDownload.innerHTML : '';
+    if (btnDownload) {
+        btnDownload.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ' + (currentCvLang === 'pt' ? 'Gerando...' : 'Generating...');
+        btnDownload.disabled = true;
+    }
+
+    // Scroll para o topo para garantir alinhamento perfeito do canvas
+    const scrollContainer = document.querySelector('.cv-document-scroll');
+    const prevScroll = scrollContainer ? scrollContainer.scrollTop : 0;
+    if (scrollContainer) scrollContainer.scrollTop = 0;
+
+    try {
+        page1.classList.add('cv-pdf-rendering');
+        page2.classList.add('cv-pdf-rendering');
+
+        const JsPdfConstructor = (window.jspdf && window.jspdf.jsPDF) ? window.jspdf.jsPDF : window.jsPDF;
+
+        if (window.html2canvas && JsPdfConstructor) {
+            const canvasOpts = {
+                scale: 2,
+                useCORS: true,
+                logging: false,
+                scrollY: 0,
+                scrollX: 0,
+                backgroundColor: '#ffffff'
+            };
+
+            const canvas1 = await window.html2canvas(page1, canvasOpts);
+            const canvas2 = await window.html2canvas(page2, canvasOpts);
+
+            const pdf = new JsPdfConstructor({
+                orientation: 'portrait',
+                unit: 'mm',
+                format: 'a4',
+                compress: true
+            });
+
+            const imgData1 = canvas1.toDataURL('image/jpeg', 0.98);
+            pdf.addImage(imgData1, 'JPEG', 0, 0, 210, 297, undefined, 'FAST');
+
+            pdf.addPage('a4', 'portrait');
+            const imgData2 = canvas2.toDataURL('image/jpeg', 0.98);
+            pdf.addImage(imgData2, 'JPEG', 0, 0, 210, 297, undefined, 'FAST');
+
+            pdf.save(`Curriculo_Bruno_Zamboni_${currentCvLang.toUpperCase()}.pdf`);
+        } else if (typeof html2pdf !== 'undefined') {
+            const opt = {
+                margin: 0,
+                filename: `Curriculo_Bruno_Zamboni_${currentCvLang.toUpperCase()}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true, backgroundColor: '#ffffff' },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            await html2pdf().set(opt).from(document.getElementById('cv-document')).save();
+        } else {
+            window.print();
+        }
+    } catch (err) {
+        console.error("Erro ao gerar PDF:", err);
+        window.print();
+    } finally {
+        page1.classList.remove('cv-pdf-rendering');
+        page2.classList.remove('cv-pdf-rendering');
+        if (scrollContainer) scrollContainer.scrollTop = prevScroll;
+        if (btnDownload) {
+            btnDownload.innerHTML = originalBtnHtml;
+            btnDownload.disabled = false;
+        }
+    }
+}
+
+// Fechar CV Modal com clique fora ou Esc
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeCvModal();
+    }
+});
+
+const cvModalOverlay = document.getElementById('cv-modal');
+if (cvModalOverlay) {
+    cvModalOverlay.addEventListener('click', (e) => {
+        if (e.target === cvModalOverlay) closeCvModal();
+    });
 }
 
 // --- INICIALIZAÇÃO GERAL ---
