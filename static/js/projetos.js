@@ -549,6 +549,115 @@ const projectsDB = {
                 <p>• <strong>GitHub Repository:</strong> <a href="https://github.com/zambonib/cinevoto" target="_blank" style="color: #39ff14; text-decoration: underline; font-weight: 600;">github.com/zambonib/cinevoto</a></p>
             `
         }
+    },
+
+    'meubolso': {
+        image: "../static/assets/MeuBolso/MeuBolso_Dashboard.png",
+        video: null,
+        animation: "../static/assets/MeuBolso/MeuBolso_3.mp4",
+
+        pt: {
+            title: "Meu Bolso — Plataforma SaaS de Gestão Financeira Inteligente & FinOps Pessoal",
+            subtitle: "💳 Java 21 • Spring Boot 3 • React • Spring Security JWT • Multi-tenancy • WhatsApp API • Oracle DB",
+            technologies: "Java 21, Spring Boot 3, Spring Security, JWT, Spring Data JPA, React (Vite), WhatsApp Business API, Oracle DB, MySQL, RESTful APIs, Docker, CI/CD",
+            year: "2026",
+            description: `
+                <p><strong>Resumo do Projeto:</strong> O <strong>Meu Bolso</strong> é uma plataforma SaaS completa de inteligência financeira pessoal e corporativa desenvolvida para entregar controle patrimonial absoluto, previsibilidade orçamentária e automação operacional. Construído com padrões corporativos rigorosos de engenharia de software, o sistema combina um backend de alta performance em <strong>Java 21 com Spring Boot 3</strong>, um frontend moderno e reativo em <strong>React (Vite)</strong> e integração nativa com o <strong>WhatsApp</strong>, permitindo aos usuários acompanhar e registrar transações em tempo real diretamente pelo aplicativo de mensagens mais utilizado do Brasil.</p>
+
+                <p><strong>URL de Produção:</strong> <a href="https://dalzam.com.br/meubolso/" target="_blank" style="color: #38bdf8; text-decoration: underline; font-weight: 700;">dalzam.com.br/meubolso</a></p>
+
+                <p><strong>Principais Funcionalidades & Arquitetura Técnica:</strong></p>
+
+                <video src="../static/assets/MeuBolso/MeuBolso_1.mp4" class="video-float-right" autoplay loop muted playsinline controls></video>
+
+                <p><strong>Backend Corporativo em Java 21 & Spring Boot 3:</strong> Arquitetura orientada a serviços RESTful estruturada sob os princípios <strong>SOLID</strong> e <strong>Clean Architecture</strong>. O backend gerencia o ciclo completo de entidades financeiras (Contas Correntes, Cartões de Crédito, Categorias, Lançamentos e Metas) com DTOs desacoplados, validações reativas e auditoria de transações.</p>
+
+                <p><strong>Segurança & Isolamento Multi-tenant (Spring Security + JWT):</strong> Para garantir privacidade e segurança em um ambiente SaaS compartilhado, implementamos isolamento multi-tenant estrito por usuário. Todas as requisições exigem autenticação via Bearer Token JWT e o <code>SecurityContext</code> injeta o <code>UserPrincipal</code>, garantindo que cada query no banco de dados filtre rigorosamente pelo tenant do usuário logado, com proteção total contra ataques e acesso cruzado.</p>
+
+                <div class="clear" style="margin-bottom: 15px;"></div>
+
+                <video src="../static/assets/MeuBolso/MeuBolso_2.mp4" class="video-float-left" autoplay loop muted playsinline controls></video>
+
+                <p><strong>Gestão Avançada de Cartões de Crédito & Faturas:</strong> Motor inteligente com regras financeiras avançadas: cálculo de limites comprometidos vs disponíveis, datas de corte/fechamento e geração de faturas consolidadas. O sistema projeta faturas futuras com precisão e alerta automaticamente sobre despesas recorrentes.</p>
+
+                <p><strong>Modelagem de Dados Relacional (Oracle DB & MySQL):</strong> Estrutura de dados corporativa normalizada, modelada para alta consistência e integridade referencial. Utiliza o <strong>Spring Data JPA</strong> com consultas analíticas otimizadas, índices balanceados e suporte a múltiplos bancos relacionais corporativos.</p>
+
+                <div class="clear" style="margin-bottom: 15px;"></div>
+
+                <img src="../static/assets/MeuBolso/MeuBolso_WhatsApp.jpeg" class="img-float-right" alt="Integração WhatsApp API">
+
+                <p><strong>Integração com WhatsApp (Automação Conversacional):</strong> Um dos grandes diferenciais operacionais do Meu Bolso é a sua integração com a <strong>WhatsApp Business API</strong> via webhooks no backend Java:</p>
+                <p>• <strong>Lançamentos Instantâneos:</strong> O usuário registra receitas ou despesas diretamente por mensagens de texto ou áudio no WhatsApp (ex: <em>"Almoço 45 reais no cartão de crédito"</em>), e o sistema processa, categoriza e consolida a transação no banco de dados em segundos.</p>
+                <p>• <strong>Notificações Proativas:</strong> Alertas automatizados de vencimento de faturas, avisos de aproximação de limite orçamentário por categoria e relatórios periódicos de saldo consolidado.</p>
+                <p>• <strong>Consulta Rápida de Extrato:</strong> Consulta de saldo e lançamentos do dia diretamente pelo chat, sem necessidade de login manual no navegador.</p>
+
+                <div class="clear" style="margin-bottom: 15px;"></div>
+
+                <img src="../static/assets/MeuBolso/MeuBolso_Dashboard.png" class="img-float-left" alt="Dashboard do Meu Bolso">
+
+                <p><strong>Frontend Moderno em React (Vite) & UX Reativa:</strong> Interface fluida desenvolvida com <strong>React + Vite</strong>, estruturada com componentização limpa e Context API para gerenciar estados globais e alternância de temas Dark/Light. O Dashboard entrega visualização em tempo real de:</p>
+                <p>• <strong>Fluxo de Caixa Analítico (12 Meses):</strong> Gráficos dinâmicos de entradas vs saídas com curva de tendência.</p>
+                <p>• <strong>Metas Financeiras Inteligentes:</strong> Cálculo de projeção de juros e contagem regressiva de dias para a realização de cada objetivo financeiro.</p>
+                <p>• <strong>Importador de Extratos (OFX e Excel):</strong> Módulo no Java para injeção e reconciliação em lote de extratos bancários brutos, eliminando trabalho manual de digitação.</p>
+
+                <div class="clear" style="margin-bottom: 15px;"></div>
+
+                <p><strong>Excelência de Engenharia, Qualidade e DevOps:</strong></p>
+                <p>• <strong>Repositório no GitHub:</strong> <a href="https://github.com/zambonib/MeuBolsoEnterprise" target="_blank" style="color: #39ff14; text-decoration: underline; font-weight: 600;">github.com/zambonib/MeuBolsoEnterprise</a></p>
+                <p>• <strong>Aplicação em Produção:</strong> <a href="https://dalzam.com.br/meubolso/" target="_blank" style="color: #38bdf8; text-decoration: underline; font-weight: 600;">dalzam.com.br/meubolso</a></p>
+            `
+        },
+        en: {
+            title: "Meu Bolso — Smart Financial SaaS & Personal FinOps Platform",
+            subtitle: "💳 Java 21 • Spring Boot 3 • React • Spring Security JWT • Multi-tenancy • WhatsApp API • Oracle DB",
+            technologies: "Java 21, Spring Boot 3, Spring Security, JWT, Spring Data JPA, React (Vite), WhatsApp Business API, Oracle DB, MySQL, RESTful APIs, Docker, CI/CD",
+            year: "2026",
+            description: `
+                <p><strong>Project Overview:</strong> <strong>Meu Bolso</strong> is a full-fledged financial SaaS platform engineered for absolute wealth visibility, budget predictability, and automated expense operations. Built with enterprise software engineering standards, the system pairs a high-throughput <strong>Java 21 and Spring Boot 3</strong> backend, a reactive <strong>React (Vite)</strong> frontend, and native integration with <strong>WhatsApp</strong>, allowing users to track and log expenses in real time directly from Brazil's most popular messaging channel.</p>
+
+                <p><strong>Production URL:</strong> <a href="https://dalzam.com.br/meubolso/" target="_blank" style="color: #38bdf8; text-decoration: underline; font-weight: 700;">dalzam.com.br/meubolso</a></p>
+
+                <p><strong>Core Capabilities & Technical Architecture:</strong></p>
+
+                <video src="../static/assets/MeuBolso/MeuBolso_1.mp4" class="video-float-right" autoplay loop muted playsinline controls></video>
+
+                <p><strong>Enterprise Backend in Java 21 & Spring Boot 3:</strong> RESTful microservice-ready architecture grounded in <strong>SOLID</strong> and <strong>Clean Architecture</strong> principles. The backend handles the complete lifecycle of financial entities (Bank Accounts, Credit Cards, Categories, Transactions, and Savings Goals) with decoupled DTOs, reactive validation, and auditable event tracking.</p>
+
+                <p><strong>Security & Multi-Tenant Isolation (Spring Security + JWT):</strong> To guarantee privacy and multi-user data segregation across the SaaS ecosystem, we enforced strict multi-tenancy. Every REST endpoint requires Bearer Token JWT authentication, with <code>SecurityContext</code> injecting the authenticated <code>UserPrincipal</code>. Every database query strictly filters by the user tenant, preventing horizontal privilege escalation.</p>
+
+                <div class="clear" style="margin-bottom: 15px;"></div>
+
+                <video src="../static/assets/MeuBolso/MeuBolso_2.mp4" class="video-float-left" autoplay loop muted playsinline controls></video>
+
+                <p><strong>Advanced Credit Card & Invoice Management:</strong> Sophisticated credit engine computing committed vs. available limits, closing statement dates, and consolidated billing cycles. Accurately anticipates future credit obligations with automated recurring expense alerts.</p>
+
+                <p><strong>Relational Data Architecture (Oracle DB & MySQL):</strong> Normalized enterprise schema modeled for high transaction consistency. Leverages <strong>Spring Data JPA</strong> with optimized analytic queries, balanced indexes, and multi-database compatibility across Oracle and MySQL.</p>
+
+                <div class="clear" style="margin-bottom: 15px;"></div>
+
+                <img src="../static/assets/MeuBolso/MeuBolso_WhatsApp.jpeg" class="img-float-right" alt="WhatsApp API Integration">
+
+                <p><strong>Strategic WhatsApp Integration (Conversational Automation):</strong> A standout operational innovation of Meu Bolso is its conversational layer powered by the <strong>WhatsApp Business API</strong> and asynchronous backend webhooks:</p>
+                <p>• <strong>Frictionless Transaction Logging:</strong> Users submit expenses or revenue conversationally via text or voice notes on WhatsApp (e.g., <em>"Lunch 45 dollars on credit card"</em>). The backend parses, tags, and records the entry in seconds.</p>
+                <p>• <strong>Proactive Alerts & Notifications:</strong> Automated statement closing reminders, payment due alerts, category budget warnings, and scheduled financial digests.</p>
+                <p>• <strong>Quick Balance Inquiries:</strong> Instant real-time checks on consolidated cash flow and daily transactions directly in the WhatsApp chat without logging into a browser.</p>
+
+                <div class="clear" style="margin-bottom: 15px;"></div>
+
+                <img src="../static/assets/MeuBolso/MeuBolso_Dashboard.png" class="img-float-left" alt="Meu Bolso Dashboard">
+
+                <p><strong>Modern Frontend in React (Vite) & Reactive UX:</strong> Seamless Single Page Application (SPA) built with <strong>React + Vite</strong>, structured with modular components and Context API for authentication state and Dark/Light Mode. The dashboard delivers real-time visibility into:</p>
+                <p>• <strong>12-Month Projected Cash Flow:</strong> Interactive income vs. expense charts with trend trajectory curves.</p>
+                <p>• <strong>Smart Savings Goals:</strong> Compound growth projection and countdown days toward milestone completion.</p>
+                <p>• <strong>Bank Statement Importer (OFX & Excel):</strong> Automated Java batch processor parsing raw statement files (.ofx, .csv) and reconciling balances with zero manual input.</p>
+
+                <div class="clear" style="margin-bottom: 15px;"></div>
+
+                <p><strong>Software Engineering, Quality & DevOps:</strong></p>
+                <p>• <strong>GitHub Repository:</strong> <a href="https://github.com/zambonib/MeuBolsoEnterprise" target="_blank" style="color: #39ff14; text-decoration: underline; font-weight: 600;">github.com/zambonib/MeuBolsoEnterprise</a></p>
+                <p>• <strong>Production URL:</strong> <a href="https://dalzam.com.br/meubolso/" target="_blank" style="color: #38bdf8; text-decoration: underline; font-weight: 600;">dalzam.com.br/meubolso</a></p>
+            `
+        }
     }
 
 };

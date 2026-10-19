@@ -4,7 +4,7 @@
 const translations = {
     pt: {
         "infra": "● Infraestrutura", "dev": ">_ Desenvolvimento",
-        "hero_greeting": "Bruno Zamboni | Back-end Developer.",
+        "hero_greeting": "Bruno Zamboni | Developer.",
         "hero_desc": "Criei meu portfólio para mostrar minhas Habilidades e Projetos.",
         "hero_exp": "Quase duas décadas orquestrando ambientes complexos e resolvendo problemas críticos. Hoje, aplico essa bagagem sênior para codar soluções inteligentes em Java e Python. Não apenas escrevo software; eu projeto sistemas que nascem para performar.",
         "btn_contact": "FALE COMIGO NO LINKEDIN",
@@ -18,6 +18,7 @@ const translations = {
         "soft_desc": "Minha postura profissional.",
         "tag_leadership": "Liderança Técnica", "tag_conflict": "Resolução de Conflitos",
         "tag_comm": "Comunicação Clara", "tag_mentor": "Mentoria", "tag_auto": "Autodidata",
+        "tag_handson": "Proatividade & Hands-on", "tag_pressure": "Trabalho sob Pressão", "tag_business": "Visão de Negócios",
         "certs_title": "# Certificados conquistados",
         "cert_1_title": "Global Solution FIAP 2025", "cert_1_meta": "FIAP - 2025", "cert_1_desc": '"Certificado do Desafio Global Solution da FIAP de 2025, aonde criamos e apresentamos o projeto NoHall, que foi o grande Campeão do Desafio."',
         "cert_2_title": "Análise e Desenvolvimento de Sistemas", "cert_2_meta": "FIAP - 1º Semestre", "cert_2_desc": '"Conclusão com excelência dos módulos fundamentais de engenharia de software, modelagem de dados e design thinking."',
@@ -34,13 +35,14 @@ const translations = {
         "proj_6_tag": "Challenge FIAP • HealthTech", "proj_6_title": "Care Plus Family: Gamificação & Saúde Integrada",
         "proj_7_tag": "Challenge FIAP • Mobile & IA", "proj_7_title": "ELO: App Mobile ESG com IA Gemini & SQLite",
         "proj_8_tag": "Real-Time Web App • Java & Firebase", "proj_8_title": "CineVoto 2.0: Votação em Tempo Real com Cloud Firestore",
+        "proj_9_tag": "Fintech SaaS • Java & React", "proj_9_title": "Meu Bolso: Gestão Financeira com Spring Boot, React & WhatsApp API",
         "footer_dev": "Desenvolvido por Bruno Zamboni", "footer_motto": "Desenvolvemos muito além do software", "footer_rights": "Todos os direitos reservados a Dalzam 2026",
         "egg_1": "Parabéns, você encontrou um dos códigos escondidos neste portfólio!", "egg_2": 'Digite no seu teclado a qualquer momento o nome da empresa desenvolvedora <strong style="color: #39ff14;">dalzam</strong> e veja o que acontece.', "egg_3": 'Atenciosamente "O Arquiteto".',
         "terminal_welcome": "The Bridge System [Version 1.0.5]<br>Bem-vindo ao modo desenvolvedor.<br>Digite <span class='cmd-highlight'>'help'</span> para ver os comandos.<br><br>"
     },
     en: {
         "infra": "● Infrastructure", "dev": ">_ Development",
-        "hero_greeting": "Bruno Zamboni | Back-end Developer",
+        "hero_greeting": "Bruno Zamboni | Developer",
         "hero_desc": "I created my portfolio to showcase my Skills and Projects.",
         "hero_exp": "Nearly two decades orchestrating complex environments and solving critical problems. Today, I apply this senior experience to code intelligent solutions in Java and Python. I don't just write software; I design systems built to perform.",
         "btn_contact": "TALK TO ME ON LINKEDIN",
@@ -54,6 +56,7 @@ const translations = {
         "soft_desc": "My professional behavior.",
         "tag_leadership": "Tech Leadership", "tag_conflict": "Conflict Resolution",
         "tag_comm": "Clear Communication", "tag_mentor": "Mentorship", "tag_auto": "Self-taught",
+        "tag_handson": "Proactivity & Hands-on", "tag_pressure": "Work Under Pressure", "tag_business": "Business Mindset",
         "certs_title": "# Earned Certificates",
         "cert_1_title": "Global Solution FIAP 2025", "cert_1_meta": "FIAP - 2025", "cert_1_desc": '"Certificate from the 2025 FIAP Global Solution Challenge, where we created the NoHall project, the grand Champion of the Challenge."',
         "cert_2_title": "Systems Analysis and Development", "cert_2_meta": "FIAP - 1st Semester", "cert_2_desc": '"Excellence in completion of core software engineering, data modeling, and design thinking modules."',
@@ -70,6 +73,7 @@ const translations = {
         "proj_6_tag": "FIAP Challenge • HealthTech", "proj_6_title": "Care Plus Family: Gamification & Integrated Healthcare",
         "proj_7_tag": "FIAP Challenge • Mobile & AI", "proj_7_title": "ELO: ESG Mobile App with Gemini AI & SQLite",
         "proj_8_tag": "Real-Time Web App • Java & Firebase", "proj_8_title": "CineVoto 2.0: Real-Time Voting with Cloud Firestore",
+        "proj_9_tag": "Fintech SaaS • Java & React", "proj_9_title": "Meu Bolso: Financial Management with Spring Boot, React & WhatsApp API",
         "footer_dev": "Developed by Bruno Zamboni", "footer_motto": "We develop much more than software", "footer_rights": "All rights reserved to Dalzam 2026",
         "egg_1": "Congratulations, you found one of the hidden codes in this portfolio!", "egg_2": 'Type the name of the development company <strong style="color: #39ff14;">dalzam</strong> on your keyboard at any time and see what happens.', "egg_3": 'Sincerely "The Architect".',
         "terminal_welcome": "The Bridge System [Version 1.0.5]<br>Welcome to developer mode.<br>Type <span class='cmd-highlight'>'help'</span> to see commands.<br><br>"
@@ -104,13 +108,13 @@ function changeLanguage(lang) {
 const linesContainer = document.getElementById('text-lines');
 const typewriterPhrases = {
     pt: [
-        "Desenvolvedor Back-end (Java | Python)", 
+        "Desenvolvedor (Java | Python | React)", 
         "Engenheiro de Software & DevOps", 
         "Especialista em Cloud & Virtualização", 
         "Soluções com IA Generativa"
     ],
     en: [
-        "Back-end Developer (Java | Python)", 
+        "Developer (Java | Python | React)", 
         "Software & DevOps Engineer", 
         "Cloud & Virtualization Specialist", 
         "Generative AI Solutions"
@@ -313,6 +317,10 @@ function startMatrixBackground(canvasElement) {
 /* ======================================================= */
 const skillsDB = {
     'Java': { pt: { t: 'Java', d: 'Desenvolvimento Back-end com Java (Java 21+ / Spring Boot), arquitetura de APIs RESTful, servidores HTTP nativos ultraleves (com.sun.net.httpserver), Programação Orientada a Objetos robusta, Clean Code e padrões de projeto corporativos.' }, en: { t: 'Java', d: 'Back-end development with Java (Java 21+ / Spring Boot), RESTful API architecture, ultra-lightweight native HTTP servers (com.sun.net.httpserver), robust OOP principles, Clean Code, and enterprise design patterns.' } },
+    'React': { pt: { t: 'React (Vite)', d: 'Desenvolvimento de SPAs modernas com React e Vite, componentização reativa desacoplada, Context API para gerenciamento de estado global e dashboards interativos com gráficos em tempo real (conforme aplicado no Meu Bolso).' }, en: { t: 'React (Vite)', d: 'Modern Single Page Application (SPA) development with React and Vite, decoupled component architecture, Context API for global state management, and real-time interactive financial dashboards (as implemented in Meu Bolso).' } },
+    'MySQL': { pt: { t: 'MySQL', d: 'Modelagem relacional e desenvolvimento de Stored Procedures e Triggers para automação de regras de integridade, cálculos automáticos e auditoria diretamente no banco de dados.' }, en: { t: 'MySQL', d: 'Relational database modeling and development of Stored Procedures and Triggers for business logic automation, data integrity, and database-level auditing.' } },
+    'WhatsApp_API': { pt: { t: 'WhatsApp Bots & API', d: 'Integração com WhatsApp Business API via Webhooks assíncronos: registro conversacional de despesas/receitas via texto ou áudio, notificações ativas de vencimento e consulta instantânea de saldo.' }, en: { t: 'WhatsApp Bots & API', d: 'Integration with WhatsApp Business API and asynchronous Webhooks: conversational expense/income logging via text or voice, proactive due-date alerts, and real-time balance inquiries.' } },
+    'JWT': { pt: { t: 'JWT & Spring Security', d: 'Autenticação e autorização stateless com JSON Web Tokens (JWT) e Spring Security, garantindo segurança robusta de endpoints RESTful e isolamento estrito de dados multi-tenant.' }, en: { t: 'JWT & Spring Security', d: 'Stateless authentication and authorization with JSON Web Tokens (JWT) and Spring Security, ensuring robust RESTful endpoint security and strict multi-tenant data isolation.' } },
     'Firebase': { pt: { t: 'Firebase (Google Cloud)', d: 'Implementação de Cloud Firestore para bancos NoSQL com sincronização em tempo real (onSnapshot), autenticação federada (Firebase Auth com Google Sign-In), regras de segurança granulares (Security Rules) e hospedagem.' }, en: { t: 'Firebase (Google Cloud)', d: 'Cloud Firestore implementation for real-time NoSQL databases (onSnapshot), federated authentication (Firebase Auth with Google Sign-In), granular Security Rules, and cloud hosting.' } },
     'Kotlin': { pt: { t: 'Kotlin', d: 'Desenvolvimento Android Nativo moderno com Kotlin 2.0, Jetpack Compose (M3), Coroutines, StateFlow, Room Database (SQLite), Dagger Hilt (DI) e integração com Google Gemini AI e Firebase.' }, en: { t: 'Kotlin', d: 'Modern Android Native development using Kotlin 2.0, Jetpack Compose (M3), Coroutines, StateFlow, Room Database (SQLite), Dagger Hilt (DI), and Google Gemini AI & Firebase integration.' } },
     'SQL': { pt: { t: 'SQL & Bancos de Dados', d: 'Modelagem conceitual e relacional (MER/DER), consultas complexas, joins, índices, otimização de queries e persistência de dados em Oracle DB, SQLite/Room e PostgreSQL.' }, en: { t: 'SQL & Databases', d: 'Conceptual and relational modeling (ERD), complex queries, joins, indexing, query optimization, and data persistence in Oracle DB, SQLite/Room, and PostgreSQL.' } },
@@ -328,7 +336,10 @@ const skillsDB = {
     'conflict': { pt: { t: 'Conflitos', d: 'Medio divergências focando na solução viável.' }, en: { t: 'Conflicts', d: 'Mediate divergences focusing on viable solutions.' } },
     'communication': { pt: { t: 'Comunicação', d: 'Traduzo problemas técnicos para linguagem de negócios.' }, en: { t: 'Communication', d: 'Translate technical problems into business language.' } },
     'mentoring': { pt: { t: 'Mentoria', d: 'Tenho prazer em ensinar e compartilhar conhecimento.' }, en: { t: 'Mentoring', d: 'I am passionate about mentoring and sharing knowledge.' } },
-    'autodidact': { pt: { t: 'Autodidata', d: 'Aprendi a programar sozinho após anos em infra.' }, en: { t: 'Self-taught', d: 'Taught myself to program after years in infra.' } }
+    'autodidact': { pt: { t: 'Autodidata', d: 'Aprendi a programar sozinho após anos em infra.' }, en: { t: 'Self-taught', d: 'Taught myself to program after years in infra.' } },
+    'handson': { pt: { t: 'Proatividade & Hands-on', d: 'Perfil executor e resolutivo ("mão na massa"): assumo a responsabilidade técnica de ponta a ponta, desde a infraestrutura até a codificação e deploy de soluções completas.' }, en: { t: 'Proactivity & Hands-on', d: 'Action-oriented and hands-on mindset: taking end-to-end ownership from infrastructure provisioning to writing, testing, and deploying production-grade code.' } },
+    'pressure': { pt: { t: 'Trabalho sob Pressão', d: 'Bagagem consolidada em quase duas décadas de TI enfrentando incidentes críticos e ambientes de alta demanda, mantendo estabilidade emocional, foco analítico e tomada de decisão assertiva.' }, en: { t: 'Thriving Under Pressure', d: 'Tested and proven resilience over nearly two decades in IT resolving high-severity outages and tight deadlines, maintaining analytical clarity and swift decision-making.' } },
+    'business': { pt: { t: 'Visão de Negócios', d: 'Compreensão estratégica de que engenharia de software e infraestrutura existem para resolver dores reais de negócio, gerar retorno financeiro, otimizar custos (FinOps) e encantar o cliente final.' }, en: { t: 'Business Mindset', d: 'Strategic awareness that engineering and infrastructure serve to solve real business pain points, drive revenue, optimize operating costs (FinOps), and deliver genuine user value.' } }
 };
 
 function flipCard(cardId, skillKey) {

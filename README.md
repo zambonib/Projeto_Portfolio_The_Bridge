@@ -52,6 +52,7 @@ Cada detalhe da página — desde a hierarquia visual até a otimização de ren
 - Carrossel interativo e responsivo construído com **Glide.js**, permitindo navegação fluida por arrasto (touch/mouse) e paginação.
 - Algoritmo inteligente de embaralhamento (`shuffle`) que garante dinamismo a cada carregamento, mantendo o portfólio e projetos estratégicos sempre em destaque.
 - Cards detalhados com badges de stack tecnológica, descrição arquitetural e links diretos para repositórios no GitHub e aplicações em produção:
+  - **Meu Bolso:** Plataforma SaaS de gestão financeira inteligente e FinOps pessoal desenvolvida com backend robusto em Java 21 com Spring Boot 3 (Spring Security, JWT, isolamento Multi-tenant, Oracle DB e MySQL), frontend moderno e reativo em React (Vite) e integração nativa com a API do WhatsApp para lançamentos conversacionais e alertas em tempo real ([dalzam.com.br/meubolso](https://dalzam.com.br/meubolso/) • [GitHub](https://github.com/zambonib/MeuBolsoEnterprise)).
   - **CineVoto 2.0:** Aplicação web de votação reativa em tempo real com backend em Java 21, Cloud Firestore e autenticação Google.
   - **ELO ESG:** Aplicativo Android Nativo em Kotlin (MVVM, Clean Architecture, Jetpack Compose, Room SQLite) com integração à IA Google Gemini para lançamentos por linguagem natural.
   - **NoHall – Connection with Value:** Projeto campeão em 1º Lugar Geral no Global Solution FIAP 2025 focado em RH Tech e retenção de talentos.

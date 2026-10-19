@@ -1,4 +1,4 @@
-﻿/* ======================================================= */
+/* ======================================================= */
 /* BASE DE DADOS DO CURRÍCULO DINÂMICO (BILÍNGUE)          */
 /* ======================================================= */
 
@@ -6,7 +6,7 @@ const cvData = {
     pt: {
         personal: {
             name: "Bruno Zamboni",
-            title: "Desenvolvedor Back-end (Java | Python | Cloud)",
+            title: "Developer (Java | Python | React | Cloud)",
             location: "São Paulo - SP (Tatuapé)",
             email: "bruno@dalzam.com.br",
             linkedin: "linkedin.com/in/brunozamboni",
@@ -20,25 +20,25 @@ const cvData = {
             contactNotice: "Para contato direto, por favor envie uma mensagem pelo LinkedIn."
         },
         summaryTitle: "Resumo Profissional",
-        summaryText: "Profissional de Tecnologia com quase duas décadas de sólida trajetória orquestrando ambientes de infraestrutura de alta criticidade, redes e arquiteturas em nuvem (AWS e Linux). Graduando em Análise e Desenvolvimento de Sistemas pela FIAP com Duplo Selo Ouro de Excelência Acadêmica (média 9.5) e 1º Lugar no Global Solution 2025. Atualmente focado no desenvolvimento de software de alta performance, aplicando padrões modernos de engenharia em Java (Spring Boot / Java 21+), Python, Kotlin (Android Nativo) e ecossistema Google Cloud / Firebase.",
+        summaryText: "Profissional de Tecnologia com quase duas décadas de sólida trajetória orquestrando ambientes de infraestrutura de alta criticidade, redes e arquiteturas em nuvem (AWS e Linux). Graduando em Análise e Desenvolvimento de Sistemas pela FIAP com Duplo Selo Ouro de Excelência Acadêmica (média 9.5) e 1º Lugar no Global Solution 2025. Atualmente focado no desenvolvimento de software de alta performance, aplicando padrões modernos de engenharia em Java (Spring Boot / Java 21+), React, Python, Kotlin (Android Nativo) e ecossistema Google Cloud / Firebase.",
         
         skillsTitle: "Competências & Tecnologias",
         skillsGroups: [
             {
-                category: "Linguagens & Back-end",
-                items: "Java (Java 21+, Spring Boot, APIs RESTful, HTTP Server nativo), Python (Flask, OpenCV, automação), Kotlin (Android Nativo, Coroutines, StateFlow), JavaScript (ES6+ Modules, DOM API)"
+                category: "Linguagens & Frameworks",
+                items: "Java (Java 21+, Spring Boot, APIs RESTful, HTTP Server nativo), React (Vite, SPA, Context API), Python (Flask, OpenCV, automação), Kotlin (Android Nativo, Coroutines), JavaScript (ES6+ Modules, DOM API)"
             },
             {
                 category: "Bancos de Dados & Persistência",
-                items: "SQL (Modelagem relacional DER/MER, queries avançadas, índices), Oracle DB, PostgreSQL, SQLite / Room Database, Google Cloud Firestore (NoSQL em tempo real)"
+                items: "MySQL (Stored Procedures, Triggers), SQL (Modelagem DER/MER, queries avançadas, índices), Oracle DB, PostgreSQL, SQLite / Room, Google Cloud Firestore (NoSQL em tempo real)"
             },
             {
                 category: "Cloud, DevOps & Infraestrutura",
                 items: "AWS (EC2, VPC, S3, RDS), Linux (15+ anos: Debian, Ubuntu, RedHat, Nginx, pfSense), Docker, Virtualização Proxmox (PBS, LXC), CI/CD com GitHub Actions, Windows Server (AD DS, GPO, PowerShell)"
             },
             {
-                category: "Metodologias & Práticas",
-                items: "Clean Architecture, MVVM, Princípios SOLID, Clean Code, Testes Unitários (JUnit, MockK), Green IT, UI/UX Glassmorphism"
+                category: "Segurança, Arquitetura & Práticas",
+                items: "JWT & Spring Security (Multi-tenant), WhatsApp Business API, Clean Architecture, MVVM, Princípios SOLID, Clean Code, Testes Unitários (JUnit, MockK), FinOps"
             }
         ],
 
@@ -102,6 +102,11 @@ const cvData = {
                 name: "Care Plus Family (2025)",
                 tech: "JavaScript Modular, UX/UI, Assistentes Virtuais",
                 description: "Desafio corporativo FIAP & Care Plus para redução de No-Show em clínicas de saúde. Plataforma integrando gamificação preventiva (Game Plus +) e comandos por assistentes de voz."
+            },
+            {
+                name: "Meu Bolso (2026)",
+                tech: "Java 21, Spring Boot 3, React, Spring Security, JWT, WhatsApp API, Oracle DB",
+                description: "Plataforma SaaS de inteligência financeira e FinOps pessoal. Backend em Java 21 com Spring Boot, autenticação stateless JWT com isolamento multi-tenant, interface reativa em React e automação de lançamentos via WhatsApp Business API."
             }
         ],
 
@@ -130,7 +135,7 @@ const cvData = {
     en: {
         personal: {
             name: "Bruno Zamboni",
-            title: "Back-end Developer (Java | Python | Cloud)",
+            title: "Developer (Java | Python | React | Cloud)",
             location: "São Paulo, Brazil (Tatuapé)",
             email: "bruno@dalzam.com.br",
             linkedin: "linkedin.com/in/brunozamboni",
@@ -144,25 +149,25 @@ const cvData = {
             contactNotice: "For direct contact, please send me a message on LinkedIn."
         },
         summaryTitle: "Professional Summary",
-        summaryText: "Senior Technology Professional with nearly two decades of proven experience orchestrating mission-critical infrastructure, enterprise networking, and cloud architectures (AWS & Linux). Systems Analysis & Development undergraduate at FIAP, earning consecutive Double Gold Badges of Academic Excellence (9.5 GPA) and 1st Place Champion at the 2025 FIAP Global Solution. Currently dedicated to high-performance software engineering, leveraging modern industry patterns in Java (Spring Boot / Java 21+), Python, Kotlin (Native Android), and Google Cloud / Firebase.",
+        summaryText: "Senior Technology Professional with nearly two decades of proven experience orchestrating mission-critical infrastructure, enterprise networking, and cloud architectures (AWS & Linux). Systems Analysis & Development undergraduate at FIAP, earning consecutive Double Gold Badges of Academic Excellence (9.5 GPA) and 1st Place Champion at the 2025 FIAP Global Solution. Currently dedicated to high-performance software engineering, leveraging modern industry patterns in Java (Spring Boot / Java 21+), React, Python, Kotlin (Native Android), and Google Cloud / Firebase.",
         
         skillsTitle: "Core Competencies & Technologies",
         skillsGroups: [
             {
-                category: "Languages & Back-end",
-                items: "Java (Java 21+, Spring Boot, RESTful APIs, Native HTTP Server), Python (Flask, OpenCV, automation), Kotlin (Native Android, Coroutines, StateFlow), JavaScript (ES6+ Modules, DOM API)"
+                category: "Languages & Frameworks",
+                items: "Java (Java 21+, Spring Boot, RESTful APIs, Native HTTP Server), React (Vite, SPA, Context API), Python (Flask, OpenCV, automation), Kotlin (Native Android, Coroutines), JavaScript (ES6+ Modules, DOM API)"
             },
             {
                 category: "Databases & Persistence",
-                items: "SQL (ERD modeling, complex joins, indexing, query optimization), Oracle DB, PostgreSQL, SQLite / Room Database, Google Cloud Firestore (Real-time NoSQL)"
+                items: "MySQL (Stored Procedures, Triggers), SQL (ERD modeling, complex joins, indexing, query optimization), Oracle DB, PostgreSQL, SQLite / Room, Google Cloud Firestore (Real-time NoSQL)"
             },
             {
                 category: "Cloud, DevOps & Infrastructure",
                 items: "AWS (EC2, VPC, S3, RDS), Linux (15+ yrs: Debian, Ubuntu, RedHat, Nginx, pfSense), Docker, Proxmox Virtualization (PBS, LXC), CI/CD with GitHub Actions, Windows Server (AD DS, GPO, PowerShell)"
             },
             {
-                category: "Methodologies & Architecture",
-                items: "Clean Architecture, MVVM, SOLID Principles, Clean Code, Automated Unit Testing (JUnit, MockK), Green IT, Glassmorphism UI/UX"
+                category: "Security, Architecture & Practices",
+                items: "JWT & Spring Security (Multi-tenancy), WhatsApp Business API, Clean Architecture, MVVM, SOLID Principles, Clean Code, Automated Unit Testing (JUnit, MockK), FinOps"
             }
         ],
 
@@ -226,6 +231,11 @@ const cvData = {
                 name: "Care Plus Family (2025)",
                 tech: "Modular JavaScript, UX/UI, Voice Assistant Integration",
                 description: "Corporate innovation challenge for FIAP & Care Plus to prevent medical appointment no-shows. Platform featuring preventive healthcare gamification (Game Plus +) and smart voice assistant queries."
+            },
+            {
+                name: "Meu Bolso (2026)",
+                tech: "Java 21, Spring Boot 3, React, Spring Security, JWT, WhatsApp API, Oracle DB",
+                description: "Personal FinOps & Smart Financial SaaS platform. High-performance Java 21 Spring Boot backend, stateless JWT authentication with multi-tenant isolation, reactive React frontend, and conversational transaction logging via WhatsApp Business API."
             }
         ],
 
