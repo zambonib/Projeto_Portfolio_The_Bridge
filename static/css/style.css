@@ -460,10 +460,20 @@ p {
 }
 
 .back-desc {
-    font-size: 1.1rem;
-    line-height: 1.6;
+    font-size: 1.05rem;
+    line-height: 1.5;
     color: #ddd;
     padding: 0 15px;
+    margin: 0;
+    word-break: break-word;
+}
+
+.back-desc.clamped-5 {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .instruction-text {

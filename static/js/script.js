@@ -354,24 +354,42 @@ function flipCard(cardId, skillKey) {
 
     document.getElementById(`${type}-title`).innerText = fullTitle;
     const descEl = document.getElementById(`${type}-desc`);
+    const moreContainer = document.getElementById(`${type}-more-container`);
 
-    // Limite de caracteres para conforto no mobile
+    // Define texto completo temporariamente sem clamp para medição precisa
+    descEl.classList.remove('clamped-5');
+    descEl.innerText = fullDesc;
+    cardInner.classList.add('flipped');
+
+    // Limite de 5 linhas: medição dinâmica com fallback de caracteres
+    const computed = window.getComputedStyle(descEl);
+    let lh = parseFloat(computed.lineHeight);
+    if (isNaN(lh)) {
+        lh = (parseFloat(computed.fontSize) || 16) * 1.5;
+    }
+    const max5LineHeight = lh * 5.15;
     const isMobile = window.innerWidth <= 768;
-    const charLimit = isMobile ? 85 : 155;
+    const charThreshold = isMobile ? 165 : 240;
 
-    if (fullDesc.length > charLimit) {
-        const truncated = fullDesc.slice(0, charLimit).trim();
-        const moreLabel = currentLang === 'pt' ? '... (ver mais)' : '... (read more)';
-        descEl.innerHTML = `${truncated} <span class="skill-read-more" onclick="event.stopPropagation(); openSkillModal('${skillKey}', '${type}')">${moreLabel}</span>`;
+    const isOver5Lines = (descEl.scrollHeight > max5LineHeight) || (fullDesc.length > charThreshold);
+
+    if (isOver5Lines) {
+        descEl.classList.add('clamped-5');
         descEl.style.cursor = 'pointer';
         descEl.onclick = () => openSkillModal(skillKey, type);
+        descEl.title = currentLang === 'pt' ? 'Clique para ver a descrição completa' : 'Click to read full description';
+
+        const moreLabel = currentLang === 'pt' ? '... (ver mais)' : '... (read more)';
+        if (moreContainer) {
+            moreContainer.innerHTML = `<span class="skill-read-more" onclick="openSkillModal('${skillKey}', '${type}')">${moreLabel}</span>`;
+        }
     } else {
-        descEl.innerText = fullDesc;
+        descEl.classList.remove('clamped-5');
         descEl.style.cursor = 'default';
         descEl.onclick = null;
+        descEl.removeAttribute('title');
+        if (moreContainer) moreContainer.innerHTML = '';
     }
-
-    cardInner.classList.add('flipped');
 }
 
 function openSkillModal(skillKey, type = 'hard') {
@@ -406,10 +424,21 @@ function handleSkillModalClick(e) {
     }
 }
 
-function unflipCard(cardId) { document.getElementById(cardId).classList.remove('flipped'); }
+function unflipCard(cardId) { 
+    const cardInner = document.getElementById(cardId);
+    if (cardInner) cardInner.classList.remove('flipped');
+    const type = cardId === 'card-hard' ? 'hard' : 'soft';
+    const moreContainer = document.getElementById(`${type}-more-container`);
+    if (moreContainer) moreContainer.innerHTML = '';
+}
+
 function unflipAllCards() {
     const cards = document.querySelectorAll('.skill-flip-inner.flipped');
     cards.forEach(card => card.classList.remove('flipped'));
+    const hardMore = document.getElementById('hard-more-container');
+    const softMore = document.getElementById('soft-more-container');
+    if (hardMore) hardMore.innerHTML = '';
+    if (softMore) softMore.innerHTML = '';
 }
 
 /* ======================================================= */
