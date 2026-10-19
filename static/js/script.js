@@ -14,7 +14,7 @@ const translations = {
         "uptime_lbl": "Uptime:", "system_lbl": "Sistema:", "system_status": "Online", "counter_lbl": "Contador:",
         "skills_title": "# Minhas habilidades e posturas profissional",
         "click_details": "Tecnologias que domino. Clique para detalhes.",
-        "instruction_flip": "Clique em uma habilidade para virar o card", "btn_back": "Voltar",
+        "instruction_flip": "Clique em uma habilidade para virar o card", "btn_back": "Voltar", "btn_close": "Fechar",
         "soft_desc": "Minha postura profissional.",
         "tag_leadership": "Liderança Técnica", "tag_conflict": "Resolução de Conflitos",
         "tag_comm": "Comunicação Clara", "tag_mentor": "Mentoria", "tag_auto": "Autodidata",
@@ -52,7 +52,7 @@ const translations = {
         "uptime_lbl": "Uptime:", "system_lbl": "System:", "system_status": "Online", "counter_lbl": "Visitor Count:",
         "skills_title": "# My Skills and Professional Stance",
         "click_details": "Technologies I master. Click for details.",
-        "instruction_flip": "Click on a skill to flip the card", "btn_back": "Go Back",
+        "instruction_flip": "Click on a skill to flip the card", "btn_back": "Go Back", "btn_close": "Close",
         "soft_desc": "My professional behavior.",
         "tag_leadership": "Tech Leadership", "tag_conflict": "Conflict Resolution",
         "tag_comm": "Clear Communication", "tag_mentor": "Mentorship", "tag_auto": "Self-taught",
@@ -316,8 +316,8 @@ function startMatrixBackground(canvasElement) {
 /* 5. FLASHCARDS DE HABILIDADES                            */
 /* ======================================================= */
 const skillsDB = {
-    'Java': { pt: { t: 'Java', d: 'Desenvolvimento Back-end com Java (Java 21+ / Spring Boot), arquitetura de APIs RESTful, servidores HTTP nativos ultraleves (com.sun.net.httpserver), Programação Orientada a Objetos robusta, Clean Code e padrões de projeto corporativos.' }, en: { t: 'Java', d: 'Back-end development with Java (Java 21+ / Spring Boot), RESTful API architecture, ultra-lightweight native HTTP servers (com.sun.net.httpserver), robust OOP principles, Clean Code, and enterprise design patterns.' } },
-    'React': { pt: { t: 'React (Vite)', d: 'Desenvolvimento de SPAs modernas com React e Vite, componentização reativa desacoplada, Context API para gerenciamento de estado global e dashboards interativos com gráficos em tempo real (conforme aplicado no Meu Bolso).' }, en: { t: 'React (Vite)', d: 'Modern Single Page Application (SPA) development with React and Vite, decoupled component architecture, Context API for global state management, and real-time interactive financial dashboards (as implemented in Meu Bolso).' } },
+    'Java': { pt: { t: 'Java', d: 'Desenvolvimento Java nativo e (Spring Boot), Arquitetura de APIs RestFull, programação orientada a objetos.' }, en: { t: 'Java', d: 'Native Java and (Spring Boot) development, RESTful API architecture, object-oriented programming.' } },
+    'React': { pt: { t: 'React (Vite)', d: 'Desenvolvimento de SPAs com React e Vite, componentização, Dashboards interativas.' }, en: { t: 'React (Vite)', d: 'SPA development with React and Vite, componentization, interactive Dashboards.' } },
     'MySQL': { pt: { t: 'MySQL', d: 'Modelagem relacional e desenvolvimento de Stored Procedures e Triggers para automação de regras de integridade, cálculos automáticos e auditoria diretamente no banco de dados.' }, en: { t: 'MySQL', d: 'Relational database modeling and development of Stored Procedures and Triggers for business logic automation, data integrity, and database-level auditing.' } },
     'WhatsApp_API': { pt: { t: 'WhatsApp Bots & API', d: 'Integração com WhatsApp Business API via Webhooks assíncronos: registro conversacional de despesas/receitas via texto ou áudio, notificações ativas de vencimento e consulta instantânea de saldo.' }, en: { t: 'WhatsApp Bots & API', d: 'Integration with WhatsApp Business API and asynchronous Webhooks: conversational expense/income logging via text or voice, proactive due-date alerts, and real-time balance inquiries.' } },
     'JWT': { pt: { t: 'JWT & Spring Security', d: 'Autenticação e autorização stateless com JSON Web Tokens (JWT) e Spring Security, garantindo segurança robusta de endpoints RESTful e isolamento estrito de dados multi-tenant.' }, en: { t: 'JWT & Spring Security', d: 'Stateless authentication and authorization with JSON Web Tokens (JWT) and Spring Security, ensuring robust RESTful endpoint security and strict multi-tenant data isolation.' } },
@@ -336,7 +336,7 @@ const skillsDB = {
     'conflict': { pt: { t: 'Conflitos', d: 'Medio divergências focando na solução viável.' }, en: { t: 'Conflicts', d: 'Mediate divergences focusing on viable solutions.' } },
     'communication': { pt: { t: 'Comunicação', d: 'Traduzo problemas técnicos para linguagem de negócios.' }, en: { t: 'Communication', d: 'Translate technical problems into business language.' } },
     'mentoring': { pt: { t: 'Mentoria', d: 'Tenho prazer em ensinar e compartilhar conhecimento.' }, en: { t: 'Mentoring', d: 'I am passionate about mentoring and sharing knowledge.' } },
-    'autodidact': { pt: { t: 'Autodidata', d: 'Aprendi a programar sozinho após anos em infra.' }, en: { t: 'Self-taught', d: 'Taught myself to program after years in infra.' } },
+    'autodidact': { pt: { t: 'Autodidata', d: 'Facilidade de aprendizado e adaptação.' }, en: { t: 'Self-taught', d: 'Fast learning and adaptability.' } },
     'handson': { pt: { t: 'Proatividade & Hands-on', d: 'Perfil executor e resolutivo ("mão na massa"): assumo a responsabilidade técnica de ponta a ponta, desde a infraestrutura até a codificação e deploy de soluções completas.' }, en: { t: 'Proactivity & Hands-on', d: 'Action-oriented and hands-on mindset: taking end-to-end ownership from infrastructure provisioning to writing, testing, and deploying production-grade code.' } },
     'pressure': { pt: { t: 'Trabalho sob Pressão', d: 'Bagagem consolidada em quase duas décadas de TI enfrentando incidentes críticos e ambientes de alta demanda, mantendo estabilidade emocional, foco analítico e tomada de decisão assertiva.' }, en: { t: 'Thriving Under Pressure', d: 'Tested and proven resilience over nearly two decades in IT resolving high-severity outages and tight deadlines, maintaining analytical clarity and swift decision-making.' } },
     'business': { pt: { t: 'Visão de Negócios', d: 'Compreensão estratégica de que engenharia de software e infraestrutura existem para resolver dores reais de negócio, gerar retorno financeiro, otimizar custos (FinOps) e encantar o cliente final.' }, en: { t: 'Business Mindset', d: 'Strategic awareness that engineering and infrastructure serve to solve real business pain points, drive revenue, optimize operating costs (FinOps), and deliver genuine user value.' } }
@@ -346,10 +346,64 @@ function flipCard(cardId, skillKey) {
     const cardInner = document.getElementById(cardId);
     const type = cardId === 'card-hard' ? 'hard' : 'soft';
     const currentLang = localStorage.getItem('preferredLanguage') || 'pt';
+    const skill = skillsDB[skillKey];
+    if (!skill || !skill[currentLang]) return;
     
-    document.getElementById(`${type}-title`).innerText = skillsDB[skillKey][currentLang].t;
-    document.getElementById(`${type}-desc`).innerText = skillsDB[skillKey][currentLang].d;
+    const fullTitle = skill[currentLang].t;
+    const fullDesc = skill[currentLang].d;
+
+    document.getElementById(`${type}-title`).innerText = fullTitle;
+    const descEl = document.getElementById(`${type}-desc`);
+
+    // Limite de caracteres para conforto no mobile
+    const isMobile = window.innerWidth <= 768;
+    const charLimit = isMobile ? 85 : 155;
+
+    if (fullDesc.length > charLimit) {
+        const truncated = fullDesc.slice(0, charLimit).trim();
+        const moreLabel = currentLang === 'pt' ? '... (ver mais)' : '... (read more)';
+        descEl.innerHTML = `${truncated} <span class="skill-read-more" onclick="event.stopPropagation(); openSkillModal('${skillKey}', '${type}')">${moreLabel}</span>`;
+        descEl.style.cursor = 'pointer';
+        descEl.onclick = () => openSkillModal(skillKey, type);
+    } else {
+        descEl.innerText = fullDesc;
+        descEl.style.cursor = 'default';
+        descEl.onclick = null;
+    }
+
     cardInner.classList.add('flipped');
+}
+
+function openSkillModal(skillKey, type = 'hard') {
+    const modal = document.getElementById('skill-modal');
+    if (!modal) return;
+    const currentLang = localStorage.getItem('preferredLanguage') || 'pt';
+    const skill = skillsDB[skillKey];
+    if (!skill || !skill[currentLang]) return;
+
+    const badge = document.getElementById('skill-modal-badge');
+    const title = document.getElementById('skill-modal-title');
+    const desc = document.getElementById('skill-modal-desc');
+
+    if (badge) {
+        badge.className = type === 'soft' ? 'soft-tag' : 'tech-tag';
+        badge.innerText = type === 'soft' ? (currentLang === 'pt' ? 'Soft Skill' : 'Soft Skill') : (currentLang === 'pt' ? 'Hard Skill' : 'Hard Skill');
+    }
+    if (title) title.innerText = skill[currentLang].t;
+    if (desc) desc.innerText = skill[currentLang].d;
+
+    modal.style.display = 'flex';
+}
+
+function closeSkillModal() {
+    const modal = document.getElementById('skill-modal');
+    if (modal) modal.style.display = 'none';
+}
+
+function handleSkillModalClick(e) {
+    if (e.target && e.target.id === 'skill-modal') {
+        closeSkillModal();
+    }
 }
 
 function unflipCard(cardId) { document.getElementById(cardId).classList.remove('flipped'); }
@@ -666,6 +720,8 @@ async function downloadCvPdf() {
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         closeCvModal();
+        closeSkillModal();
+        closeCertModal();
     }
 });
 
