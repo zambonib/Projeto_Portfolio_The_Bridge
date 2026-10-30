@@ -107,6 +107,11 @@ const cvData = {
                 name: "Meu Bolso (2026)",
                 tech: "Java 21, Spring Boot 3, React, Spring Security, JWT, WhatsApp API, Oracle DB",
                 description: "Plataforma SaaS de inteligência financeira e FinOps pessoal. Backend em Java 21 com Spring Boot, autenticação stateless JWT com isolamento multi-tenant, interface reativa em React e automação de lançamentos via WhatsApp Business API."
+            },
+            {
+                name: "NOC Híbrido OCI – Prometheus & Grafana (2026)",
+                tech: "Prometheus, Grafana, Oracle Cloud (OCI), Proxmox LXC, Network Security Groups, Linux",
+                description: "Arquitetura híbrida de observabilidade monitorando servidor de produção na nuvem Oracle a partir de container LXC no HomeLab. Hardening com NSG e iptables eliminando exposição de métricas críticas e vulnerabilidades."
             }
         ],
 
@@ -236,6 +241,11 @@ const cvData = {
                 name: "Meu Bolso (2026)",
                 tech: "Java 21, Spring Boot 3, React, Spring Security, JWT, WhatsApp API, Oracle DB",
                 description: "Personal FinOps & Smart Financial SaaS platform. High-performance Java 21 Spring Boot backend, stateless JWT authentication with multi-tenant isolation, reactive React frontend, and conversational transaction logging via WhatsApp Business API."
+            },
+            {
+                name: "Hybrid OCI NOC – Prometheus & Grafana (2026)",
+                tech: "Prometheus, Grafana, Oracle Cloud (OCI), Proxmox LXC, Network Security Groups, Linux",
+                description: "Hybrid observability architecture monitoring live production cloud instance on OCI from on-premise HomeLab Proxmox LXC. Hardened with NSG and iptables shielding critical telemetry endpoints and attack surface."
             }
         ],
 

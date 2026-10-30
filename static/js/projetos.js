@@ -659,6 +659,99 @@ const projectsDB = {
             `
         }
     }
+,
+
+    'noc': {
+        image: "../static/assets/NOC_Prometheus_Grafana/NOC_Prometheus_Grafana.png",
+        video: null,
+        animation: null,
+
+        pt: {
+            title: "NOC Híbrido: Observabilidade em Tempo Real & Monitoramento Cloud (OCI)",
+            subtitle: "🖥️ Observabilidade Híbrida • Prometheus • Grafana • Oracle Cloud (OCI) • Proxmox LXC • Hardening de Rede",
+            technologies: "Prometheus, Grafana, Oracle Cloud Infrastructure (OCI), Proxmox VE (LXC Ubuntu 24), Node Exporter, Blackbox Exporter, MySQL Monitoring, iptables, OCI Network Security Groups (NSG), Linux",
+            year: "2026",
+            description: `
+                <p><strong>Resumo do Projeto:</strong> Implementação de uma arquitetura completa de observabilidade híbrida (Edge-to-Core) e central de monitoramento <strong>NOC (Network Operations Center)</strong>. O sistema coleta telemetria em tempo real diretamente de um <strong>servidor de produção ativo na Oracle Cloud Infrastructure (OCI)</strong> e centraliza métricas, alertas e dashboards analíticos em um cluster on-premise com <strong>Proxmox VE</strong>, executando em um container LXC isolado (Ubuntu 24.04 LTS) com <strong>Prometheus e Grafana</strong>.</p>
+
+                <p><strong>Desafio de Engenharia: Segurança & Isolamento da Rede para Mitigar Vulnerabilidades:</strong></p>
+                <p>O maior desafio técnico do projeto foi estabelecer a coleta de dados sobre a internet pública mantendo <strong>estrito isolamento e mitigação de vulnerabilidades</strong>. Exporters de infraestrutura (como o <code>node_exporter</code> na porta TCP 9100, métricas de processos e probes do Blackbox) expõem dados sensíveis de baixíssimo nível: versões de kernel do Linux, tabela completa de PIDs, mapeamento de memória, rotas de rede, nomes de bancos de dados MySQL e rotas internas. Permitir o acesso público a essas portas cria uma grave superfície de ataque para varreduras automatizadas e exploração de vulnerabilidades.</p>
+
+                <p><strong>Estratégia de Defesa em Profundidade (Defense-in-Depth):</strong></p>
+                <p>• <strong>OCI Network Security Groups (NSG) & VCN Ingress Rules:</strong> Configuração de políticas de segurança stateful diretamente na malha virtual da Oracle Cloud. Qualquer tentativa de acesso à porta TCP 9100 vinda da internet genérica é descartada silenciosamente na borda da nuvem, autorizando exclusivamente o tráfego originado no IP estático do HomeLab (<code>/32</code>).</p>
+                <p>• <strong>Firewall no Host (iptables & netfilter-persistent):</strong> Camada adicional de proteção aplicada diretamente no kernel Linux da instância de produção. Regras explícitas de whitelist por IP foram persistidas antes da regra padrão de bloqueio (<code>REJECT/DROP</code>), garantindo conformidade mesmo diante de alterações acidentais de roteamento.</p>
+                <p>• <strong>Ajuste Fino de Listeners & Resolução de Bloqueios:</strong> Durante as etapas de hardening, um bloqueio de listener restrito a <code>127.0.0.1</code> demonstrou a importância de calibrar a interface de escuta com o firewall externo. A solução unificou segurança máxima contra ameaças globais sem interromper as rotinas de <em>pull</em> periódico do Prometheus.</p>
+
+                <div class="clear" style="margin-bottom: 15px;"></div>
+
+                <img src="../static/assets/NOC_Prometheus_Grafana/NOC_Infraestrutura_Rede.png" class="img-float-right" alt="Painel Grafana - Infraestrutura OCI e Rede">
+
+                <p><strong>Métricas Globais de Infraestrutura & Rede da OCI:</strong></p>
+                <p>• <strong>Telemetria do Host em Produção:</strong> Acompanhamento contínuo de uso global de CPU (registrando 70.6% sob carga real), consumo de memória RAM (14%), taxa de ocupação do disco raiz (5.11%) e uptime ininterrupto do servidor (3+ semanas consecutivas).</p>
+                <p>• <strong>Top 3 Serviços/Processos com Maior Consumo:</strong> Painel analítico de alta granularidade rastreando instantaneamente os processos mais gulosos do sistema (como instâncias headless do Chrome/Puppeteer para bots, processos Java Spring Boot do Meu Bolso e workers auxiliares).</p>
+                <p>• <strong>Latência & Tráfego de Rede:</strong> Monitoramento da latência de resposta HTTP em tempo real (trajeto HomeLab -> OCI) e volumetria de tráfego de download/upload, identificando picos de tráfego e oscilações de rota.</p>
+                <p>• <strong>Ciclo de Vida dos Certificados SSL:</strong> Painel proativo com contagem regressiva em dias e semanas para renovação dos certificados HTTPS em todos os domínios corporativos gerenciados (<code>dalzam.com.br</code>).</p>
+
+                <div class="clear" style="margin-bottom: 15px;"></div>
+
+                <img src="../static/assets/NOC_Prometheus_Grafana/NOC_Aplicacoes_Servicos.png" class="img-float-left" alt="Painel Grafana - Aplicações e Serviços em Produção">
+
+                <p><strong>Status Operacional de Aplicações, Chatbot & Banco de Dados:</strong></p>
+                <p>• <strong>Healthcheck dos Microserviços:</strong> Visão consolidada estilo "semáforo" (UP/DOWN) para todas as aplicações ativas em produção: Portal Dalzam, Meu Bolso (Web & API REST), Gasto Certo (Web & API), CineVoto e Care Plus.</p>
+                <p>• <strong>Monitoramento de Daemons PM2:</strong> Acompanhamento contínuo dos serviços de mensageria em background, incluindo o Chatbot de WhatsApp e o motor de reconhecimento de áudio Vosk.</p>
+                <p>• <strong>Engajamento & Métricas de Negócio:</strong> Indicadores de volume de acessos (total de visitas e visitantes únicos por aplicação) e métricas conversacionais do WhatsApp (860+ mensagens processadas e 125 sessões ativas simultâneas).</p>
+                <p>• <strong>Volumetria e Saúde do MySQL:</strong> Rastreamento de integridade do serviço de banco de dados relacional e histórico analítico de crescimento dos schemas de produção (<code>gastocerto_db</code>, <code>meubolso</code>, <code>mysql</code>).</p>
+
+                <div class="clear" style="margin-bottom: 15px;"></div>
+
+                <p><strong>Destaque em Engenharia de Infraestrutura & SRE:</strong></p>
+                <p>Este projeto traduz a aplicação direta de quase duas décadas de sólida experiência em administração de sistemas Linux, redes corporativas e virtualização Proxmox, integrando boas práticas de SRE (Site Reliability Engineering), observabilidade moderna e mitigação cibernética em ambientes de computação em nuvem.</p>
+            `
+        },
+
+        en: {
+            title: "Hybrid NOC: Real-Time Observability & Cloud Monitoring (OCI)",
+            subtitle: "🖥️ Hybrid Observability • Prometheus • Grafana • Oracle Cloud (OCI) • Proxmox LXC • Network Hardening",
+            technologies: "Prometheus, Grafana, Oracle Cloud Infrastructure (OCI), Proxmox VE (LXC Ubuntu 24), Node Exporter, Blackbox Exporter, MySQL Monitoring, iptables, OCI Network Security Groups (NSG), Linux",
+            year: "2026",
+            description: `
+                <p><strong>Project Overview:</strong> Implementation of an end-to-end hybrid observability architecture and operational <strong>NOC (Network Operations Center)</strong>. The system collects real-time telemetry directly from an <strong>active production cloud instance hosted on Oracle Cloud Infrastructure (OCI)</strong>, centralizing metrics, alerts, and analytical dashboards into an on-premise <strong>Proxmox VE</strong> cluster running an isolated LXC container (Ubuntu 24.04 LTS) powered by <strong>Prometheus and Grafana</strong>.</p>
+
+                <p><strong>Engineering Challenge: Security & Network Isolation to Mitigate Vulnerabilities:</strong></p>
+                <p>The primary architectural challenge was scraping sensitive metrics across the public internet while enforcing <strong>strict network isolation and vulnerability surface reduction</strong>. Telemetry exporters (such as <code>node_exporter</code> on TCP port 9100, process-level collectors, and Blackbox probes) expose low-level operating system internals: exact Linux kernel builds, full process PID tables, memory layouts, internal network routing, and MySQL schema names. Leaving these ports accessible to the public internet presents a critical attack vector for automated port scanners, network reconnaissance, and exploit attempts.</p>
+
+                <p><strong>Defense-in-Depth Implementation:</strong></p>
+                <p>• <strong>OCI Network Security Groups (NSG) & VCN Ingress Rules:</strong> Enforced stateful edge security rules within Oracle Cloud's virtual network fabric. All TCP 9100 ingress traffic from the public internet is silently dropped at the cloud border, whitelisting strictly the static external IP address (<code>/32</code>) of the HomeLab monitoring node.</p>
+                <p>• <strong>Host-Level Firewall (iptables & netfilter-persistent):</strong> Applied secondary in-kernel packet filtering within the OCI production Linux host. Explicit source-IP accept rules were placed before default <code>REJECT/DROP</code> chains, ensuring continuous security posture even during routing shifts.</p>
+                <p>• <strong>Listener Tuning & Incident Recovery:</strong> Handled listener binding calibrations where a restrictive <code>127.0.0.1</code> bind initially blocked remote scraping. Engineered a balanced architecture ensuring full edge protection without disrupting Prometheus pull intervals.</p>
+
+                <div class="clear" style="margin-bottom: 15px;"></div>
+
+                <img src="../static/assets/NOC_Prometheus_Grafana/NOC_Infraestrutura_Rede.png" class="img-float-right" alt="Grafana Dashboard - OCI Infrastructure & Network">
+
+                <p><strong>Global OCI Infrastructure & Network Telemetry:</strong></p>
+                <p>• <strong>Production Host Metrics:</strong> Live tracking of global CPU utilization (recording 70.6% under real workload), RAM consumption (14%), root filesystem utilization (5.11%), and continuous server uptime (3+ consecutive weeks).</p>
+                <p>• <strong>Top 3 Resource-Heavy Processes:</strong> High-granularity analytical panel actively identifying processes with highest CPU and memory usage (such as headless Chrome/Puppeteer processes for chatbot automation and Java Spring Boot application runtimes).</p>
+                <p>• <strong>Network Latency & Throughput:</strong> Sub-second tracking of HTTP probe response latency (HomeLab -> OCI trajectory) and download/upload throughput curves, anticipating route bottlenecks.</p>
+                <p>• <strong>SSL Certificate Lifecycle Management:</strong> Proactive countdown timers alerting on certificate expiration dates across all managed domains (<code>dalzam.com.br</code>).</p>
+
+                <div class="clear" style="margin-bottom: 15px;"></div>
+
+                <img src="../static/assets/NOC_Prometheus_Grafana/NOC_Aplicacoes_Servicos.png" class="img-float-left" alt="Grafana Dashboard - Applications & Production Services">
+
+                <p><strong>Operational Status of Microservices, Chatbot & Database:</strong></p>
+                <p>• <strong>Microservice Health Checks:</strong> Consolidated status panel (UP/DOWN) for all production endpoints: Dalzam Portal, Meu Bolso (Web & REST API), Gasto Certo (Web & API), CineVoto, and Care Plus.</p>
+                <p>• <strong>PM2 Background Daemons:</strong> Continuous telemetry of mission-critical background daemons, including the WhatsApp Business Chatbot and the Vosk speech recognition engine.</p>
+                <p>• <strong>User Engagement & Business Analytics:</strong> High-level visibility into traffic trends (total visits and unique visitors per app) and WhatsApp conversational load (860+ messages handled and 125 concurrent active sessions).</p>
+                <p>• <strong>MySQL Relational Sizing:</strong> Database daemon availability, overall storage volumetry, and historical data growth tracking across production schemas (<code>gastocerto_db</code>, <code>meubolso</code>, <code>mysql</code>).</p>
+
+                <div class="clear" style="margin-bottom: 15px;"></div>
+
+                <p><strong>Senior Infrastructure & SRE Impact:</strong></p>
+                <p>This project leverages nearly two decades of deep hands-on expertise across Linux systems administration, corporate networking, and Proxmox virtualization, bridging operational telemetry with modern SRE principles and enterprise cloud security.</p>
+            `
+        }
+    }
 
 };
 

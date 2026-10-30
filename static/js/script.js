@@ -36,6 +36,7 @@ const translations = {
         "proj_7_tag": "Challenge FIAP • Mobile & IA", "proj_7_title": "ELO: App Mobile ESG com IA Gemini & SQLite",
         "proj_8_tag": "Real-Time Web App • Java & Firebase", "proj_8_title": "CineVoto 2.0: Votação em Tempo Real com Cloud Firestore",
         "proj_9_tag": "Fintech SaaS • Java & React", "proj_9_title": "Meu Bolso: Gestão Financeira com Spring Boot, React & WhatsApp API",
+        "proj_10_tag": "NOC & Observabilidade Cloud", "proj_10_title": "NOC Híbrido: Observabilidade da OCI com Prometheus & Grafana",
         "footer_dev": "Desenvolvido por Bruno Zamboni", "footer_motto": "Desenvolvemos muito além do software", "footer_rights": "Todos os direitos reservados a Dalzam 2026",
         "egg_1": "Parabéns, você encontrou um dos códigos escondidos neste portfólio!", "egg_2": 'Digite no seu teclado a qualquer momento o nome da empresa desenvolvedora <strong style="color: #39ff14;">dalzam</strong> e veja o que acontece.', "egg_3": 'Atenciosamente "O Arquiteto".',
         "terminal_welcome": "The Bridge System [Version 1.0.5]<br>Bem-vindo ao modo desenvolvedor.<br>Digite <span class='cmd-highlight'>'help'</span> para ver os comandos.<br><br>"
@@ -74,6 +75,7 @@ const translations = {
         "proj_7_tag": "FIAP Challenge • Mobile & AI", "proj_7_title": "ELO: ESG Mobile App with Gemini AI & SQLite",
         "proj_8_tag": "Real-Time Web App • Java & Firebase", "proj_8_title": "CineVoto 2.0: Real-Time Voting with Cloud Firestore",
         "proj_9_tag": "Fintech SaaS • Java & React", "proj_9_title": "Meu Bolso: Financial Management with Spring Boot, React & WhatsApp API",
+        "proj_10_tag": "NOC & Cloud Observability", "proj_10_title": "Hybrid NOC: OCI Observability with Prometheus & Grafana",
         "footer_dev": "Developed by Bruno Zamboni", "footer_motto": "We develop much more than software", "footer_rights": "All rights reserved to Dalzam 2026",
         "egg_1": "Congratulations, you found one of the hidden codes in this portfolio!", "egg_2": 'Type the name of the development company <strong style="color: #39ff14;">dalzam</strong> on your keyboard at any time and see what happens.', "egg_3": 'Sincerely "The Architect".',
         "terminal_welcome": "The Bridge System [Version 1.0.5]<br>Welcome to developer mode.<br>Type <span class='cmd-highlight'>'help'</span> to see commands.<br><br>"
@@ -229,6 +231,7 @@ function processCommand(cmd) {
             printToTerminal("> NOHALL: Solução HR Tech premiada (1º Lugar FIAP).");
             printToTerminal("> CARPLUSFAMILY: Redução de No-Show em clínicas.");
             printToTerminal("> CUIDA+: Integração Médico -> Paciente.");
+            printToTerminal("> NOC OCI: Observabilidade híbrida (OCI + HomeLab) com Prometheus e Grafana.");
             break;
         case '3': case 'contact':
             printToTerminal("<br>--- CONTATO ---", "#0ea5e9");
