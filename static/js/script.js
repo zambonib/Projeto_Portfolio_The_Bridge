@@ -473,7 +473,7 @@ function shuffleProjects() {
 }
 
 function initGlideCarousel() {
-    if (document.querySelector('.cert-glide')) {
+    if (document.querySelector('.cert-glide') && typeof Glide !== 'undefined') {
         new Glide('.cert-glide', {
             type: 'carousel', startAt: 2, focusAt: 'center', perView: 2, gap: 40, animationDuration: 600,
             breakpoints: { 1024: { perView: 2, focusAt: 'center' }, 768: { perView: 1.4, focusAt: 'center', gap: 15 } }
